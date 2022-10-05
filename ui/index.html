@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/favicon.svg">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <title>Nest</title>
+</head>
+<body>
+    <div class="grand-opening-box">
+        Grand opening, <b>up to 15%</b> off all items. Only <b>3 days</b> left
+    </div>
+    <div class="first-section">
+        <div class="first-section-left">
+            <span><a href="">About Us</a></span>
+            <span><a href="">My Account</a></span>
+            <span><a href="">Wishlist</a></span>
+            <span><a href="">Order Tracking</a></span>
+        </div>
+        <div class="first-section-center">
+            <div class="first-center-box">
+                <div class="box-1">Trandy 25 Silver jewlery, save up 35% off today</div>
+                <div class="box-2">Supper Value Deals - Save more with coupons</div>
+                <div class="box-3">100% secure delivery without contacting the courier</div> 
+            </div>
+        </div>
+        <div class="first-section-right">
+            <p>Need help? Call Us: <span style="color: var(--text-green-one); font-weight: bold;">+1800 900</span></p>
+            <div class="language-currency">
+                <span>English <i class="fa-solid fa-angle-down"></i></span>
+                <div class="hidden-lan-options">
+                    <div><img src="../img/France.png" /> French</div>
+                    <div><img src="../img/Germany.png" /> Dutch</div>
+                    <div><img src="../img/Portugal.png" /> Italy</div>
+                </div>
+            </div>
+            <div class="language-currency">
+                <span>USD <i class="fa-solid fa-angle-down"></i></span>
+                <div class="hidden-lan-options usd">
+                    <div><img src="../img/France.png" /> EU</div>
+                    <div><img src="../img/Germany.png" /> BDT</div>
+                    <div><img src="../img/Portugal.png" /> GBP</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        Navbar section starts from here
+    -->
+	<my-header></my-header>
+
+    <!--
+        Hero-section starts from here
+    -->
+ 
+    <div class="hero-section">
+        <div class="hero-box active" style="background-image: url('../img/slider-1.png');">
+            <h1>Don't miss amazing <br> grocery deals</h1>
+            <h3>Sign up for the daily newslatter</h3>
+            <div class="hero-sign-up">
+                <i class="fa-regular fa-paper-plane"></i>
+                <input type="text" placeholder="Your email address" />
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div class="hero-box" style="background-image: url('../img/slider-2.png');">
+            <h1>Fresh Vegetables <br> Big discount</h1>
+            <h3>Sign up for the daily newslatter</h3>
+            <div class="hero-sign-up">
+                <i class="fa-regular fa-paper-plane"></i>
+                <input type="text" placeholder="Your email address"/>
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div class="hero-arrows">
+            <i class="fa-solid fa-angle-left left-btn"></i>
+            <i class="fa-solid fa-angle-right right-btn"></i>
+        </div>
+
+        <div class="hero-dots">
+            <div class="hero-dot left-btn active"></div>
+            <div class="hero-dot right-btn"></div>
+        </div>
+    </div>
+
+    <!--
+        Featured categories starts from here............
+    -->
+    <div class="feature-main">
+        <div class="featured-top">
+            <div class="featured-list">
+                <h1>Featured Categories</h1>
+                <ul>
+                    <li><a href="#/">Cake & Milk</a></li>
+                    <li><a href="#/">Coffes & Teas</a></li>
+                    <li><a href="#/">Pet Foods</a></li>
+                    <li><a href="#/">Vegetables</a></li>
+                </ul>
+            </div>
+            <div class="featured-btns">
+                <button id="feature-left-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                <button id="feature-right-btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="feature-boxes">
+            <a href="#/" class="feature-box animation" style="background: #F4F6FA; border: 1px solid #F4F6FA;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-1.png" class="feature-box-img" >
+                </div>
+                <h3>Vegetables</h3>
+                <p>72 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FEEFEA; border: 1px solid #FEEFEA;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-4.png" class="feature-box-img" >
+                </div>
+                <h3>Black plum</h3>
+                <p>123 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FEEFEA; border: 1px solid #FEEFEA;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-9.png" class="feature-box-img" >
+                </div>
+                <h3>Red Apple</h3>
+                <p>54 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #F2FCE4; border: 1px solid #F2FCE4;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-2.png" class="feature-box-img" >
+                </div>
+                <h3>Strawberry</h3>
+                <p>36 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FFF3EB; border: 1px solid #FFF3EB;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-3.png" class="feature-box-img" >
+                </div>
+                <h3>Snack</h3>
+                <p>56 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #F4F6FA; border: 1px solid #F4F6FA;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-1.png" class="feature-box-img" >
+                </div>
+                <h3>Vegetables</h3>
+                <p>72 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FFFCEB; border: 1px solid #FFFCEB;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-5.png" class="feature-box-img" >
+                </div>
+                <h3>Custard apple</h3>
+                <p>34 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FFFCEB; border: 1px solid #FFFCEB;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-12.png" class="feature-box-img" >
+                </div>
+                <h3>Organic Kiwi</h3>
+                <p>28 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FEEFEA; border: 1px solid #FEEFEA;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-14.png" class="feature-box-img" >
+                </div>
+                <h3>Coffee & Tea</h3>
+                <p>89 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #F2FCE4; border: 1px solid #F2FCE4;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-2.png" class="feature-box-img" >
+                </div>
+                <h3>Strawberry</h3>
+                <p>36 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FEEFEA; border: 1px solid #FEEFEA;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-9.png" class="feature-box-img" >
+                </div>
+                <h3>Red Apple</h3>
+                <p>54 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #ECFFEC; border: 1px solid #ECFFEC;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-15.png" class="feature-box-img" >
+                </div>
+                <h3>Coffee & Tea</h3>
+                <p>89 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #ECFFEC; border: 1px solid #ECFFEC;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-11.png" class="feature-box-img" >
+                </div>
+                <h3>Peach</h3>
+                <p>14 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FFFCEB; border: 1px solid #FFFCEB;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-12.png" class="feature-box-img" >
+                </div>
+                <h3>Organic Kiwi</h3>
+                <p>28 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #F2FCE4; border: 1px solid #F2FCE4;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-13.png" class="feature-box-img" >
+                </div>
+                <h3>Fast Food</h3>
+                <p>26 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FFF3EB; border: 1px solid #FFF3EB;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-3.png" class="feature-box-img" >
+                </div>
+                <h3>Snack</h3>
+                <p>56 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #FEEFEA; border: 1px solid #FEEFEA;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-14.png" class="feature-box-img" >
+                </div>
+                <h3>Coffee & Tea</h3>
+                <p>89 items</p>
+            </a>
+            <a href="#/" class="feature-box" style="background: #ECFFEC; border: 1px solid #ECFFEC;">
+                <div class="feature-img-box">
+                    <img src="../img/cat-11.png" class="feature-box-img" >
+                </div>
+                <h3>Peach</h3>
+                <p>14 items</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="big-feature-mainBox">
+        <div class="big-feature-box">
+           <h3>Everyday Fresh & Clean with Our Products</h3>
+           <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+           <img src="../img/banner-1.png" >
+        </div>
+        <div class="big-feature-box" >
+           <h3>Make your Breakfast Healthy and Easy</h3>
+           <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+           <img src="../img/banner-2.png" >
+        </div>
+        <div class="big-feature-box">
+           <h3>The best Organic Products Online</h3>
+           <a href="">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+           <img src="../img/banner-3.png" >
+        </div>
+    </div>
+
+
+    
+    <!--
+        http://wp.alithemes.com/html/nest/demo/index.html
+    -->
+    <script src="../javascript/index.js"></script>
+    <script src="../javascript/header.js"></script>
+
+</body>
+</html>
+
