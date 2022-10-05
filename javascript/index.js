@@ -134,11 +134,6 @@ function checkHeight(){
     })
 }
 
-const datas = [1, 2, 54, 962, 987, 32, 561, 01, 9645, 52, 74]
-
-if(number == 11){
-    
-}
 
 
 
