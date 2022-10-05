@@ -4,7 +4,7 @@ class MyHeader extends HTMLElement{
         <header class="main-header">
 		<div class="top-header">
 		   <div class="logo">
-			   <a href="../ui/index.html"><img src="../img/logo.svg" /></a>
+			   <a href="index.html"><img src="img/logo.svg" /></a>
 		   </div>
 		   <div class="search-account">
 			   <div class="search-main">
@@ -88,7 +88,7 @@ class MyHeader extends HTMLElement{
 	  
 					   <div class="cart-absu">
 						   <div class="cart-absu-innerBox">
-							   <a href=""><img src="../img/thumbnail-3.jpg" /></a>
+							   <a href=""><img src="img/thumbnail-3.jpg" /></a>
 							   <div class="cart-absu-details">
 								   <div class="cart-absu-desc">
 									   <a href="">Daisy Casual Bag</a>
@@ -98,7 +98,7 @@ class MyHeader extends HTMLElement{
 							   </div>
 						   </div>
 						   <div class="cart-absu-innerBox">
-							   <a href=""><img src="../img/thumbnail-2.jpg" /></a>
+							   <a href=""><img src="img/thumbnail-2.jpg" /></a>
 							   <div class="cart-absu-details">
 								   <div class="cart-absu-desc">
 									   <a href="">Corduroy Shirts</a>
@@ -158,60 +158,60 @@ class MyHeader extends HTMLElement{
 	  
 				   <div class="browse-all-list-box">
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-1.svg" />
+						   <img src="img/category-1.svg" />
 						   <span>Milks and Dairies</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-6.svg" />
+						   <img src="img/category-6.svg" />
 						   <span>Wines & Drinks</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-2.svg" />
+						   <img src="img/category-2.svg" />
 						   <span>Clothing & beauty</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-7.svg" />
+						   <img src="img/category-7.svg" />
 						   <span>Fresh Seafood</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-3.svg" />
+						   <img src="img/category-3.svg" />
 						   <span>Pet Foods & Toy</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-8.svg" />
+						   <img src="img/category-8.svg" />
 						   <span>Fast food</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-4.svg" />
+						   <img src="img/category-4.svg" />
 						   <span>Baking material</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-9.svg" />
+						   <img src="img/category-9.svg" />
 						   <span>Vegetables</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-5.svg" />
+						   <img src="img/category-5.svg" />
 						   <span>Fresh Fruit</span>
 					   </a>
 					   <a href="" class="all-category-list">
-						   <img src="../img/category-10.svg" />
+						   <img src="img/category-10.svg" />
 						   <span>Bread and Juice</span>
 					   </a>
 					   <span class="show-more-box">
 						   <a href="" class="all-category-list">
-							   <img src="../img/category-9.svg" />
+							   <img src="img/category-9.svg" />
 							   <span>Vegetables</span>
 						   </a>
 						   <a href="" class="all-category-list">
-							   <img src="../img/icon-1.svg" />
+							   <img src="img/icon-1.svg" />
 							   <span>Kitchen appliances</span>
 						   </a>
 						   <a href="" class="all-category-list">
-							   <img src="../img/icon-3.svg" />
+							   <img src="img/icon-3.svg" />
 							   <span>Fresh fish</span>
 						   </a>
 						   <a href="" class="all-category-list">
-							   <img src="../img/icon-2.svg" />
+							   <img src="img/icon-2.svg" />
 							   <span>Furniture</span>
 						   </a>
 					   </span>
@@ -225,7 +225,7 @@ class MyHeader extends HTMLElement{
 			   <nav class="desktop-top-nav">
 				   <ul>
 					   <li class="nav-list">
-						   <a href="./deal.html" class="main-active-link">
+						   <a href="deal.html" class="main-active-link">
 							   <i class="fa-solid fa-fire" style="color: var(--text-green-one)"></i>
 							   Deals
 						   </a>
