@@ -389,7 +389,7 @@ class MyHeader extends HTMLElement{
 	  <div class="side-navBar-background">
 	     <div class="side-navBar-box">
 		     <div class="side-logo-box"> 
-			     <a href="../ui/index.html"><img src="../img/logo.svg" /></a>
+			     <a href="index.html"><img src="img/logo.svg" /></a>
 				 <i class="fa-solid fa-xmark"></i>
 			 </div>
 
