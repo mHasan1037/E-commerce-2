@@ -1,6 +1,7 @@
 :root{
     --border-one-color: 1px solid rgb(228, 226, 226);
     --border-two-color: 1px solid rgb(180, 179, 179);
+    --border-three-color: 1px solid #ececec;
     --arrow-down-color: rgb(204, 201, 201);
     --light-green: rgb(183, 226, 183);
     --primary-black: #23313b;
