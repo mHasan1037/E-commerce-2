@@ -545,6 +545,51 @@
     border-radius: 10px;
 }
 
+/*
+  Popular products section starts from here.....
+*/
+
+.popular-products{
+    margin: 50px 10px 40px;
+}
+
+.product-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-nav h1{
+    font-size: 28px;
+    color: var(--second-black);
+    font-family: "Quicksand", sans-serif;
+}
+
+.popular-link-box{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 0 !important;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    gap: 10px 20px;
+}
+
+
+.popular-link-box li a{
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--second-black);
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+}
+
+.popular-link-box li a:hover,
+.popular-link-box li a.active{
+    color: var(--text-green-one);
+}
+
 
 
 
@@ -579,6 +624,46 @@
 
     .big-feature-box h3{
         width: 70%;
+    }
+
+
+
+
+
+
+
+
+    
+    .product-nav{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    
+    .product-nav h1{
+        font-size: 28px;
+        color: var(--second-black);
+        font-family: "Quicksand", sans-serif;
+    }
+    
+    .popular-link-box{
+        display: flex;
+        list-style-type: none;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    .popular-link-box li{
+        margin: 0 10px;
+    }
+    
+    .popular-link-box li a{
+        white-space: nowrap;
+        text-decoration: none;
+        color: var(--second-black);
+        font-size: 14px;
+        font-weight: bold;
+        font-family: "Quicksand", sans-serif;
     }
     
 }
