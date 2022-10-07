@@ -135,6 +135,34 @@ function checkHeight(){
 }
 
 
+// popular products section start from here.........
+
+const popularProductDiv = document.querySelector('.popular-product-div');
+const popularHiddenBox = document.querySelector('.popular-hidden-box');
+const popularFrontImg = document.querySelector('.popular-front-img');
+const popularBackImg = document.querySelector('.popular-back-img');
+
+popularHiddenBox.addEventListener('mouseover', ()=>{
+    popularFrontImg.style.display = 'none';
+    popularBackImg.style.display = 'inline-block';
+})
+
+popularProductDiv.addEventListener('mouseover', ()=>{
+    popularFrontImg.style.display = 'none';
+    popularBackImg.style.display = 'inline-block';
+    popularHiddenBox.style.display = 'block';
+})
+
+popularHiddenBox.addEventListener('mouseout', ()=>{
+    popularFrontImg.style.display = 'inline-block';
+    popularBackImg.style.display = 'none';
+})
+
+popularProductDiv.addEventListener('mouseout', ()=>{
+    popularFrontImg.style.display = 'inline-block';
+    popularBackImg.style.display = 'none';
+    popularHiddenBox.style.display = 'none';
+})
 
 
 
