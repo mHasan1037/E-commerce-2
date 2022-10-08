@@ -152,7 +152,7 @@ popularProductDivs.forEach((popularProductDiv, idx) =>{
         const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
         popularFrontImg.style.display = 'block'
         popularBackImg.style.display = 'none'
-        popularHiddenBoxs[idx].style.display = 'none'
+        popularHiddenBoxs[idx].style.opacity = '0'
     })
 })
 
@@ -160,7 +160,7 @@ const popularImgBoxs = document.querySelectorAll('.popular-img-box');
 
 popularImgBoxs.forEach((popularImgBox, idx) =>{
     popularImgBox.addEventListener('mouseover', ()=>{
-        popularHiddenBoxs[idx].style.display = 'inline-block'   
+        popularHiddenBoxs[idx].style.opacity = '1'   
     })
 
 })

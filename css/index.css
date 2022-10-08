@@ -673,7 +673,8 @@
     left: 50%;
     transform: translateX(-50%);
     width: fit-content;
-    display: none;
+    display: block;
+    opacity: 0;
 }
 
 .popular-hidden-element{
