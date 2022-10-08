@@ -3,15 +3,16 @@
     --border-two-color: 1px solid rgb(180, 179, 179);
     --border-three-color: 1px solid #ececec;
     --arrow-down-color: rgb(204, 201, 201);
-    --light-green: rgb(183, 226, 183);
+    --light-green: #b7e2b7;
     --primary-black: #23313b;
     --second-black: #253D4E;
     --text-green-one: #3BB77E;
     --text-green-two: #5ee6a6;
     --green-background: #3BB77E;
+    --green-light-background: #DEF9EC;
     --green-background-hover: #29A56C;
     --light-gray: #7E7E7E;
-    --lighter-gary: #a5a5a5;
+    --lighter-gray: #a5a5a5;
     --lightest-gray: #B6B6B6;
     --yellow: #ffc107;
 }

@@ -137,21 +137,25 @@ function checkHeight(){
 
 // popular products section start from here.........
 
-const popularProductDiv = document.querySelector('.popular-product-div');
-const popularHiddenBox = document.querySelector('.popular-hidden-box');
-const popularFrontImg = document.querySelector('.popular-front-img');
-const popularBackImg = document.querySelector('.popular-back-img');
+const popularProductDivs = document.querySelectorAll('.popular-product-div');
+const popularHiddenBoxs = document.querySelectorAll('.popular-hidden-box');
+const popularFrontImgs = document.querySelectorAll('.popular-front-img');
+const popularBackImgs = document.querySelectorAll('.popular-back-img');
 
 popularHiddenBox.addEventListener('mouseover', ()=>{
     popularFrontImg.style.display = 'none';
     popularBackImg.style.display = 'inline-block';
 })
 
-popularProductDiv.addEventListener('mouseover', ()=>{
-    popularFrontImg.style.display = 'none';
-    popularBackImg.style.display = 'inline-block';
-    popularHiddenBox.style.display = 'block';
+popularProductDivs.forEach(popularProductDiv, ()=>{
+    popularProductDiv.addEventListener('mouseover', ()=>{
+        popularFrontImg.style.display = 'none';
+        popularBackImg.style.display = 'inline-block';
+        popularBackImg.style.transform = `scale(${1.05})`;
+        popularHiddenBox.style.display = 'block';
+    })
 })
+
 
 popularHiddenBox.addEventListener('mouseout', ()=>{
     popularFrontImg.style.display = 'inline-block';
