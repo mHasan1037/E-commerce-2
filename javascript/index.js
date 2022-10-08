@@ -137,8 +137,52 @@ function checkHeight(){
 
 // popular products section start from here.........
 
+const popularBtns = document.querySelectorAll('.popular-btn');
 const popularProductDivs = document.querySelectorAll('.popular-product-div');
 const popularHiddenBoxs = document.querySelectorAll('.popular-hidden-box');
+
+
+//Popular nav button active non-active code goes here
+popularBtns.forEach((popularBtn)=>{
+    popularBtn.addEventListener('click', ()=>{
+        popularBtns.forEach(popularBtn => popularBtn.classList.remove('active'))
+        popularBtn.classList.add('active')
+    })
+})
+
+popularProductDivs.forEach(product =>{
+    if(product.classList.contains('display')){
+        product.style.display = 'block'
+    }else{
+        product.style.display = 'none'
+    }
+})
+
+//popular product filter code....
+for(i = 0; i < popularBtns.length; i++){
+    popularBtns[i].addEventListener('click', (e)=>{
+        e.preventDefault()
+
+        const filter = e.target.dataset.filter
+
+        popularProductDivs.forEach((product) =>{
+            if(filter == 'all'){
+                if(product.classList.contains('display')){
+                    product.style.display = 'block'
+                }else{
+                    product.style.display = 'none'
+                }
+            }else{
+                if(product.classList.contains(filter)){
+                    product.style.display = 'block'
+                }else{
+                    product.style.display = 'none'
+                }
+            }
+        })
+    })
+}
+
 
 popularProductDivs.forEach((popularProductDiv, idx) =>{
     popularProductDiv.addEventListener('mouseover', ()=>{
