@@ -160,7 +160,7 @@ const popularImgBoxs = document.querySelectorAll('.popular-img-box');
 
 popularImgBoxs.forEach((popularImgBox, idx) =>{
     popularImgBox.addEventListener('mouseover', ()=>{
-        popularHiddenBoxs[idx].style.display = 'block'   
+        popularHiddenBoxs[idx].style.display = 'inline-block'   
     })
 
 })
