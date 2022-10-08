@@ -139,33 +139,30 @@ function checkHeight(){
 
 const popularProductDivs = document.querySelectorAll('.popular-product-div');
 const popularHiddenBoxs = document.querySelectorAll('.popular-hidden-box');
-const popularFrontImgs = document.querySelectorAll('.popular-front-img');
-const popularBackImgs = document.querySelectorAll('.popular-back-img');
 
-popularHiddenBox.addEventListener('mouseover', ()=>{
-    popularFrontImg.style.display = 'none';
-    popularBackImg.style.display = 'inline-block';
-})
-
-popularProductDivs.forEach(popularProductDiv, ()=>{
+popularProductDivs.forEach((popularProductDiv, idx) =>{
     popularProductDiv.addEventListener('mouseover', ()=>{
-        popularFrontImg.style.display = 'none';
-        popularBackImg.style.display = 'inline-block';
-        popularBackImg.style.transform = `scale(${1.05})`;
-        popularHiddenBox.style.display = 'block';
+        const popularFrontImg = popularProductDiv.querySelector('.popular-front-img');
+        const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
+        popularFrontImg.style.display = 'none'
+        popularBackImg.style.display = 'block'
+    })
+    popularProductDiv.addEventListener('mouseleave', ()=>{
+        const popularFrontImg = popularProductDiv.querySelector('.popular-front-img');
+        const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
+        popularFrontImg.style.display = 'block'
+        popularBackImg.style.display = 'none'
+        popularHiddenBoxs[idx].style.display = 'none'
     })
 })
 
+const popularImgBoxs = document.querySelectorAll('.popular-img-box');
 
-popularHiddenBox.addEventListener('mouseout', ()=>{
-    popularFrontImg.style.display = 'inline-block';
-    popularBackImg.style.display = 'none';
-})
+popularImgBoxs.forEach((popularImgBox, idx) =>{
+    popularImgBox.addEventListener('mouseover', ()=>{
+        popularHiddenBoxs[idx].style.display = 'block'   
+    })
 
-popularProductDiv.addEventListener('mouseout', ()=>{
-    popularFrontImg.style.display = 'inline-block';
-    popularBackImg.style.display = 'none';
-    popularHiddenBox.style.display = 'none';
 })
 
 
