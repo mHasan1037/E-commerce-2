@@ -875,6 +875,7 @@
 .daily-product-carosul{
     display: flex;
     gap: 0 25px;
+    overflow: hidden;
 }
 
 .daily-fixed-div{
@@ -882,7 +883,8 @@
     background-position: center;
     background-size: cover;
     height: 500px;
-    width: 22%;
+    width: 25%;
+    min-width: 270px;
     border-radius: 10px;
 }
 
@@ -893,8 +895,9 @@
     font-family: "Quicksand", sans-serif;
 }
 
-
-
+.best-product-div{
+    min-width: 250px;
+}
 .best-sell-progress-bar{
     width: 100%;
     margin-top: 15px;
