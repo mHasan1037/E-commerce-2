@@ -81,6 +81,8 @@ function repeatSlide(){
 
 var slideChange = setInterval(repeatSlide, 2000)
 
+
+
 //feature section slider starts from here......
 
 const featureContainers = [...document.querySelectorAll('.feature-boxes')];
@@ -135,6 +137,7 @@ function checkHeight(){
 }
 
 
+
 // popular products section start from here.........
 
 const popularBtns = document.querySelectorAll('.popular-btn');
@@ -159,6 +162,7 @@ popularProductDivs.forEach(product =>{
 })
 
 //popular product filter code....
+
 for(i = 0; i < popularBtns.length; i++){
     popularBtns[i].addEventListener('click', (e)=>{
         e.preventDefault()
@@ -190,6 +194,7 @@ popularProductDivs.forEach((popularProductDiv, idx) =>{
         const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
         popularFrontImg.style.display = 'none'
         popularBackImg.style.display = 'block'
+        popularHiddenBoxs[idx].style.opacity = '1' 
     })
     popularProductDiv.addEventListener('mouseleave', ()=>{
         const popularFrontImg = popularProductDiv.querySelector('.popular-front-img');
@@ -200,14 +205,42 @@ popularProductDivs.forEach((popularProductDiv, idx) =>{
     })
 })
 
-const popularImgBoxs = document.querySelectorAll('.popular-img-box');
+const bestProductDivs = document.querySelectorAll('.best-product-div');
+bestProductDivs.forEach((bestProductDiv, idx) =>{
+    bestProductDiv.addEventListener('mouseover', ()=>{
+        const popularFrontImg = bestProductDiv.querySelector('.popular-front-img');
+        const popularBackImg = bestProductDiv.querySelector('.popular-back-img');
+        popularFrontImg.style.display = 'none'
+        popularBackImg.style.display = 'block'
+        const hiddenBox = bestProductDiv.querySelector('.popular-hidden-box');
+        hiddenBox.style.opacity = 1
 
-popularImgBoxs.forEach((popularImgBox, idx) =>{
-    popularImgBox.addEventListener('mouseover', ()=>{
-        popularHiddenBoxs[idx].style.opacity = '1'   
     })
-
+    bestProductDiv.addEventListener('mouseleave', ()=>{
+        const popularFrontImg = bestProductDiv.querySelector('.popular-front-img');
+        const popularBackImg = bestProductDiv.querySelector('.popular-back-img');
+        popularFrontImg.style.display = 'block'
+        popularBackImg.style.display = 'none'
+        const hiddenBox = bestProductDiv.querySelector('.popular-hidden-box');
+        hiddenBox.style.opacity = 0
+    })
 })
+
+
+
+//Daily Best Sells code goes here........
+
+//Daily Nav active code 
+const dailyActive = document.querySelectorAll('.daily-list a');
+
+dailyActive.forEach(active =>{
+    active.addEventListener('click', ()=>{
+        dailyActive.forEach(active => active.classList.remove('active'))
+        active.classList.add('active')
+    })
+})
+
+
 
 
 
