@@ -872,12 +872,6 @@
     gap: 0 30px;
 }
 
-.daily-product-carosul{
-    display: flex;
-    gap: 0 25px;
-    overflow: hidden;
-}
-
 .daily-fixed-div{
     background-image: url('/img/banner-4.png');
     background-position: center;
@@ -886,6 +880,13 @@
     width: 25%;
     min-width: 270px;
     border-radius: 10px;
+}
+
+.daily-product-carosul{
+    width: 75%;
+    display: flex;
+    gap: 0 25px;
+    overflow: hidden;
 }
 
 .daily-fixed-div h1{
