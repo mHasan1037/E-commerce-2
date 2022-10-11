@@ -508,7 +508,7 @@
     transform: translateY(-5px);
 }
 
-.big-feature-box a{
+.shopNow-btn{
     position: relative;
     left: 10%;
     top: 15%;
@@ -526,11 +526,11 @@
     z-index: 2;
 }
 
-.big-feature-box a i{
+.shopNow-btn i{
     font-size: 10px;
 }
 
-.big-feature-box a:hover{
+.shopNow-btn:hover{
    width: 95px;
    background-color: var(--yellow);
 }
@@ -607,7 +607,8 @@
     gap: 0 30px;
 }
 
-.popular-product-div{
+.popular-product-div,
+.best-product-div{
     padding: 20px;
     max-width: 270px;
     border-radius: 15px;
@@ -821,6 +822,123 @@
 }
 
 
+/*
+  Daily Best Sells goes here.......
+*/
+
+.daily-container{
+    margin: 20px 10px;
+}
+
+.daily-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.daily-head h1{
+    color: var(--second-black);
+    font-family: "Quicksand", sans-serif;
+    font-size: 32px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: bold;
+}
+
+.daily-nav{
+    display: flex;
+    list-style-type: none;
+    gap: 0 20px;
+}
+
+.daily-nav .daily-list a{
+    font-family: "Quicksand", sans-serif;
+    text-decoration: none;
+    color: var(--second-black);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.daily-nav .daily-list a.active,
+.daily-nav .daily-list a:hover{
+    color: var(--text-green-one);
+}
+
+
+.daily-body{
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    gap: 0 30px;
+}
+
+.daily-product-carosul{
+    display: flex;
+    gap: 0 25px;
+}
+
+.daily-fixed-div{
+    background-image: url('/img/banner-4.png');
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    width: 22%;
+    border-radius: 10px;
+}
+
+.daily-fixed-div h1{
+    padding: 20% 10% 0%;
+    color: var(--second-black);
+    font-size: 40px;
+    font-family: "Quicksand", sans-serif;
+}
+
+
+
+.best-sell-progress-bar{
+    width: 100%;
+    margin-top: 15px;
+    -webkit-appearance: none;
+    border-radius: 25px;
+}
+
+.best-sell-progress-bar::-webkit-progress-bar{
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: rgb(231, 230, 230);
+}
+
+.best-sell-progress-bar::-webkit-progress-value{
+    background: var(--green-background);
+    border-radius: 5px;
+}
+
+.best-sold-quantity{
+    margin-bottom: 18px;
+}
+
+.best-add-cart{
+    display: inline-block;
+    width: 100%;
+    background-color: var(--green-background);
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: translateY(0);
+    transition: 0.3s ease;
+}
+
+.best-add-cart:hover{
+    transform: translateY(-3px);
+    background-color: var(--yellow);
+}
+
+
+
 
 /*
  Media query starts from here..........
@@ -980,6 +1098,15 @@
      .featured-list ul li a{
         font-size: 12px;
      }
+
+
+     .daily-head{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .daily-nav{
+        padding-left: 0;
+    }
        
 }
 
