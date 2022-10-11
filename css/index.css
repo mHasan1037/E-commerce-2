@@ -887,7 +887,40 @@
     display: flex;
     gap: 0 25px;
     overflow: hidden;
+    position: relative;
 }
+
+.daily-slides{
+    display: flex;
+    box-sizing: border-box;
+    gap: 25px;
+}
+
+.best-slide-controls{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.best-slide-controls button{
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.best-slide-controls button:hover{
+    background-color: var(--green-background);
+    color: white;
+}
+
 
 .daily-fixed-div h1{
     padding: 20% 10% 0%;
