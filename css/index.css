@@ -937,6 +937,11 @@
     margin-top: 15px;
     -webkit-appearance: none;
     border-radius: 25px;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+  background-color: rgb(231, 230, 230);
+  height: 5px;
 }
 
 .best-sell-progress-bar::-webkit-progress-bar{
@@ -950,6 +955,13 @@
     background: var(--green-background);
     border-radius: 5px;
 }
+
+
+.best-sell-progress-bar::-moz-progress-bar {
+    background-color: var(--green-background);
+    height: 5px;
+  }
+
 
 .best-sold-quantity{
     margin-bottom: 18px;
