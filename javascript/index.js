@@ -240,6 +240,26 @@ dailyActive.forEach(active =>{
     })
 })
 
+//Daily nav onclick different product will show........
+const dailyLists = document.querySelectorAll('.daily-list');
+dailyLists.forEach((dailyList, idx) =>{
+    dailyList.addEventListener('click', ()=>{
+        const checking = dailyList.getAttribute('data-best')
+        
+        const bestSlidesDivs = document.querySelectorAll('.best-product-div');
+
+        bestSlidesDivs.forEach((bestSlidesDiv, idx)=>{
+            if(bestSlidesDiv.classList.contains(checking)){
+                bestSlidesDiv.style.display = 'block'
+            }else{
+                bestSlidesDiv.style.display = 'none'
+            }
+        })
+    })
+})
+
+
+
 //Daily slide code goes here........
 
 const sliderContainer = document.querySelector('.daily-product-carosul');
@@ -314,3 +334,76 @@ bestNextBtn.addEventListener('click', moveToNextSlide)
 bestPrevBtn.addEventListener('click', moveToPreviousSlide)
 
 startSlide()
+
+
+//Deals of the day goes here countdown code is here.........
+
+const countdown = () =>{
+    const now = new Date().getTime();
+   
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    //First countDown Data goes here
+    const countDateOne = new Date('Jan 01, 2024 00:00:00').getTime() 
+    const gapOne = countDateOne - now
+
+    const textDayOne = Math.floor(gapOne / day);
+    let textHourOne = Math.floor((gapOne % day) / hour);
+    let textMinuteOne = Math.floor((gapOne % hour) / minute); 
+    let textSecondOne = Math.floor((gapOne % minute) / second); 
+
+    document.querySelector('.days').innerText = textDayOne;
+    document.querySelector('.hours').innerText = textHourOne < 10 ? "0" + textHourOne : textHourOne;
+    document.querySelector('.mins').innerText = textMinuteOne < 10 ? "0" + textMinuteOne : textMinuteOne;
+    document.querySelector('.secs').innerText = textSecondOne < 10 ? "0" + textSecondOne : textSecondOne;
+
+
+    //Second countDown Data goes here
+    const countDateTwo =  new Date('May 01, 2024 18:30:00').getTime() 
+    const gapTwo = countDateTwo - now
+
+    const textDayTwo = Math.floor(gapTwo / day);
+    let textHourTwo = Math.floor((gapTwo % day) / hour);
+    let textMinuteTwo = Math.floor((gapTwo % hour) / minute); 
+    let textSecondTwo = Math.floor((gapTwo % minute) / second); 
+
+    document.querySelector('.days2').innerText = textDayTwo;
+    document.querySelector('.hours2').innerText = textHourTwo < 10 ? "0" + textHourTwo : textHourTwo;
+    document.querySelector('.mins2').innerText = textMinuteTwo < 10 ? "0" + textMinuteTwo : textMinuteTwo;
+    document.querySelector('.secs2').innerText = textSecondTwo < 10 ? "0" + textSecondTwo : textSecondTwo;
+
+
+    //Third countDown Data goes here
+    const countDateThree =  new Date('Oct 10, 2024 06:00:00').getTime() 
+    const gapThree = countDateThree - now
+
+    const textDayThree = Math.floor(gapThree / day);
+    let textHourThree = Math.floor((gapThree % day) / hour);
+    let textMinuteThree = Math.floor((gapThree % hour) / minute); 
+    let textSecondThree = Math.floor((gapThree % minute) / second);
+
+    document.querySelector('.days3').innerText = textDayThree;
+    document.querySelector('.hours3').innerText = textHourThree < 10 ? "0" + textHourThree : textHourThree;
+    document.querySelector('.mins3').innerText = textMinuteThree < 10 ? "0" + textMinuteThree : textMinuteThree;
+    document.querySelector('.secs3').innerText = textSecondThree < 10 ? "0" + textSecondThree : textSecondThree;
+
+
+   //Forth countdown Data goes here
+   const countDateFour =  new Date('Mar 10, 2024 12:30:00').getTime() 
+   const gapFour = countDateFour - now
+
+   const textDayFour = Math.floor(gapFour / day);
+   let textHourFour = Math.floor((gapFour % day) / hour);
+   let textMinuteFour = Math.floor((gapFour % hour) / minute); 
+   let textSecondFour = Math.floor((gapFour % minute) / second);
+
+   document.querySelector('.days4').innerText = textDayFour;
+   document.querySelector('.hours4').innerText = textHourFour < 10 ? "0" + textHourFour : textHourFour;
+   document.querySelector('.mins4').innerText = textMinuteFour < 10 ? "0" + textMinuteFour : textMinuteFour;
+   document.querySelector('.secs4').innerText = textSecondFour < 10 ? "0" + textSecondFour : textSecondFour;
+}
+
+setInterval(countdown, 1000)

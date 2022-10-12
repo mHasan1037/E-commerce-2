@@ -826,17 +826,20 @@
   Daily Best Sells goes here.......
 */
 
-.daily-container{
-    margin: 20px 10px;
+.daily-container,
+.deals-container{
+    margin: 20px 15px 60px;
 }
 
-.daily-head{
+.daily-head,
+.deals-header{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-.daily-head h1{
+.daily-head h1,
+.deals-header h1{
     color: var(--second-black);
     font-family: "Quicksand", sans-serif;
     font-size: 32px;
@@ -849,13 +852,14 @@
     display: flex;
     list-style-type: none;
     gap: 0 20px;
+    margin-right: 10px;
 }
 
 .daily-nav .daily-list a{
     font-family: "Quicksand", sans-serif;
     text-decoration: none;
     color: var(--second-black);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -987,7 +991,98 @@
 }
 
 
+/*
+  Deals of the day code goes here........
+*/
 
+.deals-header a{
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+.deals-header a:hover{
+    color: var(--text-green-one);
+}
+
+.deals-header a i{
+    margin-left: 2px;
+    font-size: 10px;
+}
+
+.deals-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 40px;
+    gap: 15px;
+}
+
+.deals-box:hover .deal-description-box{
+   transform: translate(-50%, -50px);
+}
+
+.deals-bg-box{
+   width: 100%;
+}
+
+.deals-bg-box img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.deals-description-container{
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
+
+.deal-description-box{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0.3s ease;
+    width: 90%;
+}
+
+.deals-time-box{
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.time-box{
+    background-color: white;
+    width: 60px;
+    min-height: 60px;
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.timeValue{
+    font-size: 23px;
+    margin-top: 5px;
+    color: var(--text-green-one);
+}
+
+.dayName{
+    color: var(--light-gray);
+    margin-bottom: 5px;
+}
+
+.deal-full-description{
+    background-color: white;
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+}
 
 /*
  Media query starts from here..........
@@ -1027,6 +1122,15 @@
         justify-content: flex-start;
         flex-direction: column;
         margin-bottom: 30px;
+    }
+
+    .daily-fixed-div{
+        display: none;
+    }
+    
+    .daily-product-carosul{
+        width: 100%;
+        gap: 0 10px;
     }
     
 }
@@ -1149,7 +1253,8 @@
      }
 
 
-     .daily-head{
+     .daily-head,
+     .deals-header{
         flex-direction: column;
         align-items: flex-start;
     }
@@ -1201,6 +1306,10 @@
     .big-feature-mainBox{
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
         margin: 0 5px;
+    }
+
+    .daily-product-carosul{
+        gap: 0px;
     }
     
 }
