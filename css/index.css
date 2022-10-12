@@ -873,7 +873,7 @@
 }
 
 .daily-fixed-div{
-    background-image: url('/img/banner-4.png');
+    background-image: url('../img/banner-4.png');
     background-position: center;
     background-size: cover;
     height: 500px;
