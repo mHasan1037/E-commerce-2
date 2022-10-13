@@ -1084,6 +1084,86 @@
     border-radius: 10px;
 }
 
+
+/*
+ Different product column goes here.....
+*/
+
+.different-products-lists{
+    margin: 20px 15px 60px;
+}
+
+.different-product-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 0 20px;
+}
+
+.different-product-div h1{
+    color: var(--second-black);
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ececec;
+    position: relative;
+}
+
+.different-product-div h1::after{
+    content: '';
+    width: 80px;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #BCE3C9;
+}
+
+.different-products{
+    margin-top: 25px;
+}
+
+.different-product{
+    display: flex;
+    gap: 0 10px;
+    transform: translateY(0);
+    transition: 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.different-product:hover{
+    transform: translateY(-5px);
+}
+
+.different-img-container{
+    max-width: 180px;
+    min-width: 110px;
+    height: 120px;
+}
+
+.different-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.diff-desc{
+    padding-top: 10px;
+}
+
+.diff-desc a{
+    color: var(--second-black);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.diff-desc a:hover{
+    color: var(--text-green-one);
+}
+
 /*
  Media query starts from here..........
 */
