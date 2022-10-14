@@ -4,7 +4,7 @@ class MyFooter extends HTMLElement{
         <footer>
         <section class="footer-details">
             <div class="company-add">
-                <img src="img/logo.svg">
+                <img src="./img/logo.svg">
                 <p style="margin-bottom: 40px;">Awesome grocery store website template</p>
                 <div class="com-add-detail">
                     <div class="footer-icon-container"><i class="fa-solid fa-location-pin"></i></div>
@@ -71,12 +71,12 @@ class MyFooter extends HTMLElement{
             <div class="install-app-div">
                 <h1>Install App</h1>
                 <p>From App Store or Google Play</p>
-                <a href=""><img src="img/app-store.jpg"></a>
-                <a href=""><img src="img/google-play.jpg"></a>
+                <a href=""><img src="./img/app-store.jpg"></a>
+                <a href=""><img src="./img/google-play.jpg"></a>
             </div>
             <div class="payment-method">
                 <p>Secured Payment Gateways</p>
-                <a href=""><img src="img/payment-method.png" ></a>
+                <a href=""><img src="./img/payment-method.png" ></a>
             </div>
         </section>
     
