@@ -1,0 +1,168 @@
+/*
+Footer section goes here.......
+*/
+
+footer{
+    margin: 0 15px;
+}
+footer .footer-details{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.com-add-detail{
+    display: flex;
+    align-items:baseline;
+    flex-wrap: nowrap;
+    width: 90%;
+    margin: 10px 0;
+}
+
+.footer-icon-container i{
+    box-sizing: border-box;
+    width: 30px;
+    color: var(--text-green-one);
+    margin: 0 auto;
+}
+
+.com-add-detail p{
+    margin-block-start: 0;
+    margin-block-end: 0.5em;
+}
+
+.company-add{
+    flex: 1.3;
+    min-width: 280px;
+}
+
+.company-add p{
+    color: var(--second-black);
+    font-size: 17px;
+}
+
+.com-info{
+    flex: 1;
+    min-width: 250px;
+}
+
+
+.com-info h3{
+    color: var(--second-black);
+    font-family: "Quicksand", sans-serif;
+    line-height: 1.2;
+    font-size: 24px;
+    font-weight: bold;
+    margin-block-start: 0;
+    margin-block-end: 1.5em;
+}
+
+.com-info a{
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    color: var(--second-black);
+    margin: 20px 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.com-info a:hover{
+    color: var(--text-green-one);
+    transform: translateX(5px);
+}
+
+/*
+ Install App Section goes here...
+*/
+.install-app-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--light-green);
+}
+
+.install-app-div h1{
+   color: var(--second-black);
+   font-size: 24px;
+}
+
+.install-app-sec p{
+    color: var(--second-black);
+}
+
+.install-app-div img{
+    width: 150px;
+}
+
+
+/*
+   Copy right and social media section....
+*/
+
+.copy-right-social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 25px 0;
+    gap: 10px;
+}
+.footer-number{
+    display: flex;
+    gap: 10px;
+}
+
+.fotter-social-options{
+    display: flex;
+}
+
+.fotter-social-options h3{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-right: 10px;
+}
+
+.copy-right{
+    min-width: 300px;
+}
+
+.copy-right-social p{
+    color: var(--light-gray);
+    margin-block-start: 0.5rem;
+    font-size: 14px;
+    margin-block-end: 0;
+}
+
+.fotter-social-options h3{
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    color: var(--second-black);
+}
+
+.fotter-social-options{
+    display: flex;
+    align-items: center;
+}
+
+.fotter-social-options i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--green-background);
+    margin: 0 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fotter-social-options i:hover{
+    background-color: var(--green-background-hover);
+}
