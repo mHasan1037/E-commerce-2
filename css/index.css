@@ -1171,7 +1171,7 @@
 
 .big-single-banner{
     box-sizing: border-box;
-    background-image: url('./img/banner-10.png');
+    background-image: url('../img/banner-10.png');
     background-position: center;
     background-size: cover;
     width: calc(100% - 25px);
