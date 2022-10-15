@@ -407,3 +407,57 @@ const countdown = () =>{
 }
 
 setInterval(countdown, 1000)
+
+  //fade in code is here. here all the divs that are floading up will show on scroll one after another.
+
+  const dealBoxes = document.querySelectorAll('.deals-box');
+  const differentProductDivs = document.querySelectorAll('.different-product-div');
+  const lastBoxes = document.querySelectorAll('.last-box');
+
+  showDealBox()
+
+  window.addEventListener('scroll', ()=> showDealBox())
+
+  function showDealBox(){
+     const windowHeight = window.innerHeight
+
+     dealBoxes.forEach((box, idx) =>{
+        const boxTop = box.getBoundingClientRect().top
+
+        if(windowHeight > boxTop){
+            
+            box.classList.add('animation')
+            box.style.animationDelay = `${idx * 150}ms`
+        }else{
+            box.classList.remove('show')
+            box.classList.remove('animation')
+        }
+    })
+
+    differentProductDivs.forEach((box, idx) =>{
+        const boxTop = box.getBoundingClientRect().top
+
+        if(windowHeight > boxTop){
+            
+            box.classList.add('animation')
+            box.style.animationDelay = `${idx * 150}ms`
+        }else{
+            box.classList.remove('show')
+            box.classList.remove('animation')
+        }
+    })
+
+    lastBoxes.forEach((box, idx)=>{
+        const boxTop = box.getBoundingClientRect().top
+
+        if(windowHeight > boxTop){
+            
+            box.classList.add('animation')
+            box.style.animationDelay = `${idx * 150}ms`
+        }else{
+            box.classList.remove('show')
+            box.classList.remove('animation')
+        }
+    })
+  }
+

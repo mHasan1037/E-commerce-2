@@ -1017,6 +1017,15 @@
     gap: 15px;
 }
 
+.deals-box{
+    transform: translateY(100px);
+    transition: transform 0.5s ease;
+}
+
+.deals-box.show{
+    transform: translateY(0);
+}
+
 .deals-box:hover .deal-description-box{
    transform: translate(-50%, -50px);
 }
@@ -1098,6 +1107,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 0 20px;
+}
+
+.different-product-div{
+    transform: translateY(100px);
+    transition: transform 0.5s ease;
 }
 
 .different-product-div h1{
@@ -1273,6 +1287,8 @@
     border-radius: 10px;
     padding: 15px;
     margin: 5px 0;
+    transform: translateY(100px);
+    transition: transform 0.5s ease;
 }
 
 .last-box:nth-last-child(1){
