@@ -1,3 +1,138 @@
+.modal-container{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container.close{
+    display: none;
+}
+
+.modal-main{
+    background-color: white;
+    width: 50%;
+    height: 80%;
+    border: 1px solid var(--light-green);
+    border-radius: 25px;
+    position: relative;
+    background-image: url(../img/popup-1.png);
+    background-size: 65%;
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding: 40px 60px;
+}
+
+.modal-cls-btn{
+    position: absolute;
+    right: 3%;
+    top: 4%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.modal-cls-btn:hover{
+    opacity: 1;
+}
+
+.modal-content-container{
+    width: 60%;
+}
+
+.modal-content-container h3{
+    color: var(--yellow);
+}
+
+.modal-headline{
+    color: var(--second-black);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: quicksand, sans-serif;
+    font-weight: bold;
+}
+
+.modal-price-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.modal-price-container h1{
+    color: var(--text-green-one);
+    font-size: 58px;
+    font-family: quicksand, sans-serif;
+}
+
+.modal-off-price p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: var(--yellow);
+}
+.modal-off-price h2{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: var(--lightest-gray);
+    font-size: 28px;
+    font-family: quicksand, sans-serif;
+    text-decoration: line-through;
+}
+
+.modal-hurry-up{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: var(--light-gray);
+    font-size: 16px;
+}
+
+.modal-time-box{
+    display: flex;
+    gap: 10px;
+}
+
+.modal-time{
+    border: 2px solid var(--green-background);
+    margin: 20px 0 40px;
+    padding: 10px;
+    width: 50px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal-time h3{
+    margin-block-start: 0;
+    margin-block-end: 0.4rem;
+    color: var(--text-green-one);
+}
+
+.modal-time h4{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: var(--light-gray);
+}
+
+.modal-rating-box .fa-solid{
+    color: var(--yellow);
+    font-size: 13px;
+}
+
+.modal-shop-btn{
+    margin-left: -45px !important;
+    margin-top: 25px;
+}
+
+/*
+  index page all content start from here.
+*/
+
 .grand-opening-box{
    background-color: var(--green-background);
    text-align: center;
@@ -1319,7 +1454,16 @@
 
 /*
  Media query starts from here..........
+ Media query starts from here..........
 */
+
+
+@media only screen and (max-width: 1235px){ 
+    .modal-main{
+        width: 70%;
+    }
+}
+
 
 @media only screen and (max-width: 992px){
     .grand-opening-box{
@@ -1373,7 +1517,18 @@
     .last-box:nth-last-child(1){
         display: flex;
     }
+   
+    .modal-main{
+        width: 80%;
+    }
     
+    .modal-content-container{
+        width: 90%;
+    }
+
+    .modal-headline{
+        font-size: 30px;
+    }
 }
 
 
@@ -1551,6 +1706,57 @@
 
     .big-sub-box button{
         padding: 5px 15px;
+    }
+
+    .modal-main{
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+    } 
+    .modal-cls-btn{
+        font-size: 13px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .modal-content-container{
+        width: 95%;
+    }   
+    .modal-headline{
+        font-size: 22px;
+    }   
+    .modal-price-container{
+        gap: 10px;
+    }
+    
+    .modal-price-container h1{
+        font-size: 30px;
+    }
+    
+    .modal-off-price h2{
+        font-size: 18px;
+    }
+    
+    .modal-hurry-up{
+        font-size: 13px;
+    }
+    
+    .modal-time-box{
+        gap: 5px;
+    }
+    
+    .modal-time{
+        margin: 10px 0 20px;
+        padding: 7px;
+        width: 40px;
+    }
+    
+    .modal-rating-box .fa-solid{
+        font-size: 12px;
+    }
+    
+    .modal-shop-btn{
+        margin-left: -30px !important;
+        margin-top: 20px;
     }
        
 }
