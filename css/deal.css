@@ -1,0 +1,106 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+
+.snack-banner-container{
+    max-width: 100%;
+    height: 250px;
+    box-sizing: border-box; 
+    margin: 30px 10px;
+    border-radius: 25px;
+    background-image: url('../img/header-bg.png');
+    background-position: center;
+    background-size: cover;
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.snack-headline{
+    margin-bottom: 20px;
+    font-family: "Quicksand", sans-serif;
+    color: var(--second-black);
+    font-size: 48px;
+}
+
+.snack-nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.snack-nav a{
+    text-decoration: none;
+    color: var(--text-green-one);
+    display: flex;
+    gap: 5px;
+    transition: 0.2s ease-in;
+}
+
+.snack-nav a:hover{
+    color: var(--yellow);
+}
+
+.snack-nav .fa-angle-right{
+    font-size: 12px;
+    color: var(--light-gray);
+}
+
+.snack-nav p{
+    color: var(--light-gray);
+    font-weight: bold;
+}
+
+.snack-banner-options{
+    display: flex;
+    gap: 20px;
+}
+
+.snack-option{
+    background-color: white;
+    padding: 10px 20px;
+    width: 80px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+    text-decoration: none;
+    color: var(--text-green-one);
+    font-size: 17px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.snack-option .fa-xmark{
+    color: var(--light-gray);
+}
+
+.snack-option:hover{
+    transform: translateY(-5px);
+    color: var(--yellow);
+}
+
+
+@media only screen and (max-width: 992px){
+    .snack-banner-options{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 350px){
+    .snack-banner-container{
+        height: 160px;
+        margin: 25px 10px;
+        padding: 0 50px;
+    }
+    .snack-headline{
+        font-size: 30px;
+    }
+}
+
+
