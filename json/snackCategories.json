@@ -1,0 +1,28 @@
+[
+    {
+        "category": "Milks & Dairies",
+        "count": 30,
+        "image": "img/category-1.svg"
+    },
+    {
+        "category": "Clothing",
+        "count": 35,
+        "image": "img/category-2.svg"
+    },
+    {
+        "category": "Pet Foods",
+        "count": 42,
+        "image": "img/category-3.svg"
+    },
+    {
+        "category": "Baking meterial",
+        "count": 68,
+        "image": "img/category-4.svg"
+    },
+    {
+        "category": "Fresh Fruit",
+        "count": 87,
+        "image": "img/category-5.svg"
+    }
+]
+
