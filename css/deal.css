@@ -85,6 +85,42 @@
 }
 
 
+/*
+   snack categories list goes here........
+*/
+
+.snack-product-container{
+    display: flex;
+    margin: 20px 10px;
+}
+
+.snack-product-holder{
+    width: 80%;
+}
+
+.snack-category{
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border-four-color);
+    line-height: 48px;
+    border-radius: 5px;
+    padding: 9px 18px;
+    margin: 0 0 15px 0;
+}
+
+.snack-intryo{
+   display: flex;
+   align-items: center;
+   gap: 0 15px;
+}
+
+.snack-cat-icon{
+    max-width: 30px;
+}
+
+
 @media only screen and (max-width: 992px){
     .snack-banner-options{
         display: none;
