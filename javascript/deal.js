@@ -7,7 +7,7 @@ fetch("../json/snackCategories.json")
     let out = "";
     for(let product of products){
         out += `
-        <a class="snack-category">
+        <a href="#/" class="snack-category">
         <div class="snack-intryo">
         <img src="${product.image}" class="snack-cat-icon" />
         <p>${product.category}</p>
