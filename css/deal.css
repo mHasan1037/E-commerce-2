@@ -91,23 +91,377 @@
 
 .snack-product-container{
     display: flex;
-    margin: 20px 10px;
+    gap: 0 30px;
+    margin: 40px 10px;
 }
 
 .snack-product-holder{
-    width: 80%;
+    width: calc(100% - 18%);
+}
+
+.snack-product-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#snack-found-item{
+    color: var(--light-gray);
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+}
+
+#snack-found-item span{
+    color: var(--text-green-one);
+    font-weight: bold;
+}
+
+.snack-show-options{
+    display: flex;
+    justify-content: space-between;
+    gap: 0 20px;   
+}
+
+.snack-show{
+    color: var(--light-gray);
+    border: var(--border-one-color);
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.snack-multiple-options{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    padding: 10px 0;
+    border: var(--border-one-color);
+    display: none;
+}
+
+.snack-show:hover .snack-multiple-options{
+    display: block;
+}
+
+.snack-item{
+    box-sizing: border-box;
+    width: 100%;  
+    padding: 10px 15px;
+}
+
+.snack-item:hover{
+    background-color: var( --green-background); 
+    color: white; 
+}
+
+.snack-item .fa-solid{
+    width: 20px;
+}
+
+
+
+/*
+ snack product div starts from here...........
+*/
+
+.snack-product-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.popular-product-div,
+.best-product-div{
+    padding: 20px;
+    max-width: 270px;
+    border-radius: 15px;
+    border: var(--border-three-color);
+    background-color: #fff;
+    position: relative;
+    transition: 0.3s ease;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.popular-product-div:hover,
+.best-product-div:hover{
+    border-color: var(--light-green);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.upper-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    border-radius: 15px 0 20px 0;
+    display: inline-block;
+    font-size: 12px;
+    padding: 9px 20px 10px 20px;
+    z-index: 10;
+}
+
+.upper-top.hot{
+    background-color: #f74b81;
+}
+.upper-top.sale{
+    background-color: #67bcee;
+}
+.upper-top.new{
+    background-color: var(--green-background);
+}
+.upper-top.orange{
+    background-color: #f59758;
+}
+
+.popular-img-box{
+    width: 100%;
+}
+
+.popular-img-box img{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.popular-front-img{
+    display: block;
+}
+.popular-back-img{
+    display: none;
+}
+
+.popular-hidden-box{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    display: block;
+    opacity: 0;
+}
+
+.popular-hidden-element{
+    background-color: #fff;
+    border: 1px solid var(--light-green);
+    padding: 10px;
+    color: var(--text-green-one);
+    position: relative;
+}
+
+.popular-hidden-element:hover{
+    color: var(--yellow);
+}
+
+.popular-hidden-element:nth-child(1){
+    border-radius: 5px 0 0 5px;
+}
+
+.popular-hidden-element:nth-last-child(1){
+    border-radius: 0 5px 5px 0; 
+}
+.popular-tooltip{
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background-color: var(--green-background);
+    color: white;
+    white-space: nowrap;
+    display: none;
+    z-index: 1;
+}
+
+.popular-tooltip-triangle{
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--green-background);
+    display: none;
+}
+
+.popular-hidden-element:hover > .popular-tooltip,
+.popular-hidden-element:hover > .popular-tooltip-triangle{
+    display: block;
+}
+
+.popular-inner-category{
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--lighter-gray);
+}
+
+.popular-inner-category:hover{
+    color: var(--text-green-one);
+}
+
+.popular-product-title{
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 0 0px !important;
+    color: var(--second-black);
+    font-size: 19px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.popular-product-title:hover{
+    color: var(--text-green-one);
+}
+
+.popular-rating-box{
+    font-size: 13px;
+    margin: 8px 0; 
+}
+
+.popular-rating-box .fa-star,
+.popular-rating-box .fa-star-half-stroke{
+    color: var(--yellow);
+}
+
+.popular-rating{
+    color: var(--lightest-gray);
+}
+
+.popular-com-name{
+    color: var(--lightest-gray);
+}
+
+.popular-com-name a{
+    text-decoration: none;
+    margin-left: 3px;
+    color: var(--text-green-one);
+    transition: 0.2s ease;
+}
+
+.popular-com-name a:hover{
+    color: var(--yellow);
+}
+
+.popular-price-add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+}
+
+.popular-main-price{
+    color: var(--text-green-one);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.popular-prev-price{
+    text-decoration: line-through;
+    font-weight: bold;
+    color: var(--lighter-gray);
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+.popular-add-btn{
+    background-color: var(--green-light-background);
+    text-decoration: none;
+    color: var(--text-green-one);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.popular-add-btn:hover{
+    color: white;
+    background-color: var(--green-background);
+    transform: translateY(-4px);
+}
+
+
+
+/*
+snack aside code goes here...
+*/
+.snack-aside{
+    width: 18%;
+}
+.snack-categories{
+    border: var(--border-three-color);
+    border-radius: 20px;
+    padding: 20px 25px;
+    box-sizing: border-box;
+}
+
+.snack-categories h2{
+    color: var(--second-black);
+    padding: 15px 0;
+    border-bottom: var(--border-one-color);
+    position: relative;
+    font-family: "Quicksand", sans-serif;
+}
+
+.snack-categories h2::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    background-color: var(--light-green);
+}
+
+.snack-category-box{
+    margin-top: 30px;
 }
 
 .snack-category{
-    min-width: 220px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid var(--border-four-color);
     line-height: 48px;
     border-radius: 5px;
-    padding: 9px 18px;
+    padding: 0px 18px;
     margin: 0 0 15px 0;
+    text-decoration: none;
+    color: var(--second-black);
+}
+
+.snack-category:hover{
+    border: 1px solid var(--light-green);
+    background-color: white;
+    box-shadow: rgba(161, 161, 161, 0.25) 0px 2px 5px -1px, rgba(148, 148, 148, 0.3) 0px 1px 3px -1px;
+}
+
+.snack-category:hover p{
+    color: var(--text-green-one);
+}
+
+.snack-category span{
+    background-color: var(--light-green);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
 }
 
 .snack-intryo{
@@ -119,6 +473,12 @@
 .snack-cat-icon{
     max-width: 30px;
 }
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 992px){

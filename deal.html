@@ -58,30 +58,56 @@
     -->
 
     <section class="snack-product-container">
+
+
         <main class="snack-product-holder">
+            <!--
+                Category top select options...
+            -->
             <div class="snack-product-header">
-                <p>We found <span>29</span> items for you!</p>
+                <p id="snack-found-item">We found <span>29</span> items for you!</p>
                 <div class="snack-show-options">
                     <div class="snack-show">
                         <i class="fa-solid fa-eye"></i>
-                        <span>Show: 50</span>
+                        <p>Show: <span id="snack-item-show">50</span></p>
                         <i class="fa-solid fa-angle-down"></i>
+                        <div class="snack-multiple-options">
+                            <div class="snack-item snack-item-count"><i class="fa-solid fa-check"></i><span>50</span></div>
+                            <div class="snack-item snack-item-count"><i class="fa-solid"></i><span>100</span></div>
+                            <div class="snack-item snack-item-count"><i class="fa-solid"></i><span>150</span></div>
+                            <div class="snack-item snack-item-count"><i class="fa-solid"></i><span>200</span></div>
+                            <div class="snack-item snack-item-count"><i class="fa-solid"></i><span>All</span></div>
+                        </div>
                     </div>
                     <div class="snack-show">
                         <i class="fa-solid fa-up-down"></i>
-                        <span>Sort by: Featured</span>
+                        <p>Sort by: <span id="snack-item-rank">Featured</span></p>
                         <i class="fa-solid fa-angle-down"></i>
+                        <div class="snack-multiple-options">
+                            <div class="snack-item snack-item-price"><i class="fa-solid fa-check"></i><span>Featured</span></div>
+                            <div class="snack-item snack-item-price"><i class="fa-solid"></i><span>Price: Low to High</span></div>
+                            <div class="snack-item snack-item-price"><i class="fa-solid"></i><span>Price: High to Low</span></div>
+                            <div class="snack-item snack-item-price"><i class="fa-solid"></i><span>Release Date</span></div>
+                            <div class="snack-item snack-item-price"><i class="fa-solid"></i><span>Avg. Rating</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!--
+                All snack product goes here........
+            -->
+            <div class="snack-product-box"></div>
         </main>
+
+        <!--
+          Aside of snack starts from here......
+        -->
+
         <aside class="snack-aside">
            <div class="snack-categories">
                <h2>Category</h2>
-               <div class="snack-category-box">
-                   
-               </div>
-               <div class="tessting"></div>
+               <div class="snack-category-box"></div>
            </div>
         </aside>
     </section>
