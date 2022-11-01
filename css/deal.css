@@ -144,6 +144,8 @@
     padding: 10px 0;
     border: var(--border-one-color);
     display: none;
+    z-index: 20;
+    background-color: white;
 }
 
 .snack-show:hover .snack-multiple-options{
@@ -174,14 +176,14 @@
 .snack-product-box{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 20px 0;
 }
 
 .popular-product-div,
 .best-product-div{
     padding: 20px;
-    max-width: 270px;
+    max-width: 230px;
     border-radius: 15px;
     border: var(--border-three-color);
     background-color: #fff;
@@ -238,6 +240,17 @@
 }
 .popular-back-img{
     display: none;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+.popular-product-div:hover .popular-front-img{
+    display: none;
+}
+
+.popular-product-div:hover .popular-back-img{
+    display: block;
+    transform: scale(1.05);
 }
 
 .popular-hidden-box{
@@ -250,10 +263,14 @@
     opacity: 0;
 }
 
+.popular-product-div:hover .popular-hidden-box{
+    opacity: 1;
+}
+
 .popular-hidden-element{
     background-color: #fff;
     border: 1px solid var(--light-green);
-    padding: 10px;
+    padding: 7px;
     color: var(--text-green-one);
     position: relative;
 }
@@ -385,6 +402,7 @@
     font-weight: bold;
     transform: translateY(0);
     transition: all 0.3s ease;
+    font-size: 14px;
 }
 
 .popular-add-btn:hover{
@@ -398,14 +416,21 @@
 /*
 snack aside code goes here...
 */
+
+/*
+Category section starts from here.........
+*/
+
 .snack-aside{
     width: 18%;
+    min-width: 300px;
 }
 .snack-categories{
     border: var(--border-three-color);
     border-radius: 20px;
     padding: 20px 25px;
     box-sizing: border-box;
+    margin-bottom: 30px;
 }
 
 .snack-categories h2{
@@ -444,9 +469,10 @@ snack aside code goes here...
 }
 
 .snack-category:hover{
-    border: 1px solid var(--light-green);
     background-color: white;
-    box-shadow: rgba(161, 161, 161, 0.25) 0px 2px 5px -1px, rgba(148, 148, 148, 0.3) 0px 1px 3px -1px;
+    border: 1px solid var(--light-green);
+    color: var(--text-green-one);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .snack-category:hover p{
@@ -474,16 +500,212 @@ snack aside code goes here...
     max-width: 30px;
 }
 
+/*
+ Fill by price goes here..........
+*/
+
+.snack-price-main-container{
+    background-image: url('../img/fillter-widget-bg.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 150px;
+}
+
+.snack-price-slide-container{
+    padding-top: 30px;
+}
+
+.snack-price-slider{
+    height: 4px;
+    border-radius: 5px;
+    background-color: #ddd;
+    position: relative;
+}
+
+.snack-price-slider .snack-price-progress{
+    height: 4px;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    border-radius: 5px;
+    background: var(--green-background);
+}
+
+.snack-range-input{
+    position: relative;
+}
+
+.snack-price-input{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.snack-field{
+    display: flex;
+    align-items: center;
+}
+
+.snack-feild-doller{
+    color: var(--text-green-one);
+    font-weight: bold;
+    margin-right: 1px;
+    margin-left: 3px;
+}
+
+.snack-field-point{
+    color: var(--lighter-gray);
+}
+
+.snack-field input{
+    width: 60px;
+    border: none;
+    color: var(--text-green-one);
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.snack-range-input input{
+    position: absolute;
+    top: -5px;
+    height: 4px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background: var(--green-background);
+}
+
+input[type="range"]::-moz-range-thumb{
+    height: 17px;
+    width: 17px;
+    border: none;
+    border-radius: 50%;
+    pointer-events: auto;
+    -moz-appearance: none;
+    background: var(--green-background);
+}
+
+/*
+   Snack category color and item condition is here........
+*/
+
+.snack-category-container{
+    margin-top: 20px;
+}
+
+.snack-category-container.item-condition{
+    margin-top: 30px;
+}
+
+.snack-category-headline{
+    font-weight: bold;
+    color: var(--light-gray);
+    margin-bottom: 10px;
+}
+
+.snack-category-checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.snack-category-checkbox label{
+    color: var(--checked-color);
+}
+
+.snack-category-checked{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border: 2px solid var(--arrow-down-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.snack-category-checked:after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 10px;
+    color: white;
+    display: none;
+}
+
+.snack-category-checked:checked{
+    background-color: var(--green-background);
+    border-color: var(--green-background);
+}
+
+.snack-category-checked:checked::after{
+    display: block;
+}
+
+.snack-price-filter-btn{
+    background-color: var(--green-background);
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.snack-price-filter-btn:hover{
+    background-color: var(--yellow);
+    width: 110px;
+}
 
 
 
 
-
-
+@media only screen and (max-width: 1200px){
+    .snack-product-holder{
+        width: 100%;
+    }
+    
+    .snack-aside{
+        display: none;
+    }
+}
 
 @media only screen and (max-width: 992px){
     .snack-banner-options{
         display: none;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .snack-product-header{
+        flex-direction: column;
+        gap: 10px 0;
+    }
+
+    .snack-show-options{
+        flex-direction: column;
+    }
+
+    .snack-show{
+        max-width: 180px;
+        margin-bottom: 10px;
     }
 }
 

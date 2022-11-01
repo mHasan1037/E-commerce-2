@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/deal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Deal</title>
 </head>
@@ -109,6 +110,70 @@
                <h2>Category</h2>
                <div class="snack-category-box"></div>
            </div>
+
+           <div class="snack-categories snack-price-main-container">
+                <h2>Fill by price</h2>
+                <div class="snack-price-slide-container">
+                    <div class="snack-price-slider">
+                        <div class="snack-price-progress"></div>
+                    </div>
+                    <div class="snack-range-input">
+                        <input type="range" class="range-min" min="0" max="10000" value="2500" >
+                        <input type="range" class="range-max" min="0" max="10000" value="7500" >
+                    </div>
+                    <div class="snack-price-input">
+                        <div class="snack-field">
+                            <span class="snack-field-point">From:</span> <span class="snack-feild-doller">$</span>
+                            <input type="number" class="input-min" value="2500" step="100" disabled>
+                        </div>
+                        <div class="snack-field">
+                            <span class="snack-field-point">To:</span> <span class="snack-feild-doller">$</span>
+                            <input type="number" class="input-max" value="7500" step="100" disabled>
+                        </div>
+                    </div>
+
+                    <div class="snack-category-container">
+                        <p class="snack-category-headline">Color</p>
+                        <div class="snack-category-checkbox">
+                            <input type="checkbox" class="snack-category-checked" name="vehicle1" value="Bike">
+                            <label for=""> Red (56)</label><br>
+                        </div>
+                        <div class="snack-category-checkbox">
+                            <input type="checkbox" class="snack-category-checked" name="vehicle1" value="Bike">
+                            <label for=""> Green (78)</label><br>
+                        </div>
+                        <div class="snack-category-checkbox">
+                            <input type="checkbox" class="snack-category-checked" name="vehicle1" value="Bike">
+                            <label for=""> Blue (54)</label><br>
+                        </div>
+                    </div>
+
+                    <div class="snack-category-container item-condition">
+                        <p class="snack-category-headline">Item Condition</p>
+                        <div class="snack-category-checkbox">
+                            <input type="checkbox" class="snack-category-checked" name="vehicle1" value="Bike">
+                            <label for=""> New (1506)</label><br>
+                        </div>
+                        <div class="snack-category-checkbox">
+                            <input type="checkbox" class="snack-category-checked" name="vehicle1" value="Bike">
+                            <label for=""> Refurbished (27)</label><br>
+                        </div>
+                        <div class="snack-category-checkbox">
+                            <input type="checkbox" class="snack-category-checked" name="vehicle1" value="Bike">
+                            <label for=""> Used (45)</label><br>
+                        </div>
+                    </div>
+
+                    <button class="snack-price-filter-btn">
+                        <i class="fa-solid fa-filter"></i> Fillter
+                    </button>
+                </div>
+            </div>
+
+            <div class="snack-categories">
+                <h2>New products</h2>
+                <div class="snack-category-box"></div>
+            </div>
         </aside>
     </section>
 
