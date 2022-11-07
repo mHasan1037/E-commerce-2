@@ -108,6 +108,7 @@
     color: var(--light-gray);
     font-size: 16px;
     font-family: "Lato", sans-serif;
+    margin-left: 10px;
 }
 
 #snack-found-item span{
@@ -675,6 +676,360 @@ input[type="range"]::-moz-range-thumb{
 }
 
 
+/*
+      Deal page new product goes here..........
+*/
+
+.new-products-box{
+    margin-top: 10px;
+}
+
+.new-deal-product{
+    padding: 10px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.new-deal-product:nth-child(2){
+    border: 1px dotted var(--arrow-down-color);
+    border-left: none;
+    border-right: none;
+}
+
+.new-product-img{
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.new-product-desc a{
+    color: var(--text-green-one);
+    text-decoration: none;
+    font-size: 15px;
+    font-family: quicksand, sans-serif;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.new-product-desc a:hover{
+    color: var(--yellow);
+}
+
+.new-product-desc p{
+    color: var(--light-gray);
+}
+
+.snack-product-ranking .fa-solid{
+    font-size: 12px;
+    color: var(--yellow);
+}
+
+.save-oganic-juice{
+    background-image: url(../img/banner-11.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 50px;
+    border-radius: 30px;
+}
+
+.save-oganic-juice p{
+    color: var(--lighter-gray);
+    margin-bottom: 5px;
+}
+
+.save-oganic-juice h2{
+    font-family: quicksand, sans-serif;
+    color: var(--second-black); 
+}
+
+.save-oganic-juice span{
+    color: var(--text-green-one);
+}
+
+/*
+   Pagination of the deal page is here......
+*/
+
+.pagination{
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.pagination button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: var(--light-gray);
+    font-weight: bold;
+}
+
+.pagination button:hover,
+.pagination button.active{
+    color: white;
+    background-color: var(--green-background);
+}
+
+/*
+ Deals of the day goes here........
+*/
+
+.deals-ofDay-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.deals-ofDay-header h1{
+    font-family: quicksand, sans-serif;
+    font-size: 32px;
+    color: var(--second-black);
+}
+
+.deals-ofDay-header a{
+    color: var(--light-gray);
+    text-decoration: none;
+}
+
+.deals-ofDay-header a:hover{
+    color: var(--text-green-one);
+}
+
+
+
+.deals-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.deals-box{
+    transform: translateY(00px);
+    transition: transform 0.5s ease;
+}
+
+.deals-box.show{
+    transform: translateY(0);
+}
+
+.deals-box:hover .deal-description-box{
+   transform: translate(-50%, -50px);
+}
+
+.deals-bg-box{
+   width: 100%;
+}
+
+.deals-bg-box img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.deals-description-container{
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
+
+.deal-description-box{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0.3s ease;
+    width: 90%;
+}
+
+.deals-time-box{
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px;
+    justify-content: center;
+    gap: 10px;
+}
+
+.time-box{
+    background-color: white;
+    width: 60px;
+    min-height: 60px;
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.timeValue{
+    font-size: 23px;
+    margin-top: 5px;
+    color: var(--text-green-one);
+}
+
+.dayName{
+    color: var(--light-gray);
+    margin-bottom: 5px;
+}
+
+.deal-full-description{
+    background-color: white;
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+}
+
+
+
+/*
+    Big single banner goes here.........
+*/
+
+.big-single-banner{
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+    width: calc(100% - 25px);
+    margin: 20px auto;
+    min-height: 230px;
+    border-radius: 30px;
+    position: relative;
+    padding: 40px 60px;
+    overflow: hidden;
+}
+
+.big-man-img{
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    max-width: 40%;
+}
+
+.big-section-container{
+    width: 50%;
+    margin-bottom: 30px;
+    z-index: 10;
+    position: relative;
+}
+
+.big-section-container h1{
+    font-size: 40px;
+    font-family: "Quicksand", sans-serif;
+    color: var(--second-black);
+    margin-block-end: 0;
+}
+
+.big-section-container p{
+    font-size: 18px;
+    color: var(--light-gray);
+    margin-block-end: 2.5em;
+}
+
+.big-section-container p a{
+    color: var(--text-green-one);
+    text-decoration: none;
+}
+
+.big-sub-box{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: white;
+    width: fit-content;
+    border-radius: 50px;
+    padding-left: 20px;
+    align-items: center;
+}
+
+.big-sub-box i{
+    margin: 0 5px;
+    color: var(--light-gray);
+}
+
+.big-sub-box input{
+    font-size: 16px;
+    border: none;
+}
+.big-sub-box input:focus{
+    outline: none;
+}
+
+.big-sub-box button{
+    background-color: var(--green-background);
+    border: none;
+    color: white;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 20px 40px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.big-sub-box button:hover{
+    background-color: var(--green-background-hover);
+}
+
+
+/*
+  Last six sections goes here..........
+*/
+
+.last-six-section{
+    margin: 60px 15px;
+}
+.last-six-contaier{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.last-box{
+    display: flex;
+    gap: 20px;
+    background: #F4F6FA;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px 0;
+    transform: translateY(00px);
+    transition: transform 0.5s ease;
+}
+
+.last-box:nth-last-child(1){
+    display: none;
+}
+
+.last-img{
+    transform: translateY(0);
+    transition: 0.3s ease;
+}
+
+.last-box:hover .last-img{
+    transform: translateY(-5px);
+}
+
+.last-desc h3{
+    font-family: "Quicksand", sans-serif;
+    margin-block-end: 0;
+    color: #242424;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.last-desc p{
+    margin-block-start: 0.5em;
+    color: #adadad;
+}
+
+
+
+
+
+
+
 
 
 @media only screen and (max-width: 1200px){
@@ -718,6 +1073,12 @@ input[type="range"]::-moz-range-thumb{
     }
     .snack-headline{
         font-size: 30px;
+    }
+
+    .deals-ofDay-header{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }
 
