@@ -58,10 +58,10 @@
         Snack products container here........
     -->
 
-    <section class="snack-product-container">
+    <section class="snack-product-container" id="snack-product-container">
 
 
-        <main class="snack-product-holder">
+        <main class="snack-product-holder" id="main-snack-product-holder">
             <!--
                 Category top select options...
             -->
@@ -96,16 +96,269 @@
             </div>
 
             <!--
-                All snack product goes here........
+                All snack product goes here fetched from products.json file........
             -->
             <div class="snack-product-box"></div>
+
+            <!--
+                Pagination of deal page is here.........
+            -->
+            <div class="pagination">
+                <button><i class="fa-solid fa-arrow-left-long"></i></button>
+                <button>1</button>
+                <button class="active">2</button>
+                <button>3</button>
+                <button>...</button>
+                <button>6</button>
+                <button><i class="fa-solid fa-arrow-right-long"></i></button>
+            </div>
+
+            <!--
+                Deals of the day goes here........
+            -->
+            <div class="deals-ofDay-container">
+                <div class="deals-ofDay-header">
+                    <h1>Deals Of The Day</h1>
+                    <a href="#!">All Deals <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+
+
+
+                <div class="deals-content">
+
+                    <div class="deals-box">
+                       <a href="#/" class="deals-bg-box">
+                          <img src="./img/banner-5.png" class="deals-bg">
+                       </a>
+                       <div class="deals-description-container">
+                          <div class="deal-description-box">
+                              <div class="deals-time-box">
+                                  <div id="day-box" class="time-box">
+                                      <div class="days timeValue">894</div>
+                                      <div class="dayName">Days</div>
+                                  </div>
+                                  <div id="hour-box" class="time-box">
+                                      <div class="hours timeValue">07</div>
+                                      <div class="dayName">Hours</div>
+                                  </div>
+                                  <div id="mins-box" class="time-box">
+                                      <div class="mins timeValue">17</div>
+                                      <div class="dayName">Mins</div>
+                                  </div>
+                                  <div id="sec-box" class="time-box">
+                                      <div class="secs timeValue">35</div>
+                                      <div class="dayName">Sec</div>
+                                  </div>
+                              </div>
+          
+                              <div class="deal-full-description">
+                                  <a href="#/" class="popular-product-title">Seeds of Change Organic Quinoa, Brown</a>
+                                  <div class="popular-rating-box">
+                                      <span>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star-half-stroke"></i>
+                                      </span>
+                                      <span class="popular-rating">(4.0)</span>
+                                  </div>
+                                  <div class="popular-com-name">
+                                      By <a href="#/">NestFood</a>
+                                  </div>
+                  
+                                  <div class="popular-price-add">
+                                      <div class="popular-price-box">
+                                          <span class="popular-main-price">$28.85</span>
+                                          <span class="popular-prev-price">$32.8</span>
+                                      </div>
+                                      <a href="#/" class="popular-add-btn">
+                                          <i class="fa-solid fa-cart-shopping"></i> Add
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                       </div>
+                    </div>
+          
+                    <div class="deals-box">
+                      <a href="#/" class="deals-bg-box">
+                         <img src="./img/banner-6.png" class="deals-bg">
+                      </a>
+                      <div class="deals-description-container">
+                          <div class="deal-description-box">
+                              <div class="deals-time-box">
+                                  <div id="day-box-2" class="time-box">
+                                      <div class="days2 timeValue">894</div>
+                                      <div class="dayName">Days</div>
+                                  </div>
+                                  <div id="hour-box-2" class="time-box">
+                                      <div class="hours2 timeValue">07</div>
+                                      <div class="dayName">Hours</div>
+                                  </div>
+                                  <div id="mins-box-2" class="time-box">
+                                      <div class="mins2 timeValue">17</div>
+                                      <div class="dayName">Mins</div>
+                                  </div>
+                                  <div id="sec-box-2" class="time-box">
+                                      <div class="secs2 timeValue">35</div>
+                                      <div class="dayName">Sec</div>
+                                  </div>
+                              </div>
+          
+                              <div class="deal-full-description">
+                                  <a href="#/" class="popular-product-title">Perdue Simply Smart Organics Gluten</a>
+                                  <div class="popular-rating-box">
+                                      <span>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star-half-stroke"></i>
+                                      </span>
+                                      <span class="popular-rating">(4.0)</span>
+                                  </div>
+                                  <div class="popular-com-name">
+                                      By <a href="#/">Old El Paso</a>
+                                  </div>
+                  
+                                  <div class="popular-price-add">
+                                      <div class="popular-price-box">
+                                          <span class="popular-main-price">$35.85</span>
+                                          <span class="popular-prev-price">$42.8</span>
+                                      </div>
+                                      <a href="#/" class="popular-add-btn">
+                                          <i class="fa-solid fa-cart-shopping"></i> Add
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                   </div>
+          
+                   <div class="deals-box">
+                      <a href="#/" class="deals-bg-box">
+                         <img src="./img/banner-7.png" class="deals-bg">
+                      </a>
+                      <div class="deals-description-container">
+                          <div class="deal-description-box">
+                              <div class="deals-time-box">
+                                  <div id="day-box-3" class="time-box">
+                                      <div class="days3 timeValue">894</div>
+                                      <div class="dayName">Days</div>
+                                  </div>
+                                  <div id="hour-box-3" class="time-box">
+                                      <div class="hours3 timeValue">07</div>
+                                      <div class="dayName">Hours</div>
+                                  </div>
+                                  <div id="mins-box-3" class="time-box">
+                                      <div class="mins3 timeValue">17</div>
+                                      <div class="dayName">Mins</div>
+                                  </div>
+                                  <div id="sec-box-3" class="time-box">
+                                      <div class="secs3 timeValue">35</div>
+                                      <div class="dayName">Sec</div>
+                                  </div>
+                              </div>
+          
+                              <div class="deal-full-description">
+                                  <a href="#/" class="popular-product-title">Signature Wood-Fired Mushroom</a>
+                                  <div class="popular-rating-box">
+                                      <span>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star-half-stroke"></i>
+                                      </span>
+                                      <span class="popular-rating">(4.0)</span>
+                                  </div>
+                                  <div class="popular-com-name">
+                                      By <a href="#/">Progresso</a>
+                                  </div>
+                  
+                                  <div class="popular-price-add">
+                                      <div class="popular-price-box">
+                                          <span class="popular-main-price">$12.85</span>
+                                          <span class="popular-prev-price">$22.8</span>
+                                      </div>
+                                      <a href="#/" class="popular-add-btn">
+                                          <i class="fa-solid fa-cart-shopping"></i> Add
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                   </div>
+          
+                   <div class="deals-box">
+                      <a href="#/" class="deals-bg-box">
+                         <img src="./img/banner-8.png" class="deals-bg">
+                      </a>
+                      <div class="deals-description-container">
+                          <div class="deal-description-box">
+                              <div class="deals-time-box">
+                                  <div id="day-box-4" class="time-box">
+                                      <div class="days4 timeValue">894</div>
+                                      <div class="dayName">Days</div>
+                                  </div>
+                                  <div id="hour-box-3" class="time-box">
+                                      <div class="hours4 timeValue">07</div>
+                                      <div class="dayName">Hours</div>
+                                  </div>
+                                  <div id="mins-box-2" class="time-box">
+                                      <div class="mins4 timeValue">17</div>
+                                      <div class="dayName">Mins</div>
+                                  </div>
+                                  <div id="sec-box-1" class="time-box">
+                                      <div class="secs4 timeValue">35</div>
+                                      <div class="dayName">Sec</div>
+                                  </div>
+                              </div>
+          
+                              <div class="deal-full-description">
+                                  <a href="#/" class="popular-product-title">Simply Lemonade with Raspberry Juice</a>
+                                  <div class="popular-rating-box">
+                                      <span>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star"></i>
+                                          <i class="fa-solid fa-star-half-stroke"></i>
+                                      </span>
+                                      <span class="popular-rating">(4.0)</span>
+                                  </div>
+                                  <div class="popular-com-name">
+                                      By <a href="#/">Yoplait</a>
+                                  </div>
+                  
+                                  <div class="popular-price-add">
+                                      <div class="popular-price-box">
+                                          <span class="popular-main-price">$15.50</span>
+                                          <span class="popular-prev-price">$16.50</span>
+                                      </div>
+                                      <a href="#/" class="popular-add-btn">
+                                          <i class="fa-solid fa-cart-shopping"></i>Add
+                                      </a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                   </div>
+                 </div>
+
+
+
+
+
+            </div>
         </main>
 
         <!--
           Aside of snack starts from here......
         -->
 
-        <aside class="snack-aside">
+        <aside class="snack-aside" id="snack-aside">
            <div class="snack-categories">
                <h2>Category</h2>
                <div class="snack-category-box"></div>
@@ -172,10 +425,130 @@
 
             <div class="snack-categories">
                 <h2>New products</h2>
-                <div class="snack-category-box"></div>
+                <div class="new-products-box">
+                    <div class="new-deal-product">
+                        <img src="./img/thumbnail-3.jpg" class="new-product-img">
+                        <div class="new-product-desc">
+                            <a href="#!">Chen Cardigan</a>
+                            <p>$99.50</p>
+                            <span class="snack-product-ranking">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="new-deal-product">
+                        <img src="./img/thumbnail-4.jpg" class="new-product-img">
+                        <div class="new-product-desc">
+                            <a href="#!">Chen Sweater</a>
+                            <p>$89.50</p>
+                            <span class="snack-product-ranking">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="new-deal-product">
+                        <img src="./img/thumbnail-5.jpg" class="new-product-img">
+                        <div class="new-product-desc">
+                            <a href="#!">Colorful Jacket</a>
+                            <p>$825</p>
+                            <span class="snack-product-ranking">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="save-oganic-juice">
+                <p>Oganic</p>
+                <h2>Save 17% on <span>Oganic</span> Juice</h2>
             </div>
         </aside>
     </section>
+
+<!--
+    Big single banner goes here.........
+-->
+
+<section class="big-single-banner" style="background-image: url('./img/banner-10.png');">
+    <img src="./img/banner-9.png" class="big-man-img">
+
+    <div class="big-section-container">
+       <h1>Stay home & get your daily needs from our shop</h1>
+       <p>Start You'r Daily Shopping with <a href=''>Nest Mart</a></p>
+       <div class="big-sub-box">
+           <i class="fa-sharp fa-solid fa-paper-plane"></i>
+           <input type="email" placeholder="Your email address" >
+           <button>Subscribe</button>
+       </div>
+    </div>
+</section>
+
+<!--
+   Last six sections goes here..........
+-->
+
+<section class="last-six-section">
+  <div class="last-six-contaier">
+       <div class="last-box">
+           <img src="./img/icon-1.svg" class="last-img">
+           <div class="last-desc">
+               <h3>Best prices & offers</h3>
+               <p>Orders $50 or more</p>
+           </div>
+       </div>
+       <div class="last-box">
+           <img src="./img/icon-2.svg" class="last-img">
+           <div class="last-desc">
+               <h3>Free delivery</h3>
+               <p>24/7 amazing services</p>
+           </div>
+       </div>
+       <div class="last-box">
+           <img src="./img/icon-3.svg" class="last-img">
+           <div class="last-desc">
+               <h3>Great daily deal</h3>
+               <p>When you sign up</p>
+           </div>
+       </div>
+       <div class="last-box">
+           <img src="./img/icon-4.svg" class="last-img">
+           <div class="last-desc">
+               <h3>Wide assortment</h3>
+               <p>Mega Discounts</p>
+           </div>
+       </div>
+       <div class="last-box">
+           <img src="./img/icon-5.svg" class="last-img">
+           <div class="last-desc">
+               <h3>Easy returns</h3>
+               <p>Within 30 days</p>
+           </div>
+       </div>
+       <div class="last-box">
+           <img src="./img/icon-6.svg" class="last-img">
+           <div class="last-desc">
+               <h3>Safe delivery</h3>
+               <p>Within 30 days</p>
+           </div>
+       </div>
+  </div>
+</section>
 
     <!--
     Footer section goes here.......

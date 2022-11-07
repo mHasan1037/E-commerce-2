@@ -25,7 +25,7 @@ class MyFooter extends HTMLElement{
             </div>
             <div class="com-info">
                 <h3>Company</h3>
-                <a href="#/">About Us</a>
+                <a href="about.html">About Us</a>
                 <a href="#/">Delivery Information</a>
                 <a href="#/">Privacy Policy</a>
                 <a href="#/">Terms & Conditions</a>
