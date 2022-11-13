@@ -1314,143 +1314,7 @@
     color: var(--text-green-one);
 }
 
-/*
-    Big single banner goes here.........
-*/
 
-.big-single-banner{
-    box-sizing: border-box;
-    background-position: center;
-    background-size: cover;
-    width: calc(100% - 25px);
-    margin: 20px auto;
-    min-height: 230px;
-    border-radius: 30px;
-    position: relative;
-    padding: 40px 60px;
-    overflow: hidden;
-}
-
-.big-man-img{
-    position: absolute;
-    right: 50px;
-    bottom: 0;
-    max-width: 40%;
-}
-
-.big-section-container{
-    width: 50%;
-    margin-bottom: 30px;
-    z-index: 10;
-    position: relative;
-}
-
-.big-section-container h1{
-    font-size: 40px;
-    font-family: "Quicksand", sans-serif;
-    color: var(--second-black);
-    margin-block-end: 0;
-}
-
-.big-section-container p{
-    font-size: 18px;
-    color: var(--light-gray);
-    margin-block-end: 2.5em;
-}
-
-.big-section-container p a{
-    color: var(--text-green-one);
-    text-decoration: none;
-}
-
-.big-sub-box{
-    display: flex;
-    flex-wrap: nowrap;
-    background-color: white;
-    width: fit-content;
-    border-radius: 50px;
-    padding-left: 20px;
-    align-items: center;
-}
-
-.big-sub-box i{
-    margin: 0 5px;
-    color: var(--light-gray);
-}
-
-.big-sub-box input{
-    font-size: 16px;
-    border: none;
-}
-.big-sub-box input:focus{
-    outline: none;
-}
-
-.big-sub-box button{
-    background-color: var(--green-background);
-    border: none;
-    color: white;
-    border-radius: 50px;
-    font-size: 16px;
-    padding: 20px 40px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.big-sub-box button:hover{
-    background-color: var(--green-background-hover);
-}
-
-
-/*
-  Last six sections goes here..........
-*/
-
-.last-six-section{
-    margin: 60px 15px;
-}
-.last-six-contaier{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.last-box{
-    display: flex;
-    gap: 20px;
-    background: #F4F6FA;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 5px 0;
-    transform: translateY(100px);
-    transition: transform 0.5s ease;
-}
-
-.last-box:nth-last-child(1){
-    display: none;
-}
-
-.last-img{
-    transform: translateY(0);
-    transition: 0.3s ease;
-}
-
-.last-box:hover .last-img{
-    transform: translateY(-5px);
-}
-
-.last-desc h3{
-    font-family: "Quicksand", sans-serif;
-    margin-block-end: 0;
-    color: #242424;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.last-desc p{
-    margin-block-start: 0.5em;
-    color: #adadad;
-}
 
 /*
  Media query starts from here..........
@@ -1509,14 +1373,6 @@
         width: 100%;
         gap: 0 10px;
     }
-
-    .big-section-container{
-        width: 70%;
-    }
-
-    .last-box:nth-last-child(1){
-        display: flex;
-    }
    
     .modal-main{
         width: 80%;
@@ -1568,13 +1424,7 @@
     }  
     .hero-arrows .right-btn{
         margin-right: 15px;
-    }
-
-    .big-section-container{
-        width: 80%;
-    }
-
-    
+    }   
 }
 
 
@@ -1582,24 +1432,6 @@
     .big-feature-box h3{
         width: 80%;
         font-size: 20px;
-    }
-
-    .big-section-container{
-        width: 90%;
-    }
-
-    .big-section-container h1{
-        font-size: 30px;
-    }
-    
-    .big-sub-box input{
-        font-size: 14px;
-        border: none;
-    }
-    
-    .big-sub-box button{
-        font-size: 14px;
-        padding: 10px 20px;
     }
 }
 
@@ -1684,28 +1516,6 @@
     .different-product-container{
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 0 10px;
-    }
-
-    .big-single-banner{
-        width: 100%;
-        margin: 10px;
-        padding: 35px 20px;
-    }
-
-    .big-section-container{
-        width: 95%;
-    }
-
-    .big-sub-box{
-        padding-left: 0;
-    }
-
-    .big-sub-box input{
-        width: 150px;
-    }
-
-    .big-sub-box button{
-        padding: 5px 15px;
     }
 
     .modal-main{
@@ -1812,18 +1622,6 @@
     .different-product-container{
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 0 10px;
-    }
-
-    .big-sub-box input{
-        width: 100px;
-    }
-
-    .big-sub-box button{
-        padding: 5px;
-    }
-
-    .last-img{
-        width: 50px;
     }
     
 }

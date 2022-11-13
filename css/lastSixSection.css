@@ -1,0 +1,78 @@
+/*
+  Last six sections goes here..........
+*/
+
+.last-six-section{
+    margin: 60px 15px;
+}
+.last-six-contaier{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.last-box{
+    display: flex;
+    gap: 20px;
+    background: #F4F6FA;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px 0;
+    transform: translateY(100px);
+    transition: transform 0.5s ease;
+}
+
+.last-box:nth-last-child(1){
+    display: none;
+}
+
+.last-img{
+    transform: translateY(0);
+    transition: 0.3s ease;
+}
+
+.last-box:hover .last-img{
+    transform: translateY(-5px);
+}
+
+.last-desc h3{
+    font-family: "Quicksand", sans-serif;
+    margin-block-end: 0;
+    color: #242424;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.last-desc p{
+    margin-block-start: 0.5em;
+    color: #adadad;
+}
+
+.animation{
+    animation: scrolling 0.5s ease;
+    animation-delay: 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scrolling{
+    0%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+@media only screen and (max-width: 992px){
+    .last-box:nth-last-child(1){
+        display: flex;
+    }   
+}
+
+@media only screen and (max-width: 350px){
+    .last-img{
+        width: 50px;
+    }
+    
+}
