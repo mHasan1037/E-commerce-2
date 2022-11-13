@@ -949,4 +949,29 @@ categoryMoreBtn.addEventListener('click', ()=>{
 })
 
 
+const laastBoxes = document.querySelectorAll('.last-box');
+
+showlaastBoxes()
+
+window.addEventListener('scroll', ()=> showlaastBoxes())
+
+
+
+function showlaastBoxes(){
+    const windowHeight = window.innerHeight
+
+    laastBoxes.forEach((box, idx)=>{
+        const boxTop = box.getBoundingClientRect().top
+
+        if(windowHeight > boxTop){
+            
+            box.classList.add('animation')
+            box.style.animationDelay = `${idx * 150}ms`
+        }else{
+            box.classList.remove('show')
+            box.classList.remove('animation')
+        }
+    })
+}
+
 
