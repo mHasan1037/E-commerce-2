@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.our-team-container{
+    max-width: 85%;
+    margin: 50px auto;
+}
+
+.our-team-headline{
+    width: fit-content;
+    margin: 0  auto;
+    font-size: 35px;
+    font-family: "Quicksand", sans-serif;
+    color: #253D4E;
+}
+
+.team-headline-underline{
+    width: 100%;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.our-team-main{
+    margin: 35px 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.member-box img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+
