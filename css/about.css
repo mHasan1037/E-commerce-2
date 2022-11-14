@@ -6,6 +6,7 @@
 .our-team-container{
     max-width: 85%;
     margin: 50px auto;
+    padding-bottom: 50px;
 }
 
 .our-team-headline{
@@ -27,12 +28,111 @@
     margin: 35px 0;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+}
+
+.our-team-desc .our-team-tag{
+   color: var(--text-green-one);
+   font-family: "Quicksand", sans-serif;
+   font-size: 16px;
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+
+.our-team-desc h1{
+    color: var(--second-black);
+    font-size: 48px;
+    font-family: "Quicksand", sans-serif;
+    margin-bottom: 30px;
+}
+
+.our-team-detail{
+    color: var(--light-gray);
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.our-team-desc button{
+    background-color: var(--green-background);
+    border: none;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.our-team-desc button:hover{
+    background-color: var(--green-background-hover);
+}
+
+.member-box{
+    position: relative;
 }
 
 .member-box img{
     width: 100%;
+    height: auto;
     border-radius: 20px;
+}
+
+.teamMember-info-box{
+    position: absolute;
+    background-color: white;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -90px);
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    border-radius: 10px;
+    padding: 30px 0;
+    transition: 0.2s ease;
+}
+
+.member-box:hover .teamMember-info-box{
+    transform: translate(-50%, -95px);
+}
+
+.teamMember-info-box h2{
+    color: var(--second-black);
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.teamMember-info-box h3{
+    color: var(--light-gray);
+    font-size: 17px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.teamMember-social-acc{
+    margin-top: 20px;
+}
+
+.teamMember-social-acc > *{
+    margin: 0 7px;
+    cursor: pointer;
+    color: var(--text-green-one);
+}
+
+
+
+@media only screen and (max-width: 1110px){
+    .our-team-desc{
+        grid-column: 1 / -1;
+    } 
+}
+
+@media only screen and (max-width: 730px){
+    .member-box:nth-child(2){
+        margin-bottom: 100px;
+    }
 }
 
 
