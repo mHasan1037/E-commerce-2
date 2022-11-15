@@ -484,7 +484,7 @@ All account details of customer goes here
     cursor: default;
     background-color: #fffefe;
     transform: scale(0);
-    z-index: 1;
+    z-index: 100;
 }
 
 .browse-all-cat-btn{
@@ -592,6 +592,7 @@ All account details of customer goes here
 .nav-list{
     height: 100%;
     margin: 0 15px;
+    z-index: 100;
 }
 
 .nav-list a{
