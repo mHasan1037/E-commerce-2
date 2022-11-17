@@ -70,6 +70,8 @@ fetch("./json/products.json")
     let snackProductContainer = document.querySelector('.snack-product-box');
     let proAll = "";
 
+    products = products.slice(0, 20)
+
     for(let product of products){
         const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice} = product;
 
