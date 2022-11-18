@@ -260,6 +260,99 @@ bestProductDivs.forEach((bestProductDiv, idx) =>{
 })
 
 
+// products fetching from json file is here........
+
+let popularProductContainer = document.querySelector('.popular-product-container')
+
+let firstSlice = 0
+let lastSlice = 10
+
+let changeFirstSlice = 0
+let changeLastSlice = 10
+
+popularBtns.forEach((popularBtn, idx) =>{
+    popularBtn.addEventListener('click', ()=>{
+      firstSlice = (changeFirstSlice + 10) * idx
+      lastSlice = (changeLastSlice * idx) + 10
+      console.log(firstSlice, lastSlice)
+      fetchingProducts()
+    })
+})
+
+function fetchingProducts(){
+    fetch('./json/products.json')
+    .then(res => res.json())
+    .then(products =>{
+    let proAll = " "
+
+    products = products.slice(firstSlice, lastSlice)
+
+    
+    for(let product of products){
+        const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice} = product;
+        proAll += `
+        
+        <div class="popular-product-div display">
+
+            <span class= "upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
+
+            <a href="#/" class="popular-img-box">
+                <img src="${frontPic}" alt=${name} class="popular-front-img">
+                <img src="${backPic}" class="popular-back-img">
+            </a>
+            <div class="popular-hidden-box">
+                <a href="#/" class="popular-hidden-element">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="popular-tooltip">Add to Wishlist</span>
+                    <span class="popular-tooltip-triangle"></span>
+                </a> 
+                <a href="#/" class="popular-hidden-element">
+                    <i class="fa-solid fa-code-compare"></i>
+                    <span class="popular-tooltip">Compare</span>
+                    <span class="popular-tooltip-triangle"></span>
+                </a>    
+                <a href="#/" class="popular-hidden-element">
+                    <i class="fa-regular fa-eye"></i>
+                    <span class="popular-tooltip">Quick View</span>
+                    <span class="popular-tooltip-triangle"></span>
+                </a>  
+            </div>
+            <div><a href="#/" class="popular-inner-category">${type}</a></div>
+            <a href="#/" class="popular-product-title">${name}</a>
+            <div class="popular-rating-box">
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </span>
+                <span class="popular-rating">(${rating})</span>
+            </div>
+            <div class="popular-com-name">
+                By <a href="#/">${provider}</a>
+            </div>
+
+            <div class="popular-price-add">
+                <div class="popular-price-box">
+                    <span class="popular-main-price">$${newPrice}</span>
+                    <span class="popular-prev-price">$${prevPrice}</span>
+                </div>
+                <a href="#/" class="popular-add-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Add
+                </a>
+            </div>
+        </div>
+        `
+    }
+    popularProductContainer.innerHTML = proAll
+    })
+}
+
+fetchingProducts()
+
+
+
 
 //Daily Best Sells code goes here........
 

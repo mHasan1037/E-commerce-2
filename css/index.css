@@ -802,6 +802,16 @@
 }
 .popular-back-img{
     display: none;
+    transition: transform 0.5s ease-in;
+}
+
+.popular-product-div:hover .popular-front-img{
+    display: none;
+}
+
+.popular-product-div:hover .popular-back-img{
+    display: block;
+    transform: scale(1.05);
 }
 
 .popular-hidden-box{
@@ -812,6 +822,11 @@
     width: fit-content;
     display: block;
     opacity: 0;
+}
+
+.popular-img-box:hover ~ .popular-hidden-box,
+.popular-hidden-box:hover{
+    opacity: 1;
 }
 
 .popular-hidden-element{

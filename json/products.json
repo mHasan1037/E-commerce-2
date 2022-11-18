@@ -691,5 +691,82 @@
         "provider": "Old El Paso",
         "newPrice": 23.85,
         "prevPrice": 25.8
+    },
+    {
+        "special": "",
+        "frontPic": "img/product-4-1.jpg",
+        "backPic": "img/product-4-2.jpg",
+        "type": "Vegetables",
+        "name": "Foster Farms Takeout Crispy Classic",
+        "rating": "4.0",
+        "provider": "NestFood",
+        "newPrice": 17.85,
+        "prevPrice": 19.8
+    },
+    {
+        "special": "-14%",
+        "frontPic": "img/product-5-1.jpg",
+        "backPic": "img/product-5-2.jpg",
+        "type": "Pet Foods",
+        "name": "Blue Diamond Almonds Lightly",
+        "rating": "4.0",
+        "provider": "NestFood",
+        "newPrice": 23.85,
+        "prevPrice": 25.8
+    },
+    {
+        "special": "",
+        "frontPic": "img/product-6-1.jpg",
+        "backPic": "img/product-6-2.jpg",
+        "type": "Hodo Foods",
+        "name": "Chobani Complete Vanilla Greek",
+        "rating": "4.0",
+        "provider": "NestFood",
+        "newPrice": 54.85,
+        "prevPrice": 55.8
+    },
+    {
+        "special": "Hot",
+        "frontPic": "img/product-9-1.jpg",
+        "backPic": "img/product-9-2.jpg",
+        "type": "Coffes",
+        "name": "Gorton’s Beer Battered Fish Fillets with soft paper",
+        "rating": "4",
+        "provider": "Old El Paso",
+        "newPrice": 23.85,
+        "prevPrice": 25.8
+    },
+    {
+        "special": "Hot",
+        "frontPic": "img/product-5-1.jpg",
+        "backPic": "img/product-5-2.jpg",
+        "type": "Snack",
+        "name": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+        "rating": "4",
+        "provider": "NestFood",
+        "newPrice": 28.85,
+        "prevPrice": 32.8
+    },
+    {
+        "special": "Sale",
+        "frontPic": "img/product-3-1.jpg",
+        "backPic": "img/product-3-2.jpg",
+        "type": "Hodo Foods",
+        "name": "All Natural Italian-Style Chicken Meatballs",
+        "rating": "3.5",
+        "provider": "Stouffer",
+        "newPrice": 52.85,
+        "prevPrice": 55.8
+    },
+    {
+        "special": "New",
+        "frontPic": "img/product-7-1.jpg",
+        "backPic": "img/product-7-2.jpg",
+        "type": "Snack",
+        "name": "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
+        "rating": "4",
+        "provider": "StarKist",
+        "newPrice": 42.85,
+        "prevPrice": 52.8
     }
 ]
