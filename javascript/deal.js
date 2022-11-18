@@ -78,7 +78,7 @@ fetch("./json/products.json")
       proAll += `
       
 
-      <div class="popular-product-div display all">
+      <div class="popular-product-div display">
 
       <span class= "upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
 
