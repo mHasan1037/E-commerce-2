@@ -45,7 +45,7 @@ body{
     background-color: white;
     padding-bottom: 0;
     display: none;
-    z-index: 2;
+    z-index: 250;
 }
 
 .all-category-child.active{
@@ -174,7 +174,7 @@ Location box starts here..........
     padding-bottom: 0;
     position: absolute;
     top: 100%;
-    z-index: 2;
+    z-index: 250;
 }
 
 .country-search-box{
@@ -622,7 +622,6 @@ All account details of customer goes here
 .dropdown-box{
     position: absolute;
     top: 100%;
-    display: block;
     border: var(--border-one-color);
     width: 180px;
     padding: 25px;
@@ -632,7 +631,7 @@ All account details of customer goes here
     opacity: 0;
     transition: opacity 0.3s ease;
     animation: showDropDown 0.3s;
-    z-index: 1;
+    z-index: 500;
 }
 
 .nav-sub-menu:hover .dropdown-box{
