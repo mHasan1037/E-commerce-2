@@ -40,6 +40,65 @@ Welcome to nest section......
     width: 100%;
     border-radius: 15px;
 }
+
+.welcome-carousel{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+}
+.welcome-carousel-content{
+    position: relative;
+    overflow: hidden;
+    transition: width .4s;
+    height: 100%;
+}
+
+.wel-slide{
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    transition: left .4s cubic-bezier(.47,.13,.15,.89);
+    box-sizing: border-box;
+    border: 4px solid white;
+}
+
+ .wel-slide img{
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+ }
+
+  .wel-nav{
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    background-color: rgba(150,150,150,.3);
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    -webkit-user-select: none;
+  }
+
+  .wel-nav-left{
+    left: -25px;
+  }
+  .wel-nav-right{
+    right: -25px;
+  }
+  .welcome-carousel-left{
+    margin-left: 5px;
+    margin-top: 2px;
+  }
+  .welcome-carousel-right{
+    margin-left: 7px;
+    margin-top: 2px;
+  }
 /*
 What we provide section starts from here......
 What we provide section starts from here......
