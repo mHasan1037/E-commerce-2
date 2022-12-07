@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript/footer.js"></script>
+    <script src="javascript/lastSixSection.js"></script>
+    <link rel="stylesheet" href="css/lastSixSection.css">
+    <script src="javascript/big-single-banner.js"></script>
+    <link rel="stylesheet" href="css/big-single-banner.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Contact Us</title>
 </head>
 <body>
-    d
+<!--
+    Navbar section starts from here
+-->
+<my-header></my-header>
+
+<div class="nav-about-home">
+    <a href="./index.html"><i class="fa-solid fa-house-user"></i> Home</a>
+    <span><i class="fa-solid fa-angle-right"></i></span>
+    <p>Pages</p>
+    <span><i class="fa-solid fa-angle-right"></i></span>
+    <p>Contact</p>
+</div>
+
+<!--
+     Big single banner goes here.........
+-->
+<big-single-banner></big-single-banner>
+<script>
+  var imageBig = document.querySelector('.big-man-img')
+  imageBig.src = './img/banner-13.png'
+</script>
+
+
+<!--
+Last six sections goes here..........
+-->
+<facility-boxes></facility-boxes>
+
+<!--
+Footer section goes here.......
+-->
+<my-footer></my-footer>
+
+<script src="javascript/header.js"></script>
 </body>
 </html>
