@@ -405,7 +405,7 @@ class MyHeader extends HTMLElement{
 					<i class="fa-solid fa-angle-down"></i>
 					</a>
 					<ul class="sideNav-dropbox">
-					   <li><a href="">Home 1</a></li>
+					   <li><a href="index.html">Home 1</a></li>
 					   <li><a href="">Home 2</a></li>
 					   <li><a href="">Home 3</a></li>
 					   <li><a href="">Home 4</a></li>
@@ -414,7 +414,7 @@ class MyHeader extends HTMLElement{
 					</ul>
 				  </li>
 			      <li class="sidenav-dropdown">
-				    <a href="">Shop
+				    <a href="deal.html">Shop
 					<i class="fa-solid fa-angle-down"></i>
 					</a>
 					<ul class="sideNav-dropbox">

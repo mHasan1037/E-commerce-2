@@ -73,10 +73,12 @@
    box-sizing: border-box;
    max-width: 50%;
    padding-right: 10px;
+   margin: 10px 0;
 }
 
 .contact-intro-point h3{
     font-family: "Quicksand", sans-serif;
+    font-weight: normal;
     color: var(--second-black);
     line-height: 1.2;
     font-size: 20px;
