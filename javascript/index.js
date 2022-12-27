@@ -32,7 +32,6 @@ const modalCountDown = () =>{
 setInterval(modalCountDown, 1000)
 
 //Hero section starts from here............
-
 const slider = document.querySelector('.hero-section')
 const nextBtn = document.querySelector('.right-btn')
 const prevBtn = document.querySelector('.left-btn')
@@ -113,6 +112,17 @@ function repeatSlide(){
 }
 
 var slideChange = setInterval(repeatSlide, 2000)
+
+
+//Hero section slide will stop if input is focused
+const heroEmailBoxs = document.querySelectorAll('.hero-email-box');
+heroEmailBoxs.forEach(heroEmailBox =>{
+    heroEmailBox.addEventListener('focus', ()=>{
+        heroEmailBox.focus()
+        heroEmailBox.value = ''
+        clearInterval(slideChange)
+    })
+})
 
 
 
@@ -574,4 +584,5 @@ setInterval(countdown, 1000)
     })
 
   }
+
 
