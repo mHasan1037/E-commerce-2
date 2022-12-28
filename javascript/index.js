@@ -284,7 +284,7 @@ popularBtns.forEach((popularBtn, idx) =>{
     popularBtn.addEventListener('click', ()=>{
       firstSlice = (changeFirstSlice + 10) * idx
       lastSlice = (changeLastSlice * idx) + 10
-      console.log(firstSlice, lastSlice)
+      getProductInfo()
       fetchingProducts()
     })
 })
@@ -345,7 +345,7 @@ function fetchingProducts(){
 
             <div class="popular-price-add">
                 <div class="popular-price-box">
-                    <span class="popular-main-price">$${newPrice}</span>
+                    <span class="popular-main-price">$<span class="pro-sale-price">${newPrice}</span></span>
                     <span class="popular-prev-price">$${prevPrice}</span>
                 </div>
                 <a href="#/" class="popular-add-btn">
@@ -584,5 +584,56 @@ setInterval(countdown, 1000)
     })
 
   }
+
+
+
+
+
+  //Product info collection from add click on each product to pass in localstorage
+function getProductInfo(){
+    setTimeout(()=>{
+        const popularAddBtns = document.querySelectorAll('.popular-add-btn')
+        
+        popularAddBtns.forEach((button)=>{
+            button.addEventListener('click', ()=>{
+                const productInfo = button.closest('.popular-product-div')
+                const proImgStr = productInfo.querySelector('.popular-front-img').src
+                const proName = productInfo.querySelector('.popular-product-title').innerText
+                const proPrice = productInfo.querySelector('.pro-sale-price').innerText
+
+                const proAddToCart = {
+                    img : proImgStr,
+                    name: proName,
+                    price: proPrice
+                }
+
+                const itemsToStore = (() =>{
+                    const itemsValue = localStorage.getItem('proAddToCart')
+                    return itemsValue === null ? [] : JSON.parse(itemsValue)
+                })()
+
+                itemsToStore.push(proAddToCart)
+
+                localStorage.setItem('proAddToCart', JSON.stringify(itemsToStore))
+
+                productAddedNotification()
+            })
+        })
+    }, 1000)
+}
+
+//notification after adding a product that will pop up on top of the page
+function productAddedNotification(){
+    const addNotification = document.createElement('div')
+          addNotification.classList.add('add-notification')
+          addNotification.innerHTML = 'Product is successfully added. Check cart list!'
+          document.body.appendChild(addNotification)
+
+          setTimeout(()=>{
+              addNotification.classList.remove('add-notification')
+          }, 3000)
+}
+
+getProductInfo()
 
 
