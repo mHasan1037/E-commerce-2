@@ -276,7 +276,11 @@ All account details of customer goes here
     z-index: 2;
 }
 
-.cart-acc:hover .cart-absu,
+.cart-click-detail{
+    display: flex;
+}
+
+
 .cart-acc:hover .sub-menu{
     transform: scale(1);
 }

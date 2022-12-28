@@ -1,3 +1,21 @@
+/*
+ Product add to cart notification starts here....
+*/
+.add-notification{
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(102, 209, 102);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+/*
+ Modal of the fisrt page is here...
+*/
 .modal-container{
     position: fixed;
     width: 100%;
@@ -128,6 +146,7 @@
     margin-left: -45px !important;
     margin-top: 25px;
 }
+
 
 /*
   index page all content start from here.

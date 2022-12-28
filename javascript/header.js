@@ -79,40 +79,22 @@ class MyHeader extends HTMLElement{
 					   <span class="cart-acc-name big">Wishlist</span>
 				   </a>
 	  
-				   <div class="cart-acc small">
-					   <div class="cart-icon">
-						   <span class="cart-notification cart-number">2</span>
-						   <i class="fa-solid fa-cart-shopping"></i>
+				   <div id='product-cart-details' class="cart-acc small">
+                       <div class="cart-click-detail">
+							<div class="cart-icon">
+								<span class="cart-notification cart-number">0</span>
+								<i class="fa-solid fa-cart-shopping"></i>
+							</div>
+							<span class="cart-acc-name">Cart</span>
 					   </div>
-					   <span class="cart-acc-name">Cart</span>
 	  
 					   <div class="cart-absu">
-						   <div class="cart-absu-innerBox">
-							   <a href=""><img src="img/thumbnail-3.jpg" /></a>
-							   <div class="cart-absu-details">
-								   <div class="cart-absu-desc">
-									   <a href="">Daisy Casual Bag</a>
-									   <p>1 × <span class="cart-indi-price">$800.00</span></p>
-								   </div>
-								   <i class="fa-solid fa-xmark"></i>
-							   </div>
-						   </div>
-						   <div class="cart-absu-innerBox">
-							   <a href=""><img src="img/thumbnail-2.jpg" /></a>
-							   <div class="cart-absu-details">
-								   <div class="cart-absu-desc">
-									   <a href="">Corduroy Shirts</a>
-									   <p>1 × <span class="cart-indi-price">$3200.00</span></p>
-								   </div>
-								   <i class="fa-solid fa-xmark"></i>
-							   </div>
-						   </div>
-	  
+						   <div id='cart-absu-box'></div>	  
 						   <div class="cart-absu-line"></div>
 						   <div class="cart-amount-main">
 							   <div class="cart-total">
 								   <span>Total</span>
-								   <span>$4000.00</span>
+								   <span class='cart-total-price'>$<span class="cart-total-price-count"></span></span>
 							   </div>
 							   <div class="cart-btn">
 								   <button class="cart-view-btn">View cart</button>
@@ -552,7 +534,7 @@ sidenavDropdowns.forEach(sidenavDropdown =>{
 })
 
 
-//Side navbar show hide code is here
+//Side navbar for small screen size show hide code is here
 const burgerMenu = document.querySelector('.burger-menu')
 const sideNavShowBtn = document.querySelector('.side-logo-box .fa-xmark');
 const sideNavBarBox = document.querySelector('.side-navBar-box');
@@ -570,259 +552,9 @@ sideNavShowBtn.addEventListener('click', ()=>{
 
 
 
-
-
-
-const countryList = [
-	"Afghanistan",
-	"Albania",
-	"Algeria",
-	"American Samoa",
-	"Andorra",
-	"Angola",
-	"Anguilla",
-	"Antarctica",
-	"Antigua and Barbuda",
-	"Argentina",
-	"Armenia",
-	"Aruba",
-	"Australia",
-	"Austria",
-	"Azerbaijan",
-	"Bahamas (the)",
-	"Bahrain",
-	"Bangladesh",
-	"Barbados",
-	"Belarus",
-	"Belgium",
-	"Belize",
-	"Benin",
-	"Bermuda",
-	"Bhutan",
-	"Bolivia (Plurinational State of)",
-	"Bonaire, Sint Eustatius and Saba",
-	"Bosnia and Herzegovina",
-	"Botswana",
-	"Bouvet Island",
-	"Brazil",
-	"British Indian Ocean Territory (the)",
-	"Brunei Darussalam",
-	"Bulgaria",
-	"Burkina Faso",
-	"Burundi",
-	"Cabo Verde",
-	"Cambodia",
-	"Cameroon",
-	"Canada",
-	"Cayman Islands (the)",
-	"Central African Republic (the)",
-	"Chad",
-	"Chile",
-	"China",
-	"Christmas Island",
-	"Cocos (Keeling) Islands (the)",
-	"Colombia",
-	"Comoros (the)",
-	"Congo (the Democratic Republic of the)",
-	"Congo (the)",
-	"Cook Islands (the)",
-	"Costa Rica",
-	"Croatia",
-	"Cuba",
-	"Curaçao",
-	"Cyprus",
-	"Czechia",
-	"Côte d'Ivoire",
-	"Denmark",
-	"Djibouti",
-	"Dominica",
-	"Dominican Republic (the)",
-	"Ecuador",
-	"Egypt",
-	"El Salvador",
-	"Equatorial Guinea",
-	"Eritrea",
-	"Estonia",
-	"Eswatini",
-	"Ethiopia",
-	"Falkland Islands (the) [Malvinas]",
-	"Faroe Islands (the)",
-	"Fiji",
-	"Finland",
-	"France",
-	"French Guiana",
-	"French Polynesia",
-	"French Southern Territories (the)",
-	"Gabon",
-	"Gambia (the)",
-	"Georgia",
-	"Germany",
-	"Ghana",
-	"Gibraltar",
-	"Greece",
-	"Greenland",
-	"Grenada",
-	"Guadeloupe",
-	"Guam",
-	"Guatemala",
-	"Guernsey",
-	"Guinea",
-	"Guinea-Bissau",
-	"Guyana",
-	"Haiti",
-	"Heard Island and McDonald Islands",
-	"Holy See (the)",
-	"Honduras",
-	"Hong Kong",
-	"Hungary",
-	"Iceland",
-	"India",
-	"Indonesia",
-	"Iran (Islamic Republic of)",
-	"Iraq",
-	"Ireland",
-	"Isle of Man",
-	"Israel",
-	"Italy",
-	"Jamaica",
-	"Japan",
-	"Jersey",
-	"Jordan",
-	"Kazakhstan",
-	"Kenya",
-	"Kiribati",
-	"Korea (the Democratic People's Republic of)",
-	"Korea (the Republic of)",
-	"Kuwait",
-	"Kyrgyzstan",
-	"Lao People's Democratic Republic (the)",
-	"Latvia",
-	"Lebanon",
-	"Lesotho",
-	"Liberia",
-	"Libya",
-	"Liechtenstein",
-	"Lithuania",
-	"Luxembourg",
-	"Macao",
-	"Madagascar",
-	"Malawi",
-	"Malaysia",
-	"Maldives",
-	"Mali",
-	"Malta",
-	"Marshall Islands (the)",
-	"Martinique",
-	"Mauritania",
-	"Mauritius",
-	"Mayotte",
-	"Mexico",
-	"Micronesia (Federated States of)",
-	"Moldova (the Republic of)",
-	"Monaco",
-	"Mongolia",
-	"Montenegro",
-	"Montserrat",
-	"Morocco",
-	"Mozambique",
-	"Myanmar",
-	"Namibia",
-	"Nauru",
-	"Nepal",
-	"Netherlands (the)",
-	"New Caledonia",
-	"New Zealand",
-	"Nicaragua",
-	"Niger (the)",
-	"Nigeria",
-	"Niue",
-	"Norfolk Island",
-	"Northern Mariana Islands (the)",
-	"Norway",
-	"Oman",
-	"Pakistan",
-	"Palau",
-	"Palestine, State of",
-	"Panama",
-	"Papua New Guinea",
-	"Paraguay",
-	"Peru",
-	"Philippines (the)",
-	"Pitcairn",
-	"Poland",
-	"Portugal",
-	"Puerto Rico",
-	"Qatar",
-	"Republic of North Macedonia",
-	"Romania",
-	"Russian Federation (the)",
-	"Rwanda",
-	"Réunion",
-	"Saint Barthélemy",
-	"Saint Helena, Ascension and Tristan da Cunha",
-	"Saint Kitts and Nevis",
-	"Saint Lucia",
-	"Saint Martin (French part)",
-	"Saint Pierre and Miquelon",
-	"Saint Vincent and the Grenadines",
-	"Samoa",
-	"San Marino",
-	"Sao Tome and Principe",
-	"Saudi Arabia",
-	"Senegal",
-	"Serbia",
-	"Seychelles",
-	"Sierra Leone",
-	"Singapore",
-	"Sint Maarten (Dutch part)",
-	"Slovakia",
-	"Slovenia",
-	"Solomon Islands",
-	"Somalia",
-	"South Africa",
-	"South Georgia and the South Sandwich Islands",
-	"South Sudan",
-	"Spain",
-	"Sri Lanka",
-	"Sudan (the)",
-	"Suriname",
-	"Svalbard and Jan Mayen",
-	"Sweden",
-	"Switzerland",
-	"Syrian Arab Republic",
-	"Taiwan",
-	"Tajikistan",
-	"Tanzania, United Republic of",
-	"Thailand",
-	"Timor-Leste",
-	"Togo",
-	"Tokelau",
-	"Tonga",
-	"Trinidad and Tobago",
-	"Tunisia",
-	"Turkey",
-	"Turkmenistan",
-	"Turks and Caicos Islands (the)",
-	"Tuvalu",
-	"Uganda",
-	"Ukraine",
-	"United Arab Emirates (the)",
-	"United Kingdom of Great Britain and Northern Ireland (the)",
-	"United States Minor Outlying Islands (the)",
-	"United States of America (the)",
-	"Uruguay",
-	"Uzbekistan",
-	"Vanuatu",
-	"Venezuela (Bolivarian Republic of)",
-	"Viet Nam",
-	"Virgin Islands (British)",
-	"Virgin Islands (U.S.)",
-	"Wallis and Futuna",
-	"Western Sahara",
-	"Yemen",
-	"Zambia",
-	"Zimbabwe",
-	"Åland Islands"
+// countery search box at the nav bar
+const countryList = ["Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica","Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas (the)","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia (Plurinational State of)","Bonaire, Sint Eustatius and Saba","Bosnia and Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory (the)","Brunei Darussalam","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Cayman Islands (the)","Central African Republic (the)","Chad","Chile","China","Christmas Island","Cocos (Keeling) Islands (the)","Colombia","Comoros (the)","Congo (the Democratic Republic of the)","Congo (the)","Cook Islands (the)","Costa Rica","Croatia","Cuba","Curaçao","Cyprus","Czechia","Côte d'Ivoire","Denmark","Djibouti","Dominica","Dominican Republic (the)","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Falkland Islands (the) [Malvinas]","Faroe Islands (the)","Fiji","Finland","France","French Guiana","French Polynesia","French Southern Territories (the)","Gabon","Gambia (the)","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland",  
+"Grenada","Guadeloupe","Guam","Guatemala","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island and McDonald Islands","Holy See (the)","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran (Islamic Republic of)","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Korea (the Democratic People's Republic of)","Korea (the Republic of)","Kuwait","Kyrgyzstan","Lao People's Democratic Republic (the)","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macao","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands (the)","Martinique","Mauritania","Mauritius","Mayotte","Mexico","Micronesia (Federated States of)","Moldova (the Republic of)","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands (the)","New Caledonia","New Zealand","Nicaragua","Niger (the)","Nigeria","Niue","Norfolk Island","Northern Mariana Islands (the)","Norway","Oman","Pakistan","Palau","Palestine, State of","Panama","Papua New Guinea","Paraguay","Peru","Philippines (the)","Pitcairn","Poland","Portugal","Puerto Rico","Qatar","Republic of North Macedonia","Romania","Russian Federation (the)","Rwanda","Réunion","Saint Barthélemy","Saint Helena, Ascension and Tristan da Cunha","Saint Kitts and Nevis","Saint Lucia","Saint Martin (French part)","Saint Pierre and Miquelon","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Sint Maarten (Dutch part)","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Georgia and the South Sandwich Islands","South Sudan","Spain","Sri Lanka","Sudan (the)","Suriname","Svalbard and Jan Mayen","Sweden","Switzerland","Syrian Arab Republic","Taiwan","Tajikistan","Tanzania, United Republic of","Thailand","Timor-Leste","Togo","Tokelau","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Turks and Caicos Islands (the)","Tuvalu","Uganda","Ukraine","United Arab Emirates (the)","United Kingdom of Great Britain and Northern Ireland (the)","United States Minor Outlying Islands (the)","United States of America (the)","Uruguay","Uzbekistan","Vanuatu","Venezuela (Bolivarian Republic of)","Viet Nam","Virgin Islands (British)","Virgin Islands (U.S.)","Wallis and Futuna","Western Sahara", "Yemen", "Zambia", "Zimbabwe", "Åland Islands"
 ];
 
 const countryHolder = document.querySelector('.country-holder')
@@ -848,7 +580,6 @@ eachCountries.forEach(eachCountry =>{
 		locatonArrow.classList.toggle('active')
     })
 })
-
 
 loactionBox.addEventListener('click', ()=>{
     countryListBox.classList.toggle('active')
@@ -879,6 +610,8 @@ countrySearchBox.addEventListener('keyup',  ()=>{
 
 
 
+
+
 const allCategoryNameBox = document.querySelector('.all-category-name-box')
 const allCategoryChild = document.querySelector('.all-category-child')
 const allCategoryListBoxes = document.querySelectorAll('.all-list-ul li')
@@ -903,8 +636,50 @@ allCategoryListBoxes.forEach(allCategoryListBoxe =>{
 })
 
 
-//Cart box remove
 
+//cart inner product testing..
+const cartClickDetail = document.querySelector('.cart-click-detail')
+cartClickDetail.addEventListener('click', updateCartDetail)
+let cartAbsu = document.querySelector('.cart-absu')
+const cartAbsuBox = document.getElementById('cart-absu-box')
+let getCartDetails = localStorage.getItem('proAddToCart')
+getCartDetails = JSON.parse(getCartDetails)
+
+getCartDetails.forEach((getCartDetail, idx)=>{
+	const {name, price, img} = getCartDetail
+	const cartAbsuInnerBox = document.createElement('div')
+	cartAbsuInnerBox.classList.add('cart-absu-innerBox')
+	cartAbsuInnerBox.innerHTML = `
+		<a href=""><img src=${img} /></a>
+		<div class="cart-absu-details">
+			<div class="cart-absu-desc">
+				<a href="" class="cart-absu-pro-name">${name}</a>
+				<p>1 × $<span class="cart-indi-price">${price}</span></p>
+			</div>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+	`
+
+	cartAbsuBox.appendChild(cartAbsuInnerBox)
+
+	cartPriceTotal += Number(price)
+	totalCart(cartPriceTotal)
+})
+
+let cartPriceTotal = 0
+
+function updateCartDetail(){	
+        cartAbsu.style.transform = 'scale(1)'
+}
+
+// window.addEventListener('scroll', ()=>{
+// 	cartAbsu.style.transform = 'scale(0)'
+// })
+
+
+
+
+//Cart box remove
 const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
 const cartDetailsXmark = document.querySelectorAll('.cart-absu-details, .fa-xmark')
 
@@ -914,12 +689,33 @@ cartAbsuInnerBoxes.forEach(cartAbsuInnerBox =>{
 	cartDetailsXmark.addEventListener('click', ()=>{
 		cartDetailsXmark.parentNode.remove()
 		cartNum++
-
 		cartNotification.textContent = cartAbsuInnerBoxes.length - cartNum
+		cartPriceCount()
 	})
 })
 
 cartNotification.textContent = cartAbsuInnerBoxes.length
+
+//Cart box price calculation
+function cartPriceCount(){
+	const cartIndiPrices = document.querySelectorAll('.cart-indi-price')
+
+	let numIs = 0
+
+	cartIndiPrices.forEach((cartIndi)=>{
+
+		let makeNum = +cartIndi.textContent
+		numIs += makeNum
+		totalCart(numIs)
+	})
+}
+
+function totalCart(numIs){
+	const cartTotalPriceCount = document.querySelector('.cart-total-price-count')
+	cartTotalPriceCount.innerHTML = numIs
+}
+
+
 
 
 
