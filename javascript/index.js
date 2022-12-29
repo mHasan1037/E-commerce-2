@@ -284,7 +284,7 @@ popularBtns.forEach((popularBtn, idx) =>{
     popularBtn.addEventListener('click', ()=>{
       firstSlice = (changeFirstSlice + 10) * idx
       lastSlice = (changeLastSlice * idx) + 10
-      getProductInfo()
+    //   getProductInfo()
       fetchingProducts()
     })
 })
@@ -590,7 +590,6 @@ setInterval(countdown, 1000)
 
 
   //Product info collection from add click on each product to pass in localstorage
-function getProductInfo(){
     setTimeout(()=>{
         const popularAddBtns = document.querySelectorAll('.popular-add-btn')
         
@@ -620,7 +619,7 @@ function getProductInfo(){
             })
         })
     }, 1000)
-}
+
 
 //notification after adding a product that will pop up on top of the page
 function productAddedNotification(){
@@ -634,6 +633,6 @@ function productAddedNotification(){
           }, 3000)
 }
 
-getProductInfo()
+
 
 
