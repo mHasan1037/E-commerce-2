@@ -637,13 +637,15 @@ allCategoryListBoxes.forEach(allCategoryListBoxe =>{
 
 
 
-//cart inner product testing..
+//cart inner product adding from localstorage..
 const cartClickDetail = document.querySelector('.cart-click-detail')
 cartClickDetail.addEventListener('click', updateCartDetail)
 let cartAbsu = document.querySelector('.cart-absu')
 const cartAbsuBox = document.getElementById('cart-absu-box')
 let getCartDetails = localStorage.getItem('proAddToCart')
 getCartDetails = JSON.parse(getCartDetails)
+
+let cartPriceTotal = 0
 
 getCartDetails.forEach((getCartDetail, idx)=>{
 	const {name, price, img} = getCartDetail
@@ -653,7 +655,7 @@ getCartDetails.forEach((getCartDetail, idx)=>{
 		<a href=""><img src=${img} /></a>
 		<div class="cart-absu-details">
 			<div class="cart-absu-desc">
-				<a href="" class="cart-absu-pro-name">${name}</a>
+				<a href="#/" class="cart-absu-pro-name">${name}</a>
 				<p>1 × $<span class="cart-indi-price">${price}</span></p>
 			</div>
 			<i class="fa-solid fa-xmark"></i>
@@ -666,28 +668,32 @@ getCartDetails.forEach((getCartDetail, idx)=>{
 	totalCart(cartPriceTotal)
 })
 
-let cartPriceTotal = 0
+
 
 function updateCartDetail(){	
-        cartAbsu.style.transform = 'scale(1)'
+   cartAbsu.style.transform = 'scale(1)'
 }
 
-// window.addEventListener('scroll', ()=>{
-// 	cartAbsu.style.transform = 'scale(0)'
-// })
+const body = document.querySelector('body');
+
+body.addEventListener('click', function(event){
+	if(!event.target.closest('.cart-acc') && !event.target.closest('.fa-xmark')){
+		cartAbsu.style.transform = 'scale(0)'
+	}
+})
+
 
 
 
 
 //Cart box remove
 const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
-const cartDetailsXmark = document.querySelectorAll('.cart-absu-details, .fa-xmark')
 
 let cartNum = 0;
 cartAbsuInnerBoxes.forEach(cartAbsuInnerBox =>{
-	const cartDetailsXmark = cartAbsuInnerBox.querySelector('.cart-absu-details, .fa-xmark')
+	const cartDetailsXmark = cartAbsuInnerBox.querySelector('.cart-absu-details .fa-xmark')
 	cartDetailsXmark.addEventListener('click', ()=>{
-		cartDetailsXmark.parentNode.remove()
+		cartDetailsXmark.closest('.cart-absu-innerBox').remove()
 		cartNum++
 		cartNotification.textContent = cartAbsuInnerBoxes.length - cartNum
 		cartPriceCount()
@@ -710,13 +716,11 @@ function cartPriceCount(){
 	})
 }
 
+
 function totalCart(numIs){
 	const cartTotalPriceCount = document.querySelector('.cart-total-price-count')
 	cartTotalPriceCount.innerHTML = numIs
 }
-
-
-
 
 
 
