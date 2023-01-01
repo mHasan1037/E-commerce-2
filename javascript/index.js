@@ -227,6 +227,8 @@ for(i = 0; i < popularBtns.length; i++){
                 }
             }
         })
+
+        productNotification()
     })
 }
 
@@ -590,6 +592,7 @@ setInterval(countdown, 1000)
 
 
   //Product info collection from add click on each product to pass in localstorage
+   function productNotification(){
     setTimeout(()=>{
         const popularAddBtns = document.querySelectorAll('.popular-add-btn')
         
@@ -599,11 +602,13 @@ setInterval(countdown, 1000)
                 const proImgStr = productInfo.querySelector('.popular-front-img').src
                 const proName = productInfo.querySelector('.popular-product-title').innerText
                 const proPrice = productInfo.querySelector('.pro-sale-price').innerText
+                const proId = new Date().getTime().toString()
 
                 const proAddToCart = {
                     img : proImgStr,
                     name: proName,
-                    price: proPrice
+                    price: proPrice,
+                    id: proId
                 }
 
                 const itemsToStore = (() =>{
@@ -619,6 +624,8 @@ setInterval(countdown, 1000)
             })
         })
     }, 1000)
+   }
+   productNotification()
 
 
 //notification after adding a product that will pop up on top of the page
