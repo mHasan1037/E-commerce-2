@@ -71,7 +71,7 @@ class MyHeader extends HTMLElement{
 					   <span class="cart-acc-name big">Compare</span>
 				   </a>
 	  
-				   <a href="#!" class="cart-acc heart">
+				   <a href="#!" class="cart-acc heart small">
 					   <div class="cart-icon">
 						   <span class="cart-notification">6</span>
 						   <i class="fa-regular fa-heart"></i>
@@ -79,7 +79,7 @@ class MyHeader extends HTMLElement{
 					   <span class="cart-acc-name big">Wishlist</span>
 				   </a>
 	  
-				   <div id='product-cart-details' class="cart-acc small">
+				   <div id='product-cart-details' class="cart-acc">
                        <div class="cart-click-detail">
 							<div class="cart-icon">
 								<span class="cart-notification cart-number">0</span>
@@ -648,8 +648,9 @@ getCartDetails = JSON.parse(getCartDetails)
 let cartPriceTotal = 0
 
 getCartDetails.forEach((getCartDetail, idx)=>{
-	const {name, price, img} = getCartDetail
+	const {name, price, img, id} = getCartDetail
 	const cartAbsuInnerBox = document.createElement('div')
+	cartAbsuInnerBox.id = id
 	cartAbsuInnerBox.classList.add('cart-absu-innerBox')
 	cartAbsuInnerBox.innerHTML = `
 		<a href=""><img src=${img} /></a>
@@ -686,21 +687,42 @@ body.addEventListener('click', function(event){
 
 
 
-//Cart box remove
+//Cart box remove on click the X button
 const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
+const ProductInLocalStore = JSON.parse(localStorage.getItem('proAddToCart'))
+let cardProducts;
 
 let cartNum = 0;
-cartAbsuInnerBoxes.forEach(cartAbsuInnerBox =>{
+cartAbsuInnerBoxes.forEach((cartAbsuInnerBox, index) =>{
 	const cartDetailsXmark = cartAbsuInnerBox.querySelector('.cart-absu-details .fa-xmark')
 	cartDetailsXmark.addEventListener('click', ()=>{
-		cartDetailsXmark.closest('.cart-absu-innerBox').remove()
+		const getMainDiv = cartDetailsXmark.closest('.cart-absu-innerBox')
+		getMainDiv.remove()
 		cartNum++
 		cartNotification.textContent = cartAbsuInnerBoxes.length - cartNum
 		cartPriceCount()
+
+		cardProducts = document.querySelectorAll('.cart-absu-innerBox')
+		dltProStore(cardProducts)
 	})
 })
 
+
+function dltProStore(cardProducts){
+	cardProducts.forEach((cardProduct, idx)=>{
+		if(cardProduct.id === ProductInLocalStore[idx].id){
+			// const filteredProduct = ProductInLocalStore.filter((Product) => Product.id !==  cartAbsuInnerBox.id)
+	
+			// localStorage.setItem('proAddToCart', JSON.stringify(filteredProduct))
+			// localStorage.removeItem(index)
+			ProductInLocalStore.splice(idx, 1)
+			localStorage.setItem('proAddToCart', JSON.stringify(ProductInLocalStore))
+		}
+	})
+}
+
 cartNotification.textContent = cartAbsuInnerBoxes.length
+
 
 //Cart box price calculation
 function cartPriceCount(){
