@@ -621,6 +621,7 @@ setInterval(countdown, 1000)
                 localStorage.setItem('proAddToCart', JSON.stringify(itemsToStore))
 
                 productAddedNotification()
+
             })
         })
     }, 1000)
@@ -639,6 +640,8 @@ function productAddedNotification(){
               addNotification.classList.remove('add-notification')
           }, 3000)
 }
+
+
 
 
 
