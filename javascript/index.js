@@ -611,6 +611,8 @@ setInterval(countdown, 1000)
                     id: proId
                 }
 
+                window.parent.changeCartList()
+
                 const itemsToStore = (() =>{
                     const itemsValue = localStorage.getItem('proAddToCart')
                     return itemsValue === null ? [] : JSON.parse(itemsValue)
