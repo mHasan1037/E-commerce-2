@@ -637,45 +637,16 @@ allCategoryListBoxes.forEach(allCategoryListBoxe =>{
 
 
 
-//cart inner product adding from localstorage..
+
+//Making the product cart in the header visible and hidden
 const cartClickDetail = document.querySelector('.cart-click-detail')
 cartClickDetail.addEventListener('click', updateCartDetail)
 let cartAbsu = document.querySelector('.cart-absu')
-const cartAbsuBox = document.getElementById('cart-absu-box')
-let getCartDetails = localStorage.getItem('proAddToCart')
-getCartDetails = JSON.parse(getCartDetails)
-
-let cartPriceTotal = 0
-
-getCartDetails.forEach((getCartDetail, idx)=>{
-	const {name, price, img, id} = getCartDetail
-	const cartAbsuInnerBox = document.createElement('div')
-	cartAbsuInnerBox.id = id
-	cartAbsuInnerBox.classList.add('cart-absu-innerBox')
-	cartAbsuInnerBox.innerHTML = `
-		<a href=""><img src=${img} /></a>
-		<div class="cart-absu-details">
-			<div class="cart-absu-desc">
-				<a href="#/" class="cart-absu-pro-name">${name}</a>
-				<p>1 × $<span class="cart-indi-price">${price}</span></p>
-			</div>
-			<i class="fa-solid fa-xmark"></i>
-		</div>
-	`
-
-	cartAbsuBox.appendChild(cartAbsuInnerBox)
-
-	cartPriceTotal += Number(price)
-	totalCart(cartPriceTotal)
-})
-
-
+const body = document.querySelector('body');
 
 function updateCartDetail(){	
-   cartAbsu.style.transform = 'scale(1)'
-}
-
-const body = document.querySelector('body');
+	cartAbsu.style.transform = 'scale(1)'
+ }
 
 body.addEventListener('click', function(event){
 	if(!event.target.closest('.cart-acc') && !event.target.closest('.fa-xmark')){
@@ -685,12 +656,46 @@ body.addEventListener('click', function(event){
 
 
 
+//cart inner product adding from localstorage..
+const cartAbsuBox = document.getElementById('cart-absu-box')
+
+function upgrateCartInfo(){
+	let getCartDetails = localStorage.getItem('proAddToCart')
+	getCartDetails = JSON.parse(getCartDetails)
+
+	let cartPriceTotal = 0
+
+	getCartDetails.forEach((getCartDetail, idx)=>{
+		const {name, price, img, id} = getCartDetail
+		const cartAbsuInnerBox = document.createElement('div')
+		cartAbsuInnerBox.id = id
+		cartAbsuInnerBox.classList.add('cart-absu-innerBox')
+		cartAbsuInnerBox.innerHTML = `
+			<a href=""><img src=${img} /></a>
+			<div class="cart-absu-details">
+				<div class="cart-absu-desc">
+					<a href="#/" class="cart-absu-pro-name">${name}</a>
+					<p>1 × $<span class="cart-indi-price">${price}</span></p>
+				</div>
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+		`
+
+		cartAbsuBox.appendChild(cartAbsuInnerBox)
+
+		cartPriceTotal += Number(price)
+		totalCart(cartPriceTotal)
+	})
+}
+
+upgrateCartInfo()
+
+
 
 
 //Cart box remove on click the X button
 const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
 const ProductInLocalStore = JSON.parse(localStorage.getItem('proAddToCart'))
-let cardProducts;
 
 let cartNum = 0;
 cartAbsuInnerBoxes.forEach((cartAbsuInnerBox, index) =>{
@@ -702,21 +707,25 @@ cartAbsuInnerBoxes.forEach((cartAbsuInnerBox, index) =>{
 		cartNotification.textContent = cartAbsuInnerBoxes.length - cartNum
 		cartPriceCount()
 
-		cardProducts = document.querySelectorAll('.cart-absu-innerBox')
-		dltProStore(cardProducts)
+		dltProStore()
 	})
 })
 
+function updateCartFunc(){
+	dltProStore()
+}
 
-function dltProStore(cardProducts){
+const cardProducts = document.querySelectorAll('.cart-absu-innerBox')
+
+function dltProStore(){
 	cardProducts.forEach((cardProduct, idx)=>{
 		if(cardProduct.id === ProductInLocalStore[idx].id){
-			// const filteredProduct = ProductInLocalStore.filter((Product) => Product.id !==  cartAbsuInnerBox.id)
+			const filteredProduct = ProductInLocalStore.filter((Product) => Product.id !==  cardProduct.id)
 	
-			// localStorage.setItem('proAddToCart', JSON.stringify(filteredProduct))
+			localStorage.setItem('proAddToCart', JSON.stringify(filteredProduct))
 			// localStorage.removeItem(index)
-			ProductInLocalStore.splice(idx, 1)
-			localStorage.setItem('proAddToCart', JSON.stringify(ProductInLocalStore))
+			// ProductInLocalStore.splice(index, 1)
+			// localStorage.setItem('proAddToCart', JSON.stringify(ProductInLocalStore))
 		}
 	})
 }
