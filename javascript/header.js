@@ -619,7 +619,6 @@ const allCat = document.getElementById('all-cat')
 const allCatArrow = document.querySelector('.all-category-name-box .fa-angle-down')
 const allCategorySearchBox = document.querySelector('.all-category-search-box')
 const allListUl = document.querySelector('.all-list-ul')
-const cartNotification = document.querySelector('.cart-number')
 
 
 allCategoryNameBox.addEventListener('click', ()=>{
@@ -658,6 +657,7 @@ body.addEventListener('click', function(event){
 
 //cart inner product adding from localstorage..
 const cartAbsuBox = document.getElementById('cart-absu-box')
+let cartNotification = document.querySelector('.cart-number')
 
 function upgrateCartInfo(){
 	let getCartDetails = localStorage.getItem('proAddToCart')
@@ -665,30 +665,57 @@ function upgrateCartInfo(){
 
 	let cartPriceTotal = 0
 
-	getCartDetails.forEach((getCartDetail, idx)=>{
-		const {name, price, img, id} = getCartDetail
-		const cartAbsuInnerBox = document.createElement('div')
-		cartAbsuInnerBox.id = id
-		cartAbsuInnerBox.classList.add('cart-absu-innerBox')
-		cartAbsuInnerBox.innerHTML = `
-			<a href=""><img src=${img} /></a>
-			<div class="cart-absu-details">
-				<div class="cart-absu-desc">
-					<a href="#/" class="cart-absu-pro-name">${name}</a>
-					<p>1 × $<span class="cart-indi-price">${price}</span></p>
+	if(getCartDetails === null){
+		cartAbsuBox.innerHTML = "Nothing in the cart"
+	}else{
+		cartAbsuBox.innerHTML = ""
+		getCartDetails.forEach((getCartDetail, idx)=>{
+			const {name, price, img, id} = getCartDetail
+			const cartAbsuInnerBox = document.createElement('div')
+			cartAbsuInnerBox.id = id
+			cartAbsuInnerBox.classList.add('cart-absu-innerBox')
+			cartAbsuInnerBox.innerHTML = `
+				<a href=""><img src=${img} /></a>
+				<div class="cart-absu-details">
+					<div class="cart-absu-desc">
+						<a href="#/" class="cart-absu-pro-name">${name}</a>
+						<p>1 × $<span class="cart-indi-price">${price}</span></p>
+					</div>
+					<i class="fa-solid fa-xmark"></i>
 				</div>
-				<i class="fa-solid fa-xmark"></i>
-			</div>
-		`
-
-		cartAbsuBox.appendChild(cartAbsuInnerBox)
-
-		cartPriceTotal += Number(price)
-		totalCart(cartPriceTotal)
-	})
+			`
+	
+			cartAbsuBox.appendChild(cartAbsuInnerBox)
+	
+			cartPriceTotal += Number(price)
+			totalCart(cartPriceTotal)
+		})
+	}
 }
 
 upgrateCartInfo()
+
+function changeCartList(){
+	const updatedStorage = localStorage.getItem('proAddToCart')
+
+	const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
+
+	if(updatedStorage === null){
+		setTimeout(()=>{
+			for (i = 0; i < localStorage.length; i++)   {
+				upgrateCartInfo()
+				cartNotification.textContent = cartAbsuInnerBoxes.length + 1
+			}
+		}, 1000)
+	}else{
+		setTimeout(()=>{
+			for (i = 0; i < localStorage.length; i++)   {
+				upgrateCartInfo()
+				cartNotification.textContent = cartAbsuInnerBoxes.length + 1
+			}
+		}, 1000)
+	}	
+}
 
 
 
@@ -731,6 +758,8 @@ function dltProStore(){
 }
 
 cartNotification.textContent = cartAbsuInnerBoxes.length
+
+
 
 
 //Cart box price calculation
