@@ -610,8 +610,6 @@ countrySearchBox.addEventListener('keyup',  ()=>{
 
 
 
-
-
 const allCategoryNameBox = document.querySelector('.all-category-name-box')
 const allCategoryChild = document.querySelector('.all-category-child')
 const allCategoryListBoxes = document.querySelectorAll('.all-list-ul li')
@@ -633,7 +631,6 @@ allCategoryListBoxes.forEach(allCategoryListBoxe =>{
 		allCatArrow.classList.toggle('active')
 	})
 })
-
 
 
 
@@ -684,80 +681,81 @@ function upgrateCartInfo(){
 					<i class="fa-solid fa-xmark"></i>
 				</div>
 			`
-	
 			cartAbsuBox.appendChild(cartAbsuInnerBox)
 	
 			cartPriceTotal += Number(price)
-			totalCart(cartPriceTotal)
+			totalCart(Math.ceil(cartPriceTotal))
 		})
 	}
 }
 
 upgrateCartInfo()
 
+
 function changeCartList(){
-	const updatedStorage = localStorage.getItem('proAddToCart')
+	// const updatedStorage = localStorage.getItem('proAddToCart')
+	// const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
 
-	const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
-
-	if(updatedStorage === null){
-		setTimeout(()=>{
-			for (i = 0; i < localStorage.length; i++)   {
-				upgrateCartInfo()
-				cartNotification.textContent = cartAbsuInnerBoxes.length + 1
-			}
-		}, 1000)
-	}else{
-		setTimeout(()=>{
-			for (i = 0; i < localStorage.length; i++)   {
-				upgrateCartInfo()
-				cartNotification.textContent = cartAbsuInnerBoxes.length + 1
-			}
-		}, 1000)
-	}	
+	// if(updatedStorage === null){
+	// 	setTimeout(()=>{
+	// 		for (i = 0; i < localStorage.length; i++)   {
+	// 			upgrateCartInfo()
+	// 			cartNotification.textContent = cartAbsuInnerBoxes.length + 1
+	// 		}
+	// 	}, 1000)
+	// }
+	// else{
+	// 	setTimeout(()=>{
+	// 		for (i = 0; i < localStorage.length; i++)   {
+	// 			upgrateCartInfo()
+	// 			cartNotification.textContent = cartAbsuInnerBoxes.length 
+	// 		}
+	// 	}, 1000)
+	// }
+	
+	
+	setTimeout(()=>{
+		const updatedStorage = JSON.parse(localStorage.getItem('proAddToCart'))
+		upgrateCartInfo()
+		deleteCart()
+		cartNotification.textContent = updatedStorage.length
+	}, 1000)
 }
 
-
+changeCartList()
 
 
 //Cart box remove on click the X button
-const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
-const ProductInLocalStore = JSON.parse(localStorage.getItem('proAddToCart'))
 
 let cartNum = 0;
-cartAbsuInnerBoxes.forEach((cartAbsuInnerBox, index) =>{
-	const cartDetailsXmark = cartAbsuInnerBox.querySelector('.cart-absu-details .fa-xmark')
-	cartDetailsXmark.addEventListener('click', ()=>{
-		const getMainDiv = cartDetailsXmark.closest('.cart-absu-innerBox')
-		getMainDiv.remove()
-		cartNum++
-		cartNotification.textContent = cartAbsuInnerBoxes.length - cartNum
-		cartPriceCount()
-
-		dltProStore()
-	})
-})
-
-function updateCartFunc(){
-	dltProStore()
-}
-
-const cardProducts = document.querySelectorAll('.cart-absu-innerBox')
-
-function dltProStore(){
-	cardProducts.forEach((cardProduct, idx)=>{
-		if(cardProduct.id === ProductInLocalStore[idx].id){
-			const filteredProduct = ProductInLocalStore.filter((Product) => Product.id !==  cardProduct.id)
+function deleteCart(){
+	const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
 	
-			localStorage.setItem('proAddToCart', JSON.stringify(filteredProduct))
-			// localStorage.removeItem(index)
-			// ProductInLocalStore.splice(index, 1)
-			// localStorage.setItem('proAddToCart', JSON.stringify(ProductInLocalStore))
-		}
+	cartAbsuInnerBoxes.forEach(cartAbsuInnerBox =>{
+        const cartDltBtn = cartAbsuInnerBox.querySelector('.cart-absu-details .fa-xmark')
+		cartDltBtn.addEventListener('click', ()=>{
+			const getMainDiv = cartDltBtn.closest('.cart-absu-innerBox')
+			dltStoreCart(getMainDiv)
+			getMainDiv.remove()
+			cartNum++
+			cartNotification.textContent = cartAbsuInnerBoxes.length - cartNum
+			cartPriceCount()
+		})
 	})
 }
+deleteCart()
+   
+function dltStoreCart(getMainDiv){
+     const localCarts = JSON.parse(localStorage.getItem('proAddToCart'))
+	 localCarts.forEach((localCart)=>{
+		if(getMainDiv.id === localCart.id){
+			const targetId = localCarts.filter((product) => product.id !== localCart.id)
 
-cartNotification.textContent = cartAbsuInnerBoxes.length
+			localStorage.setItem('proAddToCart', JSON.stringify(targetId))
+		}
+	 })
+}
+
 
 
 
@@ -772,7 +770,7 @@ function cartPriceCount(){
 
 		let makeNum = +cartIndi.textContent
 		numIs += makeNum
-		totalCart(numIs)
+		totalCart(Math.ceil(numIs))
 	})
 }
 
