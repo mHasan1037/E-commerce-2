@@ -657,12 +657,11 @@ const cartAbsuBox = document.getElementById('cart-absu-box')
 let cartNotification = document.querySelector('.cart-number')
 
 function upgrateCartInfo(){
-	let getCartDetails = localStorage.getItem('proAddToCart')
-	getCartDetails = JSON.parse(getCartDetails)
+	let getCartDetails = JSON.parse(localStorage.getItem('proAddToCart'))
 
 	let cartPriceTotal = 0
 
-	if(getCartDetails === null){
+	if(getCartDetails.length === 0){
 		cartAbsuBox.innerHTML = "Nothing in the cart"
 	}else{
 		cartAbsuBox.innerHTML = ""
@@ -691,29 +690,8 @@ function upgrateCartInfo(){
 
 upgrateCartInfo()
 
-
+// update the cart on click in each "add" button
 function changeCartList(){
-	// const updatedStorage = localStorage.getItem('proAddToCart')
-	// const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
-
-	// if(updatedStorage === null){
-	// 	setTimeout(()=>{
-	// 		for (i = 0; i < localStorage.length; i++)   {
-	// 			upgrateCartInfo()
-	// 			cartNotification.textContent = cartAbsuInnerBoxes.length + 1
-	// 		}
-	// 	}, 1000)
-	// }
-	// else{
-	// 	setTimeout(()=>{
-	// 		for (i = 0; i < localStorage.length; i++)   {
-	// 			upgrateCartInfo()
-	// 			cartNotification.textContent = cartAbsuInnerBoxes.length 
-	// 		}
-	// 	}, 1000)
-	// }
-	
-	
 	setTimeout(()=>{
 		const updatedStorage = JSON.parse(localStorage.getItem('proAddToCart'))
 		upgrateCartInfo()
@@ -723,6 +701,7 @@ function changeCartList(){
 }
 
 changeCartList()
+
 
 
 //Cart box remove on click the X button
@@ -740,10 +719,12 @@ function deleteCart(){
 			cartNum++
 			cartNotification.textContent = cartAbsuInnerBoxes.length - cartNum
 			cartPriceCount()
+			totalAmount()
 		})
 	})
 }
 deleteCart()
+
    
 function dltStoreCart(getMainDiv){
      const localCarts = JSON.parse(localStorage.getItem('proAddToCart'))
@@ -779,6 +760,26 @@ function totalCart(numIs){
 	const cartTotalPriceCount = document.querySelector('.cart-total-price-count')
 	cartTotalPriceCount.innerHTML = numIs
 }
+
+//After individually deleting all cart total amount will be empty here
+function totalAmount(){
+	const cartAbsuInnerBoxes = document.querySelectorAll('.cart-absu-innerBox')
+	if(cartAbsuInnerBoxes.length === 0){
+		const cartTotalPriceCount = document.querySelector('.cart-total-price-count')
+		cartTotalPriceCount.innerHTML = 0
+	}
+}
+
+
+//Go to the cart page
+
+const cartBtn = document.querySelector('.cart-view-btn')
+
+const changeToCartPage = () =>{
+	window.location.href = "shop-cart.html"
+}
+
+cartBtn.addEventListener('click', changeToCartPage)
 
 
 

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-about-home{
+    display: flex;
+    align-items: center;
+    border-bottom: var(--border-one-color);
+    min-height: 60px;
+    margin-left: 8px;
+    color: var(--light-gray);
+}
+
+.nav-about-home > *{
+    margin: 0 5px;
+}
+
+.nav-about-home a{
+    color: var(--text-green-one);
+    text-decoration: none;
+}
+
+.nav-about-home a:hover{
+    color: var(--yellow);
+}
+
+.nav-about-home span .fa-solid{
+    font-size: 10px;
+}
+
+
+/*
+   cart container code
+*/
+
+.cartBox{
+    width: 95%;
+    margin: 30px auto;
+    text-align: center;
+    min-height: 50vh;
+}
