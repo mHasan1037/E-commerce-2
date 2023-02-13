@@ -87,14 +87,14 @@ function onUpdateCart(){
           ${productRow}
        </table>
        <div class="cart-update-continue-btns">
-          <button><i class="fa-solid fa-arrow-left"></i> Continue Shopping</button>
+          <button id="continue-shopping"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</button>
           <button><i class="fa-solid fa-rotate"></i> Update Cart</button>
        </div>
 
        <table class="cart-table-second">
             <tr>
                 <th>Total</th>
-                <th>Tax</th>
+                <th>VAT</th>
                 <th>Shipping</th>
                 <th>Payable</th>
             </tr>
@@ -111,6 +111,12 @@ function onUpdateCart(){
 }
 
 
+const continueShopping = document.getElementById('continue-shopping')
+continueShopping.addEventListener('click', ()=>{
+    window.location.href = 'index.html'
+})
+
+
 const proceedBtn = document.querySelector('.proceed-btn')
 
 proceedBtn.addEventListener('click', ()=>{
@@ -119,52 +125,53 @@ proceedBtn.addEventListener('click', ()=>{
     document.querySelector('.cartbox-full').style.display = 'none'
 
     checkOutContainer.innerHTML = `
-      <div>
-        <button class="cart-goBack">Go Back</button>
-        <div class="checkout-section">
+      <div class="checkout-section">
+        <div class="check-form-container">
+            <button class="cart-goBack"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
             <h1>Checkout</h1>
             <hr>
 
             <form>
-                <h2>Shipping address</h2>
+                <h2 style="margin-bottom: 10px;">Shipping address</h2>
                 <div class="form-controll">
                     <label for="">Name</label>
-                    <input type="text" />
+                    <input type="text" required />
                 </div>
                 <div class="form-controll">
                         <label for="">Street</label>
-                        <input type="text" />
+                        <input type="text" required />
                     </div>
                 <div class="form-controll">
                     <label for="">City</label>
-                    <input type="text" />
+                    <input type="text" required />
                 </div>
                 <div class="form-controll">
                     <label for="">State</label>
-                    <input type="text" />
+                    <input type="text" required />
                 </div>
                 <div class="form-controll">
                         <label for="">Zip code</label>
-                        <input type="number" />
+                        <input type="number" required />
                 </div>
                 <div class="form-controll">
                     <label for="">Country</label>
-                    <input type="text" />
+                    <input type="text" required />
                 </div>
                 <div class="form-controll">
                         <label for="">Phone</label>
-                        <input type="number" />
+                        <input type="number" required />
                 </div>
                 <div class="form-controll">
                     <label for="">Email</label>
-                    <input type="email" />
+                    <input type="email" required />
                 </div>
+
+                <button class="place-order-btn">Place Order</button>
             </form>
         </div>
         <div class="cart-details">
             Hello
         </div>
-      </div>
       </div>
     `
     cartContainer.appendChild(checkOutContainer)
