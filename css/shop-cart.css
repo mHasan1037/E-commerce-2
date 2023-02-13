@@ -182,19 +182,93 @@
 
 .checkout-container{
     width: 95%;
-    margin: 20px auto;
-    height: 500px;
-    display: flex;
-    gap: 20px;
+    margin: 30px auto 80px;
+    min-height: 500px;
 }
 
 .checkout-section{
+    display: flex;
+    gap: 30px;
+}
+
+.check-form-container{
     flex: 3;
+}
+
+.cart-goBack{
+    margin-bottom: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--text-green-one);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.check-form-container form{
+    margin-top: 50px;
+}
+
+.form-controll{
+    margin: 15px 0;
+}
+
+.form-controll label{
+    display: block;
+    margin-bottom: 3px;
+}
+
+.form-controll label::after{
+    content: '*';
+    margin-left: 3px;
+}
+
+.form-controll input{
+    width: 100%;
+    border: none;
+    background-color: var(--border-four-color);
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-controll input::-webkit-outer-spin-button,
+.form-controll input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.form-controll input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.form-controll input:focus{
+    outline: none;
+}
+
+.place-order-btn{
+    display: block;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--green-background);
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.place-order-btn:hover{
+    background-color: var(--green-background-hover);
 }
 
 .cart-details{
     flex: 1;
 }
+
+
 
 
 

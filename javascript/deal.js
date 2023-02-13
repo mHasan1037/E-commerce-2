@@ -125,7 +125,8 @@ fetch("./json/products.json")
               <span class="popular-prev-price">$${prevPrice}</span>
           </div>
           <a href="#/" class="popular-add-btn">
-              <i class="fa-solid fa-cart-shopping"></i> Add
+              <i class="fa-solid fa-cart-shopping"></i> 
+              Add
           </a>
       </div>
   </div>
