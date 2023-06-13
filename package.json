@@ -1,0 +1,21 @@
+{
+  "name": "17-html-css-javascript",
+  "version": "1.0.0",
+  "description": "This is my second e-commerce website\r You can see it live <a href=\"https://mhasan1037.github.io/E-commerce-2/\" target=\"_blank\">HERE</a>",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mHasan1037/E-commerce-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mHasan1037/E-commerce-2/issues"
+  },
+  "homepage": "https://github.com/mHasan1037/E-commerce-2#readme"
+}
