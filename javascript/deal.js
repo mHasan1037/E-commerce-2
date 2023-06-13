@@ -6,9 +6,7 @@ const snackAside = document.getElementById('snack-aside');
 
 
     snackAside.getBoundingClientRect().height;
-    console.log(snackAside);
     mainSnackProductHolder.style.maxHeight = snackAside + "px";
-    console.log('resized');
 
     
 
@@ -121,7 +119,7 @@ fetch("./json/products.json")
 
       <div class="popular-price-add">
           <div class="popular-price-box">
-              <span class="popular-main-price">$${newPrice}</span>
+              <span class="popular-main-price">$<span class="pro-sale-price">${newPrice}</span></span>
               <span class="popular-prev-price">$${prevPrice}</span>
           </div>
           <a href="#/" class="popular-add-btn">

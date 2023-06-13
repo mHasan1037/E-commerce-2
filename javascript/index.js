@@ -1,131 +1,3 @@
-//modal code is here............
-const modalToggle = document.querySelector('.modal-cls-btn');
-const modalBox = document.querySelector('.modal-container');
-
-modalToggle.addEventListener('click', ()=>{
-    modalBox.classList.add('close')
-})
-
-const modalCountDown = () =>{
-    const newTime = new Date().getTime()
-
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
-
-    const countdownDate = new Date('Jan 10, 2024 12:30:00').getTime() 
-
-    const gapTime = countdownDate - newTime
-
-    let modalDay = Math.floor(gapTime / day);
-    let modalHour = Math.floor((gapTime % day) / hour);
-    let modalMinute = Math.floor((gapTime % hour) / minute); 
-    let modalSecond = Math.floor((gapTime % minute) / second); 
-
-    document.querySelector('.modal-day').innerText = modalDay;
-    document.querySelector('.modal-hour').innerText = modalHour < 10 ? "0" + modalHour : modalHour;
-    document.querySelector('.modal-minute').innerText = modalMinute < 10 ? "0" + modalMinute : modalMinute;
-    document.querySelector('.modal-sec').innerText = modalSecond < 10 ? "0" + modalSecond : modalSecond;
-}
-
-setInterval(modalCountDown, 1000)
-
-//Hero section starts from here............
-const slider = document.querySelector('.hero-section')
-const nextBtn = document.querySelector('.right-btn')
-const prevBtn = document.querySelector('.left-btn')
-const slides = document.querySelectorAll('.hero-box')
-const slideIcons = document.querySelectorAll('.hero-dot')
-const numberOfSlides = slides.length;
-var slideNumber = 0;
-
-nextBtn.addEventListener('click', ()=>{
-    slides.forEach(slide =>{
-        slide.classList.remove('active')
-    })
-    slideIcons.forEach(slideIcon =>{
-        slideIcon.classList.remove('active')
-    })
-    slideNumber++;
-
-    if(slideNumber > (numberOfSlides - 1)){
-        slideNumber = 0
-    }
-
-    slides[slideNumber].classList.add('active')
-    slideIcons[slideNumber].classList.add('active')
-
-    clearInterval(slideChange)
-})
-
-prevBtn.addEventListener('click', ()=>{
-    slides.forEach(slide =>{
-        slide.classList.remove('active')
-    })
-    slideIcons.forEach(slideIcon =>{
-        slideIcon.classList.remove('active')
-    })
-
-    slideNumber--;
-
-    if(slideNumber < 0){
-        slideNumber = numberOfSlides - 1
-    }
-    slides[slideNumber].classList.add('active')
-    slideIcons[slideNumber].classList.add('active')
-
-    clearInterval(slideChange)
-})
-
-slideIcons[0].addEventListener('click', ()=>{
-    slides[1].classList.remove('active')
-    slideIcons[1].classList.remove('active')
-    slides[0].classList.add('active')
-    slideIcons[0].classList.add('active')
-})
-
-slideIcons[1].addEventListener('click', ()=>{
-    slides[0].classList.remove('active')
-    slideIcons[0].classList.remove('active')
-    slides[1].classList.add('active')
-    slideIcons[1].classList.add('active')
-})
-
-
-
-function repeatSlide(){
-    slides.forEach(slide =>{
-        slide.classList.remove('active')
-    })
-    slideIcons.forEach(slideIcon =>{
-        slideIcon.classList.remove('active')
-    })
-    slideNumber++;
-
-    if(slideNumber > (numberOfSlides - 1)){
-        slideNumber = 0
-    }
-
-    slides[slideNumber].classList.add('active')
-    slideIcons[slideNumber].classList.add('active')
-}
-
-var slideChange = setInterval(repeatSlide, 2000)
-
-
-//Hero section slide will stop if input is focused
-const heroEmailBoxs = document.querySelectorAll('.hero-email-box');
-heroEmailBoxs.forEach(heroEmailBox =>{
-    heroEmailBox.addEventListener('focus', ()=>{
-        heroEmailBox.focus()
-        heroEmailBox.value = ''
-        clearInterval(slideChange)
-    })
-})
-
-
-
 //feature section slider starts from here......
 
 const featureContainers = [...document.querySelectorAll('.feature-boxes')];
@@ -156,27 +28,25 @@ function checkHeight(){
     const triggerBottom = window.innerHeight / 100 * 99.9
     
     featureBoxs.forEach((featureBox, idx) =>{
-        const boxTop = featureBox.getBoundingClientRect().top
-
-        if(boxTop < triggerBottom){
-            featureBox.classList.add('animation')
-            featureBox.style.animationDelay = `${idx * 50}ms`
-        }else{
-            featureBox.classList.remove('animation')
-        }
+        waveUpAnimation(featureBox, idx, 50)
     })
 
 
     bigFeatureBoxs.forEach((bigFeatureBox, idx)=>{
-        const boxTop = bigFeatureBox.getBoundingClientRect().top
+        waveUpAnimation(bigFeatureBox, idx, 150)
+    })
+
+    //creating a wave during scroll of the element
+    function waveUpAnimation(box, idx, delay){
+        const boxTop = box.getBoundingClientRect().top
 
         if(boxTop < triggerBottom){
-            bigFeatureBox.classList.add('animation')
-            bigFeatureBox.style.animationDelay = `${idx * 150}ms`
+            box.classList.add('animation')
+            box.style.animationDelay = `${idx * delay}ms`
         }else{
-            bigFeatureBox.classList.remove('animation')
+            box.classList.remove('animation')
         }
-    })
+    }
 }
 
 
@@ -234,16 +104,15 @@ for(i = 0; i < popularBtns.length; i++){
 
 
 popularProductDivs.forEach((popularProductDiv, idx) =>{
+    const popularFrontImg = popularProductDiv.querySelector('.popular-front-img');
+    const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
+
     popularProductDiv.addEventListener('mouseover', ()=>{
-        const popularFrontImg = popularProductDiv.querySelector('.popular-front-img');
-        const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
         popularFrontImg.style.display = 'none'
         popularBackImg.style.display = 'block'
         popularHiddenBoxs[idx].style.opacity = '1' 
     })
     popularProductDiv.addEventListener('mouseleave', ()=>{
-        const popularFrontImg = popularProductDiv.querySelector('.popular-front-img');
-        const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
         popularFrontImg.style.display = 'block'
         popularBackImg.style.display = 'none'
         popularHiddenBoxs[idx].style.opacity = '0'
@@ -252,27 +121,27 @@ popularProductDivs.forEach((popularProductDiv, idx) =>{
 
 const bestProductDivs = document.querySelectorAll('.best-product-div');
 bestProductDivs.forEach((bestProductDiv, idx) =>{
+    const popularFrontImg = bestProductDiv.querySelector('.popular-front-img');
+    const popularBackImg = bestProductDiv.querySelector('.popular-back-img');
+    const hiddenBox = bestProductDiv.querySelector('.popular-hidden-box');
+
     bestProductDiv.addEventListener('mouseover', ()=>{
-        const popularFrontImg = bestProductDiv.querySelector('.popular-front-img');
-        const popularBackImg = bestProductDiv.querySelector('.popular-back-img');
         popularFrontImg.style.display = 'none'
         popularBackImg.style.display = 'block'
-        const hiddenBox = bestProductDiv.querySelector('.popular-hidden-box');
         hiddenBox.style.opacity = 1
 
     })
     bestProductDiv.addEventListener('mouseleave', ()=>{
-        const popularFrontImg = bestProductDiv.querySelector('.popular-front-img');
-        const popularBackImg = bestProductDiv.querySelector('.popular-back-img');
         popularFrontImg.style.display = 'block'
         popularBackImg.style.display = 'none'
-        const hiddenBox = bestProductDiv.querySelector('.popular-hidden-box');
         hiddenBox.style.opacity = 0
     })
 })
 
 
-// products fetching from json file is here........
+
+
+// popular products fetching from json file is here........
 
 let popularProductContainer = document.querySelector('.popular-product-container')
 
@@ -301,10 +170,10 @@ function fetchingProducts(){
 
     
     for(let product of products){
-        const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice} = product;
+        const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
         proAll += `
         
-        <div class="popular-product-div display">
+        <div class="popular-product-div display" id=${id + provider}>
 
             <span class= "upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
 
@@ -622,7 +491,7 @@ setInterval(countdown, 1000)
 
                 localStorage.setItem('proAddToCart', JSON.stringify(itemsToStore))
 
-                productAddedNotification()
+                productAddedNotification(proName)
 
             })
         })
@@ -632,10 +501,10 @@ setInterval(countdown, 1000)
 
 
 //notification after adding a product that will pop up on top of the page
-function productAddedNotification(){
+function productAddedNotification(proName){
     const addNotification = document.createElement('div')
           addNotification.classList.add('add-notification')
-          addNotification.innerHTML = 'Product is successfully added. Check cart list!'
+          addNotification.innerHTML = `${proName} is successfully added. Check cart list!`
           document.body.appendChild(addNotification)
 
           setTimeout(()=>{
