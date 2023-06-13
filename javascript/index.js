@@ -76,7 +76,7 @@ popularProductDivs.forEach(product =>{
 
 //popular product filter code....
 
-for(i = 0; i < popularBtns.length; i++){
+for(let i = 0; i < popularBtns.length; i++){
     popularBtns[i].addEventListener('click', (e)=>{
         e.preventDefault()
 
