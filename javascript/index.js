@@ -1,3 +1,5 @@
+import { quickViewFunc } from './homePage/quickView.js'
+
 //feature section slider starts from here......
 
 const featureContainers = [...document.querySelectorAll('.feature-boxes')];
@@ -160,7 +162,7 @@ popularBtns.forEach((popularBtn, idx) =>{
     })
 })
 
-function fetchingProducts(){
+function fetchingProducts(quickViewFunc){
     fetch('./json/products.json')
     .then(res => res.json())
     .then(products =>{
@@ -173,7 +175,7 @@ function fetchingProducts(){
         const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
         proAll += `
         
-        <div class="popular-product-div display" id=${id + provider}>
+        <div class="popular-product-div display" id=${id}>
 
             <span class= "upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
 
@@ -192,7 +194,7 @@ function fetchingProducts(){
                     <span class="popular-tooltip">Compare</span>
                     <span class="popular-tooltip-triangle"></span>
                 </a>    
-                <a href="#/" class="popular-hidden-element">
+                <a href="#/" class="popular-hidden-element quice-view">
                     <i class="fa-regular fa-eye"></i>
                     <span class="popular-tooltip">Quick View</span>
                     <span class="popular-tooltip-triangle"></span>
@@ -227,10 +229,14 @@ function fetchingProducts(){
         `
     }
     popularProductContainer.innerHTML = proAll
+
+    quickViewFunc()
     })
 }
 
-fetchingProducts()
+fetchingProducts(quickViewFunc)
+
+
 
 
 
