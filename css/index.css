@@ -41,6 +41,7 @@
     height: 80%;
     border: 1px solid var(--light-green);
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .qkView-product-box :is(button){
@@ -77,9 +78,9 @@
         flex-direction: column;
      }
      .qkView-product-box :is(img){
-        width: 95%;
+        width: 70%;
         max-width: 100%;
-        height: auto;
+        max-height: 300px;
     }
 }
 
