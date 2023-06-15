@@ -3,6 +3,7 @@ export function quickViewFunc(){
 
     quiceView.forEach((view)=>{
         view.addEventListener('click', ()=>{
+            console.log('clicked')
             const target = view.parentElement.parentElement.id
             fetchTarget(target)
         })
