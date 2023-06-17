@@ -77,7 +77,6 @@ popularProductDivs.forEach(product =>{
 })
 
 //popular product filter code....
-
 for(let i = 0; i < popularBtns.length; i++){
     popularBtns[i].addEventListener('click', (e)=>{
         e.preventDefault()
@@ -104,7 +103,7 @@ for(let i = 0; i < popularBtns.length; i++){
     })
 }
 
-
+// showing the front and back image of every div on mouseover
 popularProductDivs.forEach((popularProductDiv, idx) =>{
     const popularFrontImg = popularProductDiv.querySelector('.popular-front-img');
     const popularBackImg = popularProductDiv.querySelector('.popular-back-img');
@@ -121,6 +120,7 @@ popularProductDivs.forEach((popularProductDiv, idx) =>{
     })
 })
 
+// showing the front and back image of every div on mouseover
 const bestProductDivs = document.querySelectorAll('.best-product-div');
 bestProductDivs.forEach((bestProductDiv, idx) =>{
     const popularFrontImg = bestProductDiv.querySelector('.popular-front-img');
@@ -157,8 +157,8 @@ popularBtns.forEach((popularBtn, idx) =>{
     popularBtn.addEventListener('click', ()=>{
       firstSlice = (changeFirstSlice + 10) * idx
       lastSlice = (changeLastSlice * idx) + 10
-    //   getProductInfo()
-      fetchingProducts()
+    
+      fetchingProducts(quickViewFunc)
     })
 })
 
@@ -173,6 +173,7 @@ function fetchingProducts(quickViewFunc){
     
     for(let product of products){
         const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
+
         proAll += `
         
         <div class="popular-product-div display" id=${id}>

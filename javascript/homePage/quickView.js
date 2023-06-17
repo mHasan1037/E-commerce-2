@@ -52,8 +52,6 @@ function getDataHere(datas, target){
 
      qkViewModalContainerBody.appendChild(qkViewModalContainer)
 
-     console.log(filteredData[0])
-
      const quickPic = document.querySelector('.quickPic')
 
      quickPic.addEventListener('mouseover', ()=> quickPic.src = backPic)
