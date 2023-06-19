@@ -73,7 +73,7 @@ class MyHeader extends HTMLElement{
 	  
 				   <a href="#!" class="cart-acc heart small">
 					   <div class="cart-icon">
-						   <span class="cart-notification">6</span>
+						   <span class="cart-notification">0</span>
 						   <i class="fa-regular fa-heart"></i>
 					   </div>
 					   <span class="cart-acc-name big">Wishlist</span>

@@ -1,4 +1,7 @@
 import { quickViewFunc } from './homePage/quickView.js'
+import { bestSellsDisplay } from './homePage/bestSellsDisplay.js'
+
+bestSellsDisplay()
 
 //feature section slider starts from here......
 
@@ -272,82 +275,6 @@ dailyLists.forEach((dailyList, idx) =>{
     })
 })
 
-
-
-//Daily slide code goes here........
-
-const sliderContainer = document.querySelector('.daily-product-carosul');
-const slide = document.querySelector('.daily-slides');
-const bestNextBtn = document.getElementById('best-next-btn');
-const bestPrevBtn = document.getElementById('best-prev-btn');
-const interval = 2000;
-
-let BestSlides = document.querySelectorAll('.best-product-div');
-let index = 1;
-let slideId;
-
-
-const firstClone = BestSlides[0].cloneNode(true);
-const lastClone = BestSlides[BestSlides.length - 1].cloneNode(true);
-
-firstClone.id = 'first-clone'
-lastClone.id = 'last-clone'
-
-slide.append(firstClone)
-slide.prepend(lastClone)
-
-const slideWidth = BestSlides[index].clientWidth;
-
-slide.style.transform = `translateX(${-slideWidth * index}px)`;
-
-const startSlide = () =>{
-    slideId = setInterval(()=>{
-        moveToNextSlide()
-    }, interval);
-}
-
-const getSlides = () => BestSlides = document.querySelectorAll('.best-product-div')
-
-slide.addEventListener('transitionend', ()=>{
-    BestSlides = getSlides()
-    if(BestSlides[index].id === firstClone.id){
-        slide.style.transition = 'none';
-        index = 1
-        slide.style.transform = `translateX(${-slideWidth * index}px)`;
-    }
-    if(BestSlides[index].id === lastClone.id){
-        slide.style.transition = 'none';
-        index = slides.length - 2;
-        slide.style.transform = `translateX(${-slideWidth * index}px)`;
-    }
-})
-
-
-const moveToNextSlide = () =>{
-    BestSlides = getSlides()
-    if(index >= BestSlides.length - 1) return;
-    index++
-    slide.style.transform = `translateX(${-slideWidth * index}px)`;
-    slide.style.transition = '.7s'
-}
-
-const moveToPreviousSlide = () =>{
-    if(index <= 0) return;
-   index--
-   slide.style.transform = `translateX(${-slideWidth * index}px)`;
-   slide.style.transition = '.7s'
-}
-
-sliderContainer.addEventListener('mouseenter', ()=>{
-    clearInterval(slideId)
-})
-
-sliderContainer.addEventListener('mouseleave', startSlide);
-
-bestNextBtn.addEventListener('click', moveToNextSlide)
-bestPrevBtn.addEventListener('click', moveToPreviousSlide)
-
-startSlide()
 
 
 //Deals of the day goes here countdown code is here.........
