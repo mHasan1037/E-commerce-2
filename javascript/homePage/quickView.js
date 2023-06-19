@@ -7,6 +7,7 @@ export function quickViewFunc(){
             fetchTarget(target)
         })
     })
+
 }
 
 function fetchTarget(target){

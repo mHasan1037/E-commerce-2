@@ -13,13 +13,19 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/productModalShow.css">
     <link rel="stylesheet" href="css/deal.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Deal</title>
 </head>
 <body>
+    <!--
+        quick view modal after clicking the product quick view option
+    -->
+    <div class="qkView-modal-container-body"></div>
 
+    
     <span class="notification">Product is successfully added. Check cart list!</span>
     <!--
         Navbar section starts from here
@@ -351,11 +357,6 @@
                       </div>
                    </div>
                  </div>
-
-
-
-
-
             </div>
         </main>
 
@@ -503,7 +504,7 @@
     -->
     <my-footer></my-footer>
 
-    <script src="javascript/deal.js"></script>
+    <script src="javascript/deal.js" type="module"></script>
     <script src="javascript/header.js"></script>
     <script src="javascript/productOrder.js"></script>
 </body>

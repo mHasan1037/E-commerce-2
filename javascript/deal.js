@@ -1,3 +1,5 @@
+import { quickViewFunc } from './homePage/quickView.js'
+
 // main and aside div size is equil by javascript and onscroll main size expand....
 
 const snackProductContainer = document.getElementById('snack-product-container');
@@ -15,9 +17,7 @@ const snackAside = document.getElementById('snack-aside');
 // categiries fetched from here.....
 
 fetch("./json/snackCategories.json")
-.then(function(response){
-    return response.json();
-})
+.then(response => response.json())
 .then(function(products){
     let snackCategory = document.querySelector('.snack-category-box');
     let out = "";
@@ -62,78 +62,83 @@ snackItemsPrice.forEach((snackItem)=>{
 
 //snack product fetching from products.json.....
 
-fetch("./json/products.json")
-.then( res => res.json())
-.then(products =>{
-    let snackProductContainer = document.querySelector('.snack-product-box');
-    let proAll = "";
+function fetchDealFunc(quickViewFunc){
+    fetch("./json/products.json")
+    .then( res => res.json())
+    .then(products =>{
+        let snackProductContainer = document.querySelector('.snack-product-box');
+        let proAll = "";
 
-    products = products.slice(0, 20)
+        products = products.slice(0, 20)
 
-    for(let product of products){
-        const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice} = product;
+        for(let product of products){
+            const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
 
-      proAll += `
-      
+        proAll += `
+        
 
-      <div class="popular-product-div display">
+        <div class="popular-product-div display" id=${id}>
 
-      <span class= "upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
+            <span class= "upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
 
-      <a href="#/" class="popular-img-box">
-          <img src="${frontPic}" alt=${name} class="popular-front-img">
-          <img src="${backPic}" class="popular-back-img">
-      </a>
-      <div class="popular-hidden-box">
-          <a href="#/" class="popular-hidden-element">
-              <i class="fa-regular fa-heart"></i>
-              <span class="popular-tooltip">Add to Wishlist</span>
-              <span class="popular-tooltip-triangle"></span>
-          </a> 
-          <a href="#/" class="popular-hidden-element">
-              <i class="fa-solid fa-code-compare"></i>
-              <span class="popular-tooltip">Compare</span>
-              <span class="popular-tooltip-triangle"></span>
-          </a>    
-          <a href="#/" class="popular-hidden-element">
-              <i class="fa-regular fa-eye"></i>
-              <span class="popular-tooltip">Quick View</span>
-              <span class="popular-tooltip-triangle"></span>
-          </a>  
-      </div>
-      <div><a href="#/" class="popular-inner-category">${type}</a></div>
-      <a href="#/" class="popular-product-title">${name}</a>
-      <div class="popular-rating-box">
-          <span>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half-stroke"></i>
-          </span>
-          <span class="popular-rating">(${rating})</span>
-      </div>
-      <div class="popular-com-name">
-          By <a href="#/">${provider}</a>
-      </div>
+            <a href="#/" class="popular-img-box">
+                <img src="${frontPic}" alt=${name} class="popular-front-img">
+                <img src="${backPic}" class="popular-back-img">
+            </a>
+            <div class="popular-hidden-box">
+                <a href="#/" class="popular-hidden-element">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="popular-tooltip">Add to Wishlist</span>
+                    <span class="popular-tooltip-triangle"></span>
+                </a> 
+                <a href="#/" class="popular-hidden-element">
+                    <i class="fa-solid fa-code-compare"></i>
+                    <span class="popular-tooltip">Compare</span>
+                    <span class="popular-tooltip-triangle"></span>
+                </a>    
+                <a href="#/" class="popular-hidden-element quice-view">
+                    <i class="fa-regular fa-eye"></i>
+                    <span class="popular-tooltip">Quick View</span>
+                    <span class="popular-tooltip-triangle"></span>
+                </a>  
+            </div>
+            <div><a href="#/" class="popular-inner-category">${type}</a></div>
+            <a href="#/" class="popular-product-title">${name}</a>
+            <div class="popular-rating-box">
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </span>
+                <span class="popular-rating">(${rating})</span>
+            </div>
+            <div class="popular-com-name">
+                By <a href="#/">${provider}</a>
+            </div>
 
-      <div class="popular-price-add">
-          <div class="popular-price-box">
-              <span class="popular-main-price">$<span class="pro-sale-price">${newPrice}</span></span>
-              <span class="popular-prev-price">$${prevPrice}</span>
-          </div>
-          <a href="#/" class="popular-add-btn">
-              <i class="fa-solid fa-cart-shopping"></i> 
-              Add
-          </a>
-      </div>
-  </div>
+            <div class="popular-price-add">
+                <div class="popular-price-box">
+                    <span class="popular-main-price">$<span class="pro-sale-price">${newPrice}</span></span>
+                    <span class="popular-prev-price">$${prevPrice}</span>
+                </div>
+                <a href="#/" class="popular-add-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> 
+                    Add
+                </a>
+            </div>
+    </div>
 
-      `
-    }
+        `
+        }
 
-    snackProductContainer.innerHTML = proAll
-})
+        snackProductContainer.innerHTML = proAll
+        quickViewFunc()
+    })
+}
+
+fetchDealFunc(quickViewFunc)
 
 
 //Price range code starts from here......

@@ -1,5 +1,5 @@
 export function bestSellsDisplay(){
-    fetch('../../json/products.json')
+    fetch('../json/products.json')
     .then(res => res.json())
     .then(data =>{
         let selectedProduct = data.slice(20, 50)
@@ -9,6 +9,7 @@ export function bestSellsDisplay(){
             const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
 
             const bestProductDiv = document.createElement('div')
+            bestProductDiv.id = id
             bestProductDiv.classList.add('best-product-div')
             bestProductDiv.innerHTML = `
                 <span class="upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
@@ -27,7 +28,7 @@ export function bestSellsDisplay(){
                         <span class="popular-tooltip">Compare</span>
                         <span class="popular-tooltip-triangle"></span>
                     </a>    
-                    <a href="#/" class="popular-hidden-element">
+                    <a href="#/" class="popular-hidden-element quice-view">
                         <i class="fa-regular fa-eye"></i>
                         <span class="popular-tooltip">Quick View</span>
                         <span class="popular-tooltip-triangle"></span>
@@ -62,7 +63,15 @@ export function bestSellsDisplay(){
         }
 
 
-        const sliderContainer = document.querySelector('.daily-product-carosul');
+        const quiceView = document.querySelectorAll('.quice-view')
+
+        quiceView.forEach((view)=>{
+            view.addEventListener('click', ()=>{
+                const target = view.parentElement.parentElement.id
+            })
+        })
+
+const sliderContainer = document.querySelector('.daily-product-carosul');
 const slide = document.querySelector('.daily-slides');
 const bestNextBtn = document.getElementById('best-next-btn');
 const bestPrevBtn = document.getElementById('best-prev-btn');
@@ -136,5 +145,4 @@ bestPrevBtn.addEventListener('click', moveToPreviousSlide)
 startSlide()
 
     })
-    console.log('30 products')
 }
