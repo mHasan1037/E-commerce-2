@@ -7,7 +7,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 100;
 }
@@ -21,6 +21,7 @@
    position: relative;
    width: 60vw;
    height: 70vh;
+   max-width: 800px;
    max-height: 500px;
    background-color: var(--white);
    border: 1px solid var(--border-four-color);
@@ -71,7 +72,7 @@
 @media only screen and (max-width: 992px){
     .qkView-modal-container{
         width: 70vw;
-        height: auto;
+        height: 100%;
         max-height: 80vh;
         padding: 20px 0;
      }
@@ -90,5 +91,9 @@
         width: 90vw;
         height: 70vh;
         max-height: auto;
+     }
+
+     .modal_product_des h2{
+        font-size: 20px;
      }
 }

@@ -1,8 +1,7 @@
 import { quickViewFunc } from './homePage/quickView.js'
+import { productAddCart } from './productOrder.js';
 
 // main and aside div size is equil by javascript and onscroll main size expand....
-
-const snackProductContainer = document.getElementById('snack-product-container');
 const mainSnackProductHolder = document.getElementById('main-snack-product-holder');
 const snackAside = document.getElementById('snack-aside');
 
@@ -134,7 +133,16 @@ function fetchDealFunc(quickViewFunc){
         }
 
         snackProductContainer.innerHTML = proAll
-        quickViewFunc()
+        const quiceView = document.querySelectorAll('.quice-view')
+
+        quiceView.forEach((view)=>{
+            view.addEventListener('click', ()=>{
+                const target = view.parentElement.parentElement.id
+                //product id is sent to quickView.js and there targeted product will be fetched from the json file
+                quickViewFunc(target)
+            })
+        })
+        productAddCart()
     })
 }
 

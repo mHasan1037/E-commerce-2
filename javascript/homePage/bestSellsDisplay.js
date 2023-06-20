@@ -1,4 +1,4 @@
-export function bestSellsDisplay(){
+export function bestSellsDisplay(quickViewFunc){
     fetch('../json/products.json')
     .then(res => res.json())
     .then(data =>{
@@ -9,8 +9,8 @@ export function bestSellsDisplay(){
             const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
 
             const bestProductDiv = document.createElement('div')
-            bestProductDiv.id = id
             bestProductDiv.classList.add('best-product-div')
+            bestProductDiv.id = id
             bestProductDiv.innerHTML = `
                 <span class="upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
                 <a href="#/" class="popular-img-box">
@@ -68,6 +68,8 @@ export function bestSellsDisplay(){
         quiceView.forEach((view)=>{
             view.addEventListener('click', ()=>{
                 const target = view.parentElement.parentElement.id
+                //product id is sent to quickView.js and there targeted product will be fetched from the json file
+                quickViewFunc(target)
             })
         })
 

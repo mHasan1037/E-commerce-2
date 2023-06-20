@@ -1,10 +1,10 @@
 import { quickViewFunc } from './homePage/quickView.js'
 import { bestSellsDisplay } from './homePage/bestSellsDisplay.js'
+import { productAddCart } from './productOrder.js';
 
-bestSellsDisplay()
+bestSellsDisplay(quickViewFunc)
 
 //feature section slider starts from here......
-
 const featureContainers = [...document.querySelectorAll('.feature-boxes')];
 const featureBox = document.querySelector('.feature-box');
 const nxtBtn = document.getElementById('feature-right-btn');
@@ -234,7 +234,17 @@ function fetchingProducts(quickViewFunc){
     }
     popularProductContainer.innerHTML = proAll
 
-    quickViewFunc()
+        const quiceView = document.querySelectorAll('.quice-view')
+
+        quiceView.forEach((view)=>{
+            view.addEventListener('click', ()=>{
+                const target = view.parentElement.parentElement.id
+                //product id is sent to quickView.js and there targeted product will be fetched from the json file
+                quickViewFunc(target)
+            })
+        })
+
+    productAddCart()
     })
 }
 
@@ -392,59 +402,6 @@ setInterval(countdown, 1000)
 
 
 
-
-
-  //Product info collection from add click on each product to pass in localstorage
-   function productNotification(){
-    setTimeout(()=>{
-        const popularAddBtns = document.querySelectorAll('.popular-add-btn')
-        
-        popularAddBtns.forEach((button)=>{
-            button.addEventListener('click', ()=>{
-                const productInfo = button.closest('.popular-product-div')
-                const proImgStr = productInfo.querySelector('.popular-front-img').src
-                const proName = productInfo.querySelector('.popular-product-title').innerText
-                const proPrice = productInfo.querySelector('.pro-sale-price').innerText
-                const proId = new Date().getTime().toString()
-
-                const proAddToCart = {
-                    img : proImgStr,
-                    name: proName,
-                    price: proPrice,
-                    id: proId
-                }
-
-                window.parent.changeCartList()
-
-                const itemsToStore = (() =>{
-                    const itemsValue = localStorage.getItem('proAddToCart')
-                    return itemsValue === null ? [] : JSON.parse(itemsValue)
-                })()
-
-                itemsToStore.push(proAddToCart)
-
-                localStorage.setItem('proAddToCart', JSON.stringify(itemsToStore))
-
-                productAddedNotification(proName)
-
-            })
-        })
-    }, 1000)
-   }
-   productNotification()
-
-
-//notification after adding a product that will pop up on top of the page
-function productAddedNotification(proName){
-    const addNotification = document.createElement('div')
-          addNotification.classList.add('add-notification')
-          addNotification.innerHTML = `${proName} is successfully added. Check cart list!`
-          document.body.appendChild(addNotification)
-
-          setTimeout(()=>{
-              addNotification.classList.remove('add-notification')
-          }, 3000)
-}
 
 
 

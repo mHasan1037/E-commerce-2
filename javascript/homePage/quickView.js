@@ -1,22 +1,11 @@
-export function quickViewFunc(){
-    const quiceView = document.querySelectorAll('.quice-view')
-
-    quiceView.forEach((view)=>{
-        view.addEventListener('click', ()=>{
-            const target = view.parentElement.parentElement.id
-            fetchTarget(target)
-        })
-    })
-
-}
-
-function fetchTarget(target){
+export function quickViewFunc(target){
     fetch(`../../json/products.json`)
     .then((res)=> res.json())
     .then((datas)=> 
        getDataHere(datas, target)
     )
 }
+
 
 const qkViewModalContainerBody = document.querySelector('.qkView-modal-container-body')
 
@@ -37,7 +26,7 @@ function getDataHere(datas, target){
             <i class="fa-solid fa-xmark qkView-modal-close"></i>
             <div class="qkView-product-box">
                 <img src=${frontPic} class="quickPic"/>
-                <div>
+                <div class="modal_product_des">
                     <h2>${name}</h2>
                     <p>${type}</p>
                     <p>Description:- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>

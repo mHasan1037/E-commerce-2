@@ -252,7 +252,7 @@ class MyHeader extends HTMLElement{
 						   </div>
 					   </li>
 					   <li class="nav-list nav-sub-menu">
-						   <a href="vendors.html" class="main-active-link">
+						   <a href="#" class="main-active-link">
 							   Vendors
 							   <i class="fa-solid fa-angle-down"></i>
 						   </a>
@@ -266,7 +266,7 @@ class MyHeader extends HTMLElement{
 						   </div>
 					   </li>
 					   <li class="nav-list nav-mega-menu">
-						   <a href="megamenu.html" class="main-active-link">
+						   <a href="#" class="main-active-link">
 							   Mega menu
 							   <i class="fa-solid fa-angle-down"></i>
 						   </a>
@@ -318,7 +318,7 @@ class MyHeader extends HTMLElement{
 						   </div>
 					   </li>
 					   <li class="nav-list nav-sub-menu">
-						   <a href="blog.html" class="main-active-link">
+						   <a href="" class="main-active-link">
 							   Blog
 							   <i class="fa-solid fa-angle-down"></i>
 						   </a>
@@ -331,7 +331,7 @@ class MyHeader extends HTMLElement{
 						   </div>
 					   </li>
 					   <li class="nav-list nav-sub-menu">
-						   <a href="pages.html" class="main-active-link">
+						   <a href="" class="main-active-link">
 							   Pages
 							   <i class="fa-solid fa-angle-down"></i>
 						   </a>
