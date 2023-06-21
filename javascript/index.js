@@ -102,7 +102,7 @@ for(let i = 0; i < popularBtns.length; i++){
             }
         })
 
-        productNotification()
+        // productNotification()
     })
 }
 
