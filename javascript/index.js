@@ -1,5 +1,5 @@
-import { quickViewFunc } from 'quickView.js'
-import { bestSellsDisplay } from 'bestSellsDisplay.js'
+import { quickViewFunc } from './quickView.js'
+import { bestSellsDisplay } from './bestSellsDisplay.js'
 import { productAddCart } from './productOrder.js';
 
 //feature section slider starts from here......
@@ -283,7 +283,7 @@ dailyLists.forEach((dailyList, idx) =>{
     })
 })
 
-bestSellsDisplay(quickViewFunc)
+bestSellsDisplay()
 
 
 
