@@ -1,4 +1,4 @@
-export function bestSellsDisplay(){
+export function bestSellsDisplay(quickViewFunc){
     fetch('../json/products.json')
     .then(res => res.json())
     .then(data =>{
@@ -69,7 +69,7 @@ export function bestSellsDisplay(){
             view.addEventListener('click', ()=>{
                 const target = view.parentElement.parentElement.id
                 //product id is sent to quickView.js and there targeted product will be fetched from the json file
-                
+                quickViewFunc(target)
             })
         })
 

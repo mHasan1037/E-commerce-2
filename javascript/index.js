@@ -283,7 +283,7 @@ dailyLists.forEach((dailyList, idx) =>{
     })
 })
 
-bestSellsDisplay()
+bestSellsDisplay(quickViewFunc)
 
 
 

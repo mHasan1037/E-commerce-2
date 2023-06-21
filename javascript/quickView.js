@@ -1,5 +1,5 @@
 export function quickViewFunc(target){
-    fetch(`../../json/products.json`)
+    fetch(`../json/products.json`)
     .then((res)=> res.json())
     .then((datas)=> 
        getDataHere(datas, target)
