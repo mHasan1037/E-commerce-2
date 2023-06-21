@@ -186,16 +186,16 @@ function fetchingProducts(quickViewFunc){
                 <img src="${backPic}" class="popular-back-img">
             </a>
             <div class="popular-hidden-box">
-                <a href="#/" class="popular-hidden-element">
+                <span class="popular-hidden-element">
                     <i class="fa-regular fa-heart"></i>
                     <span class="popular-tooltip">Add to Wishlist</span>
                     <span class="popular-tooltip-triangle"></span>
-                </a> 
-                <a href="#/" class="popular-hidden-element">
+                </span> 
+                <span class="popular-hidden-element">
                     <i class="fa-solid fa-code-compare"></i>
                     <span class="popular-tooltip">Compare</span>
                     <span class="popular-tooltip-triangle"></span>
-                </a>    
+                </span>    
                 <span class="popular-hidden-element quice-view">
                     <i class="fa-regular fa-eye"></i>
                     <span class="popular-tooltip">Quick View</span>
