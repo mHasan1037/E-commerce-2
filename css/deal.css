@@ -287,6 +287,7 @@
     padding: 7px;
     color: var(--text-green-one);
     position: relative;
+    cursor: pointer;
 }
 
 .popular-hidden-element:hover{

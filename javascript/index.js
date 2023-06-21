@@ -196,11 +196,11 @@ function fetchingProducts(quickViewFunc){
                     <span class="popular-tooltip">Compare</span>
                     <span class="popular-tooltip-triangle"></span>
                 </a>    
-                <a href="#/" class="popular-hidden-element quice-view">
+                <span class="popular-hidden-element quice-view">
                     <i class="fa-regular fa-eye"></i>
                     <span class="popular-tooltip">Quick View</span>
                     <span class="popular-tooltip-triangle"></span>
-                </a>  
+                </span>  
             </div>
             <div><a href="#/" class="popular-inner-category">${type}</a></div>
             <a href="#/" class="popular-product-title">${name}</a>
