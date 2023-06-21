@@ -1,5 +1,5 @@
 export function bestSellsDisplay(quickViewFunc){
-    fetch('../json/products.json')
+    fetch('json/products.json')
     .then(res => res.json())
     .then(data =>{
         let selectedProduct = data.slice(20, 50)
