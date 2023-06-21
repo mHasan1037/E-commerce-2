@@ -2,7 +2,7 @@ import { quickViewFunc } from './homePage/quickView.js'
 import { bestSellsDisplay } from './homePage/bestSellsDisplay.js'
 import { productAddCart } from './productOrder.js';
 
-bestSellsDisplay(quickViewFunc)
+bestSellsDisplay()
 
 //feature section slider starts from here......
 const featureContainers = [...document.querySelectorAll('.feature-boxes')];
