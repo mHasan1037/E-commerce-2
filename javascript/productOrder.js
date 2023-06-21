@@ -19,6 +19,8 @@ export function productAddCart(){
 
             window.parent.changeCartList()
 
+            console.log(proAddToCart)
+
             const itemsToStore = (() =>{
                 const itemsValue = localStorage.getItem('proAddToCart')
                 return itemsValue === null ? [] : JSON.parse(itemsValue)
