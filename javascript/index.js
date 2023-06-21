@@ -1,5 +1,5 @@
-import { quickViewFunc } from './homePage/quickView.js'
-import { bestSellsDisplay } from './homePage/bestSellsDisplay.js'
+import { quickViewFunc } from './quickView.js'
+import { bestSellsDisplay } from './bestSellsDisplay.js'
 import { productAddCart } from './productOrder.js';
 
 bestSellsDisplay(quickViewFunc)

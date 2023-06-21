@@ -1,4 +1,4 @@
-import { quickViewFunc } from './homePage/quickView.js'
+import { quickViewFunc } from './quickView.js'
 import { productAddCart } from './productOrder.js';
 
 // main and aside div size is equil by javascript and onscroll main size expand....
