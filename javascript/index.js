@@ -2,8 +2,6 @@ import { quickViewFunc } from './quickView.js'
 import { bestSellsDisplay } from './bestSellsDisplay.js'
 import { productAddCart } from './productOrder.js';
 
-bestSellsDisplay(quickViewFunc)
-
 //feature section slider starts from here......
 const featureContainers = [...document.querySelectorAll('.feature-boxes')];
 const featureBox = document.querySelector('.feature-box');
@@ -284,6 +282,8 @@ dailyLists.forEach((dailyList, idx) =>{
         })
     })
 })
+
+bestSellsDisplay(quickViewFunc)
 
 
 
