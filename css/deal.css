@@ -766,8 +766,9 @@ input[type="range"]::-moz-range-thumb{
 */
 
 .pagination{
-    margin-left: 10px;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .pagination button{

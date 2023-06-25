@@ -61,14 +61,17 @@ snackItemsPrice.forEach((snackItem)=>{
 
 //snack product fetching from products.json.....
 
-function fetchDealFunc(quickViewFunc){
+function fetchDealFunc(quickViewFunc, firstProduct = 0, lastProduct = 20){
     fetch("./json/products.json")
     .then( res => res.json())
     .then(products =>{
         let snackProductContainer = document.querySelector('.snack-product-box');
         let proAll = "";
 
-        products = products.slice(0, 20)
+        products = products.slice(firstProduct, lastProduct)
+
+        const foundItem = document.getElementById('snack-found-item').querySelector('span')
+        foundItem.innerHTML = products.length
 
         for(let product of products){
             const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
@@ -147,6 +150,56 @@ function fetchDealFunc(quickViewFunc){
 }
 
 fetchDealFunc(quickViewFunc)
+
+
+// product pagination starts from here....
+
+function paginationFunc(){
+    let firstProduct = 0;
+    let lastProduct = 20;
+    let proPerPage = 20
+    
+
+    fetch("./json/products.json")
+    .then(res => res.json())
+    .then(products => {
+      
+        let totalPage = Math.ceil(products.length / proPerPage)
+        const pagination = document.querySelector('.pagination')
+
+        // buttons for pages is created here...
+       for(let i = 1; i <= totalPage; i++){
+         const button = document.createElement('button')
+         button.classList.add('pageButton')
+         button.innerHTML = i
+         pagination.appendChild(button)
+       }
+
+
+       
+        const pageButtons = document.querySelectorAll('.pageButton')
+        pageButtons[0].classList.add('active')
+
+        pageButtons.forEach((button, idx) =>{
+            button.addEventListener('click', ()=>{
+                pageButtons.forEach(button => button.classList.remove('active'))
+                button.classList.add('active')
+
+                firstProduct = idx * proPerPage
+                lastProduct = firstProduct + 20
+
+                fetchDealFunc(quickViewFunc, firstProduct, lastProduct)
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            })
+        })
+
+    })
+}
+
+paginationFunc()
 
 
 //Price range code starts from here......

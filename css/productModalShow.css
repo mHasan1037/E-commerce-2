@@ -69,10 +69,23 @@
     color: var(--red);
 }
 
+@media only screen and (max-width: 1200px){
+    .qkView-product-box :is(img){
+        max-width: 50%;
+    }
+}
+
 @media only screen and (max-width: 992px){
+    .qkView-modal-container-body.show{
+        display: block;
+    }
     .qkView-modal-container{
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
         width: 70vw;
-        height: 100%;
+        height: 70vh;
         max-height: 80vh;
         padding: 20px 0;
      }
@@ -89,7 +102,6 @@
 @media only screen and (max-width: 576px){
     .qkView-modal-container{
         width: 90vw;
-        height: 70vh;
         max-height: auto;
      }
 
