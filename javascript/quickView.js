@@ -1,3 +1,5 @@
+import { productAddedNotification } from './productAddNotification.js'
+
 export function quickViewFunc(target){
     console.log(target)
     fetch(`json/products.json`)
@@ -28,15 +30,15 @@ function getDataHere(datas, target){
             <div class="qkView-product-box">
                 <img src=${frontPic} class="quickPic"/>
                 <div class="modal_product_des">
-                    <h2>${name}</h2>
+                    <h2 id='qk-proName'>${name}</h2>
                     <p>${type}</p>
                     <p>Description:- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                     <p>Rating: ${rating}</p>
                     <div style="display: flex; gap: 20px;">
                         <p>Previous price: <span>${prevPrice}</span></p>
-                        <p>New price: <span>${newPrice}</span></p>
+                        <p>New price: <span id="qk-proPrice">${newPrice}</span></p>
                     </div>
-                    <button>Add to cart</button>
+                    <button class="popular-add-btn">Add to cart</button>
                 </div>
             </div>
      `
@@ -52,6 +54,37 @@ function getDataHere(datas, target){
      qkViewModalClose.addEventListener('click', ()=> {
         qkViewModalContainerBody.classList.remove('show')
      })
+
+
+     const addButtons = document.querySelector('.popular-add-btn')
+     addButtons.addEventListener('click', ()=>{
+        const qkViewDiv = addButtons.closest('.qkView-product-box')
+        const proImgStr = qkViewDiv.querySelector('.quickPic').src
+        const proName = qkViewDiv.querySelector('#qk-proName').innerText
+        const proPrice = qkViewDiv.querySelector('#qk-proPrice').innerText
+        const proId = new Date().getTime().toString()
+
+        const proAddToCart = {
+            img : proImgStr,
+            name: proName,
+            price: proPrice,
+            id: proId
+        }
+
+        window.parent.changeCartList()
+
+        const itemsToStore = (()=>{
+            const itemsValue = localStorage.getItem('proAddToCart')
+            return itemsValue === null ? [] : JSON.parse(itemsValue)
+        })()
+
+        itemsToStore.push(proAddToCart)
+
+        localStorage.setItem('proAddToCart', JSON.stringify(itemsToStore))
+
+        productAddedNotification(proName)
+     })
 }
+
 
 

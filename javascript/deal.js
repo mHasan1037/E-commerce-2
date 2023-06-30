@@ -5,7 +5,6 @@ import { productAddCart } from './productOrder.js';
 const mainSnackProductHolder = document.getElementById('main-snack-product-holder');
 const snackAside = document.getElementById('snack-aside');
 
-
     snackAside.getBoundingClientRect().height;
     mainSnackProductHolder.style.maxHeight = snackAside + "px";
 
@@ -67,6 +66,8 @@ function fetchDealFunc(quickViewFunc, firstProduct = 0, lastProduct = 20){
     .then(products =>{
         let snackProductContainer = document.querySelector('.snack-product-box');
         let proAll = "";
+
+    
 
         products = products.slice(firstProduct, lastProduct)
 
@@ -200,6 +201,8 @@ function paginationFunc(){
 }
 
 paginationFunc()
+
+
 
 
 //Price range code starts from here......
