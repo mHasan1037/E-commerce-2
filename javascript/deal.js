@@ -152,6 +152,58 @@ function fetchDealFunc(quickViewFunc, firstProduct = 0, lastProduct = 20){
 
 fetchDealFunc(quickViewFunc)
 
+//product sorting based on number of items and different range..
+
+function prodcutSorting(){
+    const snackProductHeader = document.querySelector('.snack-product-header')
+
+    snackProductHeader.innerHTML = `
+        <p id="snack-found-item">We found <span></span> items for you!</p>
+        <div class="snack-show-options">
+            <div class="snack-show">
+                <i class="fa-solid fa-eye"></i>
+                <p>Show: <span id="snack-item-show">20</span></p>
+                <i class="fa-solid fa-angle-down"></i>
+                <div class="snack-multiple-options">
+                    <div class="snack-item snack-item-count"><i class="fa-solid"></i><span>10</span></div>
+                    <div class="snack-item snack-item-count"><i class="fa-solid fa-check"></i><span>20</span></div>
+                    <div class="snack-item snack-item-count"><i class="fa-solid"></i><span>30</span></div>
+                    <div class="snack-item snack-item-count"><i class="fa-solid"></i><span>40</span></div>
+                </div>
+            </div>
+            <div class="snack-show">
+                <i class="fa-solid fa-up-down"></i>
+                <p>Sort by: <span id="snack-item-rank">Featured</span></p>
+                <i class="fa-solid fa-angle-down"></i>
+                <div class="snack-multiple-options">
+                    <div class="snack-item snack-item-price"><i class="fa-solid fa-check"></i><span>Featured</span></div>
+                    <div class="snack-item snack-item-price"><i class="fa-solid"></i><span>Price: Low to High</span></div>
+                    <div class="snack-item snack-item-price"><i class="fa-solid"></i><span>Price: High to Low</span></div>
+                </div>
+            </div>
+        </div>
+    `
+
+    const allCheckedItem = document.querySelectorAll('.snack-item-count .fa-solid')
+    const snackItemCount = document.querySelectorAll('.snack-item-count')
+    snackItemCount.forEach((snakeItem) =>{
+        snakeItem.addEventListener('click', ()=>{
+            allCheckedItem.forEach((item) => item.classList.remove('fa-check'))
+
+            const checked = snakeItem.querySelector('.fa-solid')
+            checked.classList.add('fa-check')
+            let spanIs = snakeItem.querySelector('span').innerText
+
+            const snackItemShow = document.getElementById('snack-item-show')
+            snackItemShow.innerText = spanIs
+
+            fetchDealFunc(quickViewFunc, 0, spanIs)
+        })
+    })
+}
+
+prodcutSorting()
+
 
 // product pagination starts from here....
 
