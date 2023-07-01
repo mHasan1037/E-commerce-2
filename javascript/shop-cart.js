@@ -170,7 +170,7 @@ proceedBtn.addEventListener('click', ()=>{
             </form>
         </div>
         <div class="cart-details">
-            Hello
+            
         </div>
       </div>
     `

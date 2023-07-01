@@ -5,7 +5,7 @@ I have used html, css, javascript to make this website. The website is made by r
 <br><br>
 All the data are fetched and displayed in different section.
 <br><br>
-Different features are available in the website like product <b>add to cart</b>, <b>Quick view</b>, <b>Product stored in the cart</b>, processing the order from the cart etc.
+Different features are available in the website like product <b>add to cart</b>, <b>Quick view</b>, <b>Product stored in the cart</b>, <b>filtering product</b> processing the order from the cart etc.
 <br><br>
 This website is fully responsive for all the devices.
 <br>

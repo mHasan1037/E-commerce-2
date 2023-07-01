@@ -34,52 +34,52 @@ fetch("./json/snackCategories.json")
 })
 
 
-// Category top select options...
-
-
-const snackItems = document.querySelectorAll('.snack-item-count');
-snackItems.forEach((snackItem)=>{
-    snackItem.addEventListener('click', ()=>{
-        snackItems.forEach(snackItem => snackItem.querySelector('i').classList.remove('fa-check'))
-        snackItem.querySelector('.fa-solid').classList.add('fa-check');
-        const snackItemShow = document.getElementById('snack-item-show');
-        snackItemShow.innerHTML = snackItem.querySelector('span').innerHTML
-    })
-})
-
-const snackItemsPrice = document.querySelectorAll('.snack-item-price');
-snackItemsPrice.forEach((snackItem)=>{
-    snackItem.addEventListener('click', ()=>{
-        snackItemsPrice.forEach(snackItem => snackItem.querySelector('i').classList.remove('fa-check'))
-        snackItem.querySelector('.fa-solid').classList.add('fa-check');
-        const snackItemRank = document.getElementById('snack-item-rank');
-        snackItemRank.innerHTML = snackItem.querySelector('span').innerHTML
-    })
-})
-
-
 //snack product fetching from products.json.....
+let snackProductContainer = document.querySelector('.snack-product-box');
 
-function fetchDealFunc(quickViewFunc, firstProduct = 0, lastProduct = 20){
+function fetchDealFunc(quickViewFunc, firstProduct = 0, lastProduct = 20, sort = 'none'){
     fetch("./json/products.json")
     .then( res => res.json())
     .then(products =>{
-        let snackProductContainer = document.querySelector('.snack-product-box');
         let proAll = "";
 
-    
-
         products = products.slice(firstProduct, lastProduct)
+
+        if(sort === 'lowtohigh'){
+            products = products.sort((a, b) => a.newPrice  - b.newPrice)
+        }else if(sort === 'hightolow'){
+            products = products.sort((a, b) => b.newPrice  - a.newPrice)
+        }
+
 
         const foundItem = document.getElementById('snack-found-item').querySelector('span')
         foundItem.innerHTML = products.length
 
         for(let product of products){
-            const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
+          proAll += producthtml(product)
+        }
 
-        proAll += `
-        
+        snackProductContainer.innerHTML = proAll
+        const quiceView = document.querySelectorAll('.quice-view')
 
+        quiceView.forEach((view)=>{
+            view.addEventListener('click', ()=>{
+                const target = view.parentElement.parentElement.id
+                //product id is sent to quickView.js and there targeted product will be fetched from the json file
+                quickViewFunc(target)
+            })
+        })
+        productAddCart()
+    })
+}
+
+fetchDealFunc(quickViewFunc)
+
+//product html part is here... parameter taken from fetching...
+function producthtml(product){
+    const {special, frontPic, backPic, type, name, rating, provider, newPrice, prevPrice, id} = product;
+
+    return `
         <div class="popular-product-div display" id=${id}>
 
             <span class= "upper-top ${special === `-14%` ? `orange` : special.toLowerCase()}">${special}</span>
@@ -132,25 +132,9 @@ function fetchDealFunc(quickViewFunc, firstProduct = 0, lastProduct = 20){
                 </a>
             </div>
     </div>
-
-        `
-        }
-
-        snackProductContainer.innerHTML = proAll
-        const quiceView = document.querySelectorAll('.quice-view')
-
-        quiceView.forEach((view)=>{
-            view.addEventListener('click', ()=>{
-                const target = view.parentElement.parentElement.id
-                //product id is sent to quickView.js and there targeted product will be fetched from the json file
-                quickViewFunc(target)
-            })
-        })
-        productAddCart()
-    })
+ `
 }
 
-fetchDealFunc(quickViewFunc)
 
 //product sorting based on number of items and different range..
 
@@ -184,6 +168,7 @@ function prodcutSorting(){
         </div>
     `
 
+    //product filter based on amount
     const allCheckedItem = document.querySelectorAll('.snack-item-count .fa-solid')
     const snackItemCount = document.querySelectorAll('.snack-item-count')
     snackItemCount.forEach((snakeItem) =>{
@@ -198,6 +183,29 @@ function prodcutSorting(){
             snackItemShow.innerText = spanIs
 
             fetchDealFunc(quickViewFunc, 0, spanIs)
+        })
+    })
+
+
+
+    //product filter based on lower to higher price
+    const allPriceFilterOp = document.querySelectorAll('.snack-item-price .fa-solid')
+    const snackItemsPrice = document.querySelectorAll('.snack-item-price')
+    snackItemsPrice.forEach((snackPrice)=>{
+        snackPrice.addEventListener('click', ()=>{
+            allPriceFilterOp.forEach((item)=> item.classList.remove('fa-check'))
+
+            const checked = snackPrice.querySelector('.fa-solid')
+            checked.classList.add('fa-check')
+            let spanIs = snackPrice.querySelector('span').innerText
+
+            const snackItemShow = document.getElementById('snack-item-rank')
+            snackItemShow.innerText = spanIs
+
+            let sort = spanIs.replace(/\s/g, "").slice(6).toLowerCase()
+
+            fetchDealFunc(quickViewFunc, 0, 20, sort)
+            
         })
     })
 }

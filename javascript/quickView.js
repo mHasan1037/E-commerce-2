@@ -1,7 +1,6 @@
 import { productAddedNotification } from './productAddNotification.js'
 
 export function quickViewFunc(target){
-    console.log(target)
     fetch(`json/products.json`)
     .then((res)=> res.json())
     .then((datas)=> 
