@@ -24,14 +24,27 @@ fetch("./json/snackCategories.json")
         <a href="#/" class="snack-category">
           <div class="snack-intryo">
             <img src="${product.image}" class="snack-cat-icon" />
-            <p>${product.category}</p>
+            <p id="snack_cat_name">${product.category}</p>
           </div>
           <span>${product.count}</span>
         </a>
         `
     }
     snackCategory.innerHTML = out
+
+
+    const allSnacksCategory = document.querySelectorAll('.snack-category')
+    allSnacksCategory.forEach((category)=>{
+        category.addEventListener('click', ()=>{
+           let name = category.querySelector('#snack_cat_name').innerText
+           name = name.replace(/\s/g, "")
+
+           fetchDealFunc(quickViewFunc, 0, 20, name)
+        })
+    })
 })
+
+
 
 
 //snack product fetching from products.json.....
@@ -49,6 +62,16 @@ function fetchDealFunc(quickViewFunc, firstProduct = 0, lastProduct = 20, sort =
             products = products.sort((a, b) => a.newPrice  - b.newPrice)
         }else if(sort === 'hightolow'){
             products = products.sort((a, b) => b.newPrice  - a.newPrice)
+        }else if(sort === 'Milks&Dairies'){
+            products = products.filter(product => product.type === 'Snack')
+        }else if(sort === 'Clothing'){
+            products = products.filter(product => product.type === 'Hodo Foods')
+        }else if(sort === 'PetFoods'){
+            products = products.filter(product => product.type === 'Pet Foods')
+        }else if(sort === 'Bakingmeterial'){
+            products = products.filter(product => product.type === 'Vegetables')
+        }else if(sort === 'FreshFruit'){
+            products = products.filter(product => product.type === 'Meats')
         }
 
 
@@ -136,7 +159,7 @@ function producthtml(product){
 }
 
 
-//product sorting based on number of items and different range..
+//product sorting html based on number of items and different range..
 
 function prodcutSorting(){
     const snackProductHeader = document.querySelector('.snack-product-header')
@@ -208,6 +231,7 @@ function prodcutSorting(){
             
         })
     })
+
 }
 
 prodcutSorting()
