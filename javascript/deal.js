@@ -2,8 +2,8 @@ import { quickViewFunc } from './quickView.js'
 import { productAddCart } from './productOrder.js';
 
 // main and aside div size is equil by javascript and onscroll main size expand....
-const mainSnackProductHolder = document.getElementById('main-snack-product-holder');
-const snackAside = document.getElementById('snack-aside');
+    const mainSnackProductHolder = document.getElementById('main-snack-product-holder');
+    const snackAside = document.getElementById('snack-aside');
 
     snackAside.getBoundingClientRect().height;
     mainSnackProductHolder.style.maxHeight = snackAside + "px";
@@ -32,7 +32,7 @@ fetch("./json/snackCategories.json")
     }
     snackCategory.innerHTML = out
 
-
+   //on click of any category product will be fetched in the fetchDealFunc function
     const allSnacksCategory = document.querySelectorAll('.snack-category')
     allSnacksCategory.forEach((category)=>{
         category.addEventListener('click', ()=>{

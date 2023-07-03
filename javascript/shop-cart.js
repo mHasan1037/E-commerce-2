@@ -13,6 +13,21 @@ if(localStore.length === 0){
     cartContainer.appendChild(cartBox)
 }else{
     onUpdateCart()
+
+
+    const deleteBtns = document.querySelectorAll('.pro-delete')
+    deleteBtns.forEach(btn =>{
+        btn.addEventListener('click', ()=>{
+            let id = btn.parentNode.parentNode.id
+
+            
+            let getId = localStore.filter(item => item.id !== id)
+
+            localStorage.setItem('proAddToCart', JSON.stringify(getId))
+
+            window.location.reload()
+        })
+    })
 }
 
 
@@ -29,7 +44,7 @@ function onUpdateCart(){
         const item = localStore[i]
 
         productRow += `
-        <tr style="text-align: center;">
+        <tr style="text-align: center;" id=${item.id}>
             <td><input type="checkbox" /></td>
             <td class="cart-product" style="display: flex; align-items: center; text-align: left;">
                 <img class="item-img" src=${item.img} />
@@ -48,14 +63,14 @@ function onUpdateCart(){
                 ${item.price}
             </td>
             <td>
-                <i class="fa-solid fa-trash"></i> 
+                <i class="fa-solid fa-trash pro-delete"></i> 
             </td>
         </tr>
         `
     }
 
 
-    
+ 
     
     let totalPrice = localStore.map(obj => parseFloat(obj.price)).reduce((acc, price)=> acc + price, 0)
     totalPrice = Math.ceil(totalPrice)
@@ -108,7 +123,11 @@ function onUpdateCart(){
         <button class="proceed-btn">Proceed</button>
     `
     cartContainer.appendChild(cartBox)
+
 }
+
+
+
 
 
 const continueShopping = document.getElementById('continue-shopping')
@@ -184,15 +203,6 @@ proceedBtn.addEventListener('click', ()=>{
         document.querySelector('.cartbox-full').style.display = 'block'
     })
 })
-
-
-
-
- 
-
-
-
-
 
 
 

@@ -268,7 +268,9 @@
     flex: 1;
 }
 
-
+.pro-delete{
+    cursor: pointer;
+}
 
 
 
