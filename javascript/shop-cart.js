@@ -25,7 +25,7 @@ if(localStore.length === 0){
 
             localStorage.setItem('proAddToCart', JSON.stringify(getId))
 
-            window.location.reload()
+            //window.location.reload()
         })
     })
 }
@@ -132,7 +132,7 @@ function onUpdateCart(){
 
 const continueShopping = document.getElementById('continue-shopping')
 continueShopping.addEventListener('click', ()=>{
-    window.location.href = 'index.html'
+    window.location.href = 'deal.html'
 })
 
 
